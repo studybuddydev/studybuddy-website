@@ -1,0 +1,28 @@
+{
+  "name": "studybuddy-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "build-sass": "sass src/style:dist/style",
+    "build-pug": "pug ./src -o ./dist -P",
+    "build": "rimraf dist && npm run build-pug && npm run build-ts && npm run build-sass",
+    "watch-ts": "tsc --watch",
+    "watch-scss": "sass src/style:dist/style --watch",
+    "watch-pug": "pug -w ./src -o ./dist -P",
+    "watch-http": "es-dev-server --root-dir dist --app-index index.html --node-resolve --watch --open",
+    "dev": "concurrently --kill-others 'npm:watch-*'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "es-dev-server": "^2.1.0",
+    "pug-cli": "1.0.0-alpha6",
+    "rimraf": "^4.1.2",
+    "sass": "^1.57.1",
+    "typescript": "^4.9.4"
+  }
+}
