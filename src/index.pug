@@ -2,5 +2,22 @@ doctype html
 html
   include ./includes/head.pug
   body
-    h1 StudyBuddy
-    script(type='module' src='./script/main.js')
+    header
+      nav
+        a.selected(href="/") StudyBuddy
+        a(href="/about") Chi siamo
+        a(href="/mission") Mission
+      //- .banner 
+      //-   h1 StudyBuddy
+      //-   p Studiamo insieme
+    main
+      .intro
+        .title
+          h1 StudyBuddy
+          h2 Il tuo assistente e motivatore allo studio blabla
+        .descripion
+          p Qui si descrive il succo di study buddy che ti aiuta  a partire dalle lezioni per poi metterti giu un piano per la sessione aggregando tutti gli strumenti della produttività in un ambiente flessibile e custruito sulla tua università 
+        img(src="https://picsum.photos/1200/800")
+
+      .try 
+        a.button(target="_blank" href="http://app.studybuddy.it") Prova StudyBuddy

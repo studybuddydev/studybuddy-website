@@ -7,3 +7,95 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+
+header {
+
+    nav {
+        background: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        padding: 0.6em;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6em 1em;
+
+            &.selected {
+                background: #444;
+                border-radius: 0.5em;
+                font-weight: bold;
+            }
+        }
+    }
+
+
+    .banner {
+        display: flex;
+        width: 100vw;
+        height: 80vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-image: url("https://picsum.photos/1920/1080");
+        ;
+    }
+}
+
+
+main {
+    width: 100vw;
+    overflow: hidden;
+    .intro {
+        width: 70vw;
+        margin: 3em auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 3em;
+
+        .title {
+            h1 {
+                font-size: 4em;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            h2 {
+                font-size: 1em;
+                margin: 0;
+                color: #222;
+            }
+        }
+
+        img {
+            justify-self: center;
+            grid-column: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            object-fit: cover;
+            width: 100%;
+            max-height: 100%;
+            border-radius: 1em;
+            filter: drop-shadow(0px 0px 4px #CCC);
+        }
+    }
+
+    .try {
+        text-align: center;
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: .7em 1.5em;
+            font-size: 1.2em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 0.4em;
+        }
+    }
+}
