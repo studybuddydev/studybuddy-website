@@ -11,6 +11,11 @@
         text-decoration: none;
     }
 
+    img {
+        height: 5rem;
+        width: 3rem;
+    }
+
     .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
