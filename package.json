@@ -6,11 +6,11 @@
   "scripts": {
     "prebuild": "rimraf dist && cpx 'src/assets/**' 'dist/assets'",
     "build-ts": "tsc",
-    "build-sass": "sass src/style:dist/style --style compressed",
+    "build-sass": "sass src/style/main.scss:dist/style/main.css --style compressed",
     "build-pug": "pug ./src -o ./dist -P",
     "build": "npm run prebuild && npm run build-pug && npm run build-ts && npm run build-sass",
     "watch-ts": "tsc --watch",
-    "watch-scss": "sass src/style:dist/style --watch",
+    "watch-scss": "sass src/style/main.scss:dist/style/main.css --watch",
     "watch-pug": "pug -w ./src -o ./dist -P",
     "watch-http": "es-dev-server --root-dir dist --app-index index.html --node-resolve --watch --open",
     "dev": "npm run prebuild && concurrently --kill-others 'npm:watch-*'"

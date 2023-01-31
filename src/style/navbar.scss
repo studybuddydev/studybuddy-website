@@ -1,0 +1,51 @@
+.main-navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+
+
+    a, p {
+        margin: 0;
+        text-decoration: none;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        max-width: 1400px;
+        margin: auto;
+        padding: 1rem;
+
+        .menu-section {
+            display: flex;
+            align-items: center;
+            justify-items: center;
+
+            p {
+                padding: 0 1rem;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        }
+        
+        .logo {
+            justify-self: flex-start;
+            img {
+                border-radius: 50%;
+            }
+        }
+        
+        .menu {
+            justify-self: flex-end;
+
+            a {
+                padding: 0 2rem;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
