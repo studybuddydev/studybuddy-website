@@ -1,0 +1,16 @@
+footer {
+    margin-top: 10rem;
+    background-color: $gray-dark;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    p {
+        margin: 0;
+        padding: 1rem 2rem;
+        a {
+            padding: 0.5rem;
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+}
