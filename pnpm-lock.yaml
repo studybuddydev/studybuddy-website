@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  bootstrap: ^5.2.3
   concurrently: ^7.6.0
   cpx: ^1.5.0
   es-dev-server: ^2.1.0
@@ -8,6 +9,9 @@ specifiers:
   rimraf: ^4.1.2
   sass: ^1.57.1
   typescript: ^4.9.4
+
+dependencies:
+  bootstrap: 5.2.3
 
 devDependencies:
   concurrently: 7.6.0
@@ -1830,6 +1834,12 @@ packages:
       file-uri-to-path: 1.0.0
     dev: true
     optional: true
+
+  /bootstrap/5.2.3:
+    resolution: {integrity: sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.6
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
