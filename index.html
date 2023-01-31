@@ -11,20 +11,50 @@
     <script type="module" src="./script/main.js"></script>
   </head>
   <body>
-    <header>
-      <nav><a class="selected" href="/">StudyBuddy</a><a href="/about">Chi siamo</a><a href="/mission">Mission</a></nav>
-    </header>
-    <main>
-      <div class="intro">
-        <div class="title">
-          <h1>StudyBuddy</h1>
-          <h2>Il tuo assistente e motivatore allo studio blabla</h2>
+    <nav class="main-navbar">
+      <div class="wrapper">
+        <div class="menu-section logo"><img src="https://picsum.photos/40/40">
+          <p>StudyBuddy</p>
         </div>
-        <div class="descripion">
-          <p>Qui si descrive il succo di study buddy che ti aiuta  a partire dalle lezioni per poi metterti giu un piano per la sessione aggregando tutti gli strumenti della produttività in un ambiente flessibile e custruito sulla tua università </p>
-        </div><img src="https://picsum.photos/1200/800">
+        <div class="menu-section menu"><a href="#main">Missione</a><a href="#main">Chi siamo</a><a href="#main">Dove siamo</a></div>
       </div>
-      <div class="try"> <a class="button" target="_blank" href="http://app.studybuddy.it">Prova StudyBuddy</a></div>
-    </main>
+    </nav>
+    <div class="parallax-wrapper">
+      <div class="parallax-image"><img src="../assets/bg/bg.png"></div>
+      <main>
+        <section class="section-header">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6"><img class="d-block mx-lg-auto img-fluid" src="https://picsum.photos/500/400" alt="Bootstrap Themes" width="700" height="500" loading="lazy"></div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world&rsquo;s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button class="btn btn-primary btn-lg px-4 me-md-2" type="button">Primary</button>
+                  <button class="btn btn-outline-secondary btn-lg px-4" type="button">Default</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services">
+          <h2 class="text-primary">Missione</h2>
+          <div class="services-list">
+            <div class="service">
+              <h3 class="text-primary">Service 1</h3><img src="https://picsum.photos/150/150?random=1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem. Sed euismod, nisl vel tincidunt aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem.</p>
+            </div>
+            <div class="service">
+              <h3 class="text-primary">Service 2</h3><img src="https://picsum.photos/150/150?random=2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem. Sed euismod, nisl vel tincidunt aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem.</p>
+            </div>
+            <div class="service">
+              <h3 class="text-primary">Service 3</h3><img src="https://picsum.photos/150/150?random=3">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem. Sed euismod, nisl vel tincidunt aliquam, nunc nisl aliquet nisl, eget aliquam nisl nisl sit amet lorem.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
