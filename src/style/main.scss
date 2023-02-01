@@ -111,6 +111,24 @@ section {
     scroll-margin-top: 10em;
 }
 
+.scrollbar::-webkit-scrollbar {
+	width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+	background: $white;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background-color: $primary;
+	border-radius: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+	background-color: darken($primary, 10%);
+	border-radius: 4px;
+}
+
 @import "navbar";
 @import "header";
 @import "newsletter";
