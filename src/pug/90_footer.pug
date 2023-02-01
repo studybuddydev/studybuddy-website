@@ -1,8 +1,11 @@
 footer
+  .logo 
+    img(src='../assets/bg/sb_icon.png')
+    p StudyBuddy
   .follow
-    p Follow us:
-      a(href='https://www.facebook.com') Facebook
-      a(href='https://www.instagram.com') Instagram
-      a(href='https://www.tiktko.com') TikTok
-      a(href='https://www.youtube.com') YouTube
-  p Made with ❤️ by the StudyBuddy team
+    include ./fragments/social.pug
+  .info
+    div.legal
+      a(href="https://www.google.it" target="_blank") Privacy Policy
+      a(href="https://www.google.it" target="_blank") Legal Stuff
+    p Fatto con ❤️ dal team StudyBuddy

@@ -1,16 +1,79 @@
+$text-color-footer: #aaa;
+
 footer {
     margin-top: 10rem;
-    background-color: $gray-dark;
+    background-color: $black;
     color: $white;
     display: flex;
     justify-content: space-between;
-    p {
-        margin: 0;
-        padding: 1rem 2rem;
+    flex-direction: column;
+    padding: 2rem 2rem 0;
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 4rem;
+            margin: 0 1rem;
+        }
+
+        p {
+            color: $text-color-footer;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .follow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         a {
             padding: 0.5rem;
             text-decoration: none;
-            color: $yellow;
+            color: $text-color-footer;
+            font-size: 1.2rem;
+
+            &:hover {
+                color: $primary;
+            }
         }
+    }
+
+    .info {
+        margin-top: 1rem;
+        margin-bottom: 0.4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: #999;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .legal {
+            display: flex;
+            flex-direction: row;
+            a {
+                color: #999;
+                margin: 0;
+                margin: 0 0.5rem;
+                text-decoration: underline;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+        
     }
 }
