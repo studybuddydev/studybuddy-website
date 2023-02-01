@@ -134,7 +134,12 @@ section {
   border-radius: 4px;
 }
 
+.hide {
+  display: none !important;
+}
+
 @import "navbar";
+@import "cookie";
 @import "header";
 @import "newsletter";
 @import "services";
