@@ -102,6 +102,9 @@ h2 {
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.1);
 }
 
+section {
+    scroll-margin-top: 10em;
+}
 
 @import "navbar";
 @import "header";
