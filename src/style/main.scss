@@ -42,7 +42,13 @@ $theme-colors: (
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
-    
+$fa-font-path: "../assets/webfonts";
+
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
 * {
     box-sizing: border-box;
 }
@@ -79,9 +85,24 @@ body {
         transform: translateZ(0);
     }
 }
+.btn-primary {
+    color: $white;
+}
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin: 1em;
+}
+.box {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.1);
+}
 
 
 @import "navbar";
 @import "header";
+@import "newsletter";
 @import "services";
 @import "footer";

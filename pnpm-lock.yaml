@@ -1,17 +1,21 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fortawesome/fontawesome-free': ^6.2.1
   bootstrap: ^5.2.3
   concurrently: ^7.6.0
   cpx: ^1.5.0
   es-dev-server: ^2.1.0
+  font-awesome: ^4.7.0
   pug-cli: 1.0.0-alpha6
   rimraf: ^4.1.2
   sass: ^1.57.1
   typescript: ^4.9.4
 
 dependencies:
+  '@fortawesome/fontawesome-free': 6.2.1
   bootstrap: 5.2.3
+  font-awesome: 4.7.0
 
 devDependencies:
   concurrently: 7.6.0
@@ -1181,6 +1185,12 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: true
+
+  /@fortawesome/fontawesome-free/6.2.1:
+    resolution: {integrity: sha512-viouXhegu/TjkvYQoiRZK3aax69dGXxgEjpvZW81wIJdxm5Fnvp3VVIP4VHKqX4SvFw6qpmkILkD4RJWAdrt7A==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
 
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
@@ -2698,6 +2708,11 @@ packages:
     dependencies:
       array-back: 3.1.0
     dev: true
+
+  /font-awesome/4.7.0:
+    resolution: {integrity: sha512-U6kGnykA/6bFmg1M/oT9EkFeIYv7JlX3bozwQJWiiLz6L0w3F5vBVPxHlwyX/vtNq1ckcpRKOB9f2Qal/VtFpg==}
+    engines: {node: '>=0.10.3'}
+    dev: false
 
   /for-in/1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}

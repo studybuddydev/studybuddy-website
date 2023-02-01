@@ -13,7 +13,7 @@
 
     img {
         height: 5rem;
-        width: 3rem;
+        width: 100%;
     }
 
     .wrapper {
@@ -22,7 +22,7 @@
         grid-template-rows: 1fr;
         max-width: 1400px;
         margin: auto;
-        padding: 1rem;
+        padding: 0.5rem 5vw;
 
         .menu-section {
             display: flex;
@@ -47,8 +47,9 @@
             justify-self: flex-end;
 
             a {
-                padding: 0 2rem;
+                padding: 0 1rem;
                 font-size: 1.2em;
+                font-weight: bold;
             }
         }
     }
