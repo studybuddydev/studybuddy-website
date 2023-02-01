@@ -20,25 +20,25 @@ $danger: #F95C19;
 
 
 $theme-colors: (
-    "blue": $blue,
-    "indigo": $indigo,
-    "purple": $purple,
-    "pink": $pink,
-    "red": $red,
-    "orange": $orange,
-    "yellow": $yellow,
-    "green": $green,
-    "teal": $teal,
-    "cyan": $cyan,
-    "white": $white,
-    "gray": $gray,
-    "gray-dark": $gray-dark,
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "info": $info,
-    "warning": $warning,
-    "danger": $danger,
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "white": $white,
+  "gray": $gray,
+  "gray-dark": $gray-dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
@@ -50,83 +50,88 @@ $fa-font-path: "../assets/webfonts";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 
 ::selection {
-    color: $white;
-    background: $primary;
+  color: $white;
+  background: $primary;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .parallax-wrapper {
-    perspective: 1px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#EAF7FF), to(#F3F1F7));
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EAF7FF), to(#F3F1F7));
 
-    .parallax-image {
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transform: translateZ(-1px);
-        img {
-            filter: hue-rotate(155deg)
-        }
+  .parallax-image {
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px);
+
+    img {
+      filter: hue-rotate(155deg)
     }
-    main {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transform: translateZ(0);
-    }
+  }
+
+  main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(0);
+  }
 }
+
 .btn-primary {
-    color: $white;
+  color: $white;
 }
+
 h2 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.5em;
-    margin: 1em;
-    margin-top: 3em;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin: 1em;
+  margin-top: 3em;
 }
+
 .box {
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 section {
-    scroll-margin-top: 10em;
+  scroll-margin-top: 10em;
 }
 
 .scrollbar::-webkit-scrollbar {
-	width: 8px;
+  width: 8px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
-	background: $white;
+  background: $white;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-	background-color: $primary;
-	border-radius: 4px;
+  background-color: $primary;
+  border-radius: 4px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
-	background-color: darken($primary, 10%);
-	border-radius: 4px;
+  background-color: darken($primary, 10%);
+  border-radius: 4px;
 }
 
 @import "navbar";

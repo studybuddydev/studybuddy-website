@@ -1,44 +1,44 @@
 .team {
+  .team-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 
+    a {
+      text-decoration: none;
+      transition: all .3s ease-in-out;
 
-    .team-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        a {
-            text-decoration: none;
-            transition: all .3s ease-in-out; 
-            &:hover { 
-                transform: scale(1.05); 
-            }
-        }
-
-        .team-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 1rem;
-            border-radius: 1rem;
-
-            img {
-                height: 15rem;
-                width: 15rem;
-                border-radius: 1em 1em 0 0;
-            }
-
-            h3 {
-                font-size: 2rem;
-                margin-top: 0.5em;
-                margin-bottom: 0.3em;
-                color: $secondary;
-            }
-
-            p {
-                color: $black;
-            }
-
-        }
+      &:hover {
+        transform: scale(1.05);
+      }
     }
+
+    .team-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem;
+      border-radius: 1rem;
+
+      img {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 1em 1em 0 0;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-top: 0.5em;
+        margin-bottom: 0.3em;
+        color: $secondary;
+      }
+
+      p {
+        color: $black;
+      }
+
+    }
+  }
 }

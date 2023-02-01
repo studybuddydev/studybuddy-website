@@ -1,67 +1,73 @@
 .roadmap {
-    .roadmap-wrapper {
-        padding: 1em 0;
-        max-width: 1600px;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  .roadmap-wrapper {
+    padding: 1em 0;
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        img {
-            height: 15vw;
-            width: 15vw;
-            margin-right: 5vw;
-        }
-
-        .milestone {
-            margin: 1em;
-            padding: 1em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 1em;
-            border-radius: 50%;
-            width: 18vw;
-            height: 18vw;
-            max-width: 15em;
-            max-height: 15em;
-
-            h3 {
-                font-size: 3vw;
-                @media screen and (min-width: 1600px) {
-                    font-size: 2.5em;
-                }
-
-            }
-            p {
-                font-size: 1.5vw;
-                margin: 0;
-                @media screen and (min-width: 1600px) {
-                    font-size: 1.5em;
-                }
-            }
-        }
-
-        @media screen and (max-width: 991px) {
-            flex-direction: column;
-            img {
-                height: 10em;
-                width: 10em;
-                margin: 2em 0;
-            }
-            .milestone {
-                width: 10em;
-                height: 10em;
-                margin: 1em 0;
-            }
-
-            h3 {
-                font-size: 2em !important;
-            }
-            p {
-                font-size: 1em !important;
-            }
-        }
+    img {
+      height: 15vw;
+      width: 15vw;
+      margin-right: 5vw;
     }
+
+    .milestone {
+      margin: 1em;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1em;
+      border-radius: 50%;
+      width: 18vw;
+      height: 18vw;
+      max-width: 15em;
+      max-height: 15em;
+
+      h3 {
+        font-size: 3vw;
+
+        @media screen and (min-width: 1600px) {
+          font-size: 2.5em;
+        }
+
+      }
+
+      p {
+        font-size: 1.5vw;
+        margin: 0;
+
+        @media screen and (min-width: 1600px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column;
+
+      img {
+        height: 10em;
+        width: 10em;
+        margin: 2em 0;
+      }
+
+      .milestone {
+        width: 10em;
+        height: 10em;
+        margin: 1em 0;
+      }
+
+      h3 {
+        font-size: 2em !important;
+      }
+
+      p {
+        font-size: 1em !important;
+      }
+    }
+  }
 }
