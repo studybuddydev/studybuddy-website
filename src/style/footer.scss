@@ -2,14 +2,18 @@ $text-color-footer: #aaa;
 
 footer {
   margin-top: 5rem;
-  background-color: $black;
   color: $white;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 2rem 2rem 0;
+  background-color: $black;
+
+  > * {
+    padding: 0 2rem;
+  }
 
   a {
+    margin-top: 2rem;
     text-decoration: none;
   }
   .logo {
@@ -36,6 +40,7 @@ footer {
   }
 
   .follow {
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,8 +58,9 @@ footer {
   }
 
   .info {
-    margin-top: 1rem;
-    margin-bottom: 0.4rem;
+    border-top: 1px solid $text-color-footer;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
