@@ -7,8 +7,8 @@ section.newsletter
                 .text
                     h3 Resta in contatto
                     p Resta aggiornato sui nostri progressi!
-            form
-                input.form-control(type='email' placeholder='La tua email')
+            form(action="https://formsubmit.co/email@example.com" method="POST" )
+                input.form-control(name='email' type='email' placeholder='La tua email')
                 button.btn.btn-primary(type='submit') Iscriviti
             .social
                 include ./fragments/social.pug
