@@ -6,10 +6,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-document.querySelector(".cookie-close").addEventListener("click", (e) => {
+function closeCookie(accepted) {
+    localStorage.setItem("cookie", accepted ? "true" : "false");
     document.querySelector(".cookie").classList.add("hide");
-    localStorage.setItem("cookie", "true");
-});
+}
+document.querySelector(".cookie-cancel").addEventListener("click", (e) => closeCookie(false));
+document.querySelector(".cookie-accep").addEventListener("click", (e) => closeCookie(true));
 if (!localStorage.getItem("cookie"))
     document.querySelector(".cookie").classList.remove("hide");
 //# sourceMappingURL=main.js.map
