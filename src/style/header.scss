@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   padding-top: 12vh;
 
+  .row {
+    justify-content: center;
+  }
+
   .btn-primary {
     color: $white;
   }
@@ -12,4 +16,5 @@
   .img-wrapper {
     justify-content: center;
   }
+
 }

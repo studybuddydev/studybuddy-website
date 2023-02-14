@@ -6,12 +6,6 @@
   background-color: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(10px);
 
-  .quest {
-    background-color: $primary;
-    color: $white;
-    border-radius: 0.5rem;
-  }
-
   a,
   p {
     margin: 0;
@@ -23,33 +17,12 @@
   }
 
   .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1400px;
     margin: auto;
     padding: 0.5rem 5vw;
-
-    @media screen and (max-width: 768px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
-
-      .logo {
-        justify-self: center !important;
-
-        img {
-          height: 3rem;
-        }
-
-        p {
-          font-size: 1.5em;
-        }
-      }
-
-      .menu {
-        justify-self: center !important;
-      }
-    }
 
     .menu-section {
       display: flex;
@@ -82,6 +55,40 @@
         padding: 0 1rem;
         font-size: 1.2em;
         font-weight: bold;
+      }
+    }
+    .survey {
+      font-weight: bold;
+      letter-spacing: 0.03rem;
+      .btn {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+    }
+
+
+    
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      .survey {
+        display: none;
+      }
+
+      .logo {
+        justify-self: center !important;
+
+        img {
+          height: 3rem;
+        }
+
+        p {
+          font-size: 1.5em;
+        }
+      }
+
+      .menu {
+        justify-self: center !important;
       }
     }
   }
