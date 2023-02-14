@@ -117,7 +117,7 @@ section {
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -126,12 +126,12 @@ section {
 
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: $primary;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: darken($primary, 10%);
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 .hide {
