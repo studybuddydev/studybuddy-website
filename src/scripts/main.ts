@@ -21,6 +21,11 @@ function closeCookie(accepted: boolean) {
 document.querySelector(".cookie-cancel").addEventListener("click", (e) => closeCookie(false));
 document.querySelector(".cookie-accep").addEventListener("click", (e) => closeCookie(true));
 
+function getCookieStatus(): boolean | null {
+  const cookieStatus = localStorage.getItem("cookie");
+  if (cookieStatus === null) return null;
+  return cookieStatus === "true" ? true : false;
+}
 
 function main() {
   // @ts-ignore
@@ -30,14 +35,17 @@ function main() {
   gtag('js', new Date());
   // @ts-ignore
   gtag('config', 'G-FR9JDD39YJ');
-  
-  if (localStorage.getItem("cookie") === 'true') {
-    document.querySelector(".cookie").classList.remove("hide");
+
+  const cookieStatus = getCookieStatus();
+  if (cookieStatus) {
     // @ts-ignore
     gtag('consent', 'default', { 'ad_storage': 'granted', 'analytics_storage': 'granted'});
   } else {
     // @ts-ignore
     gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'denied' });
+  }
+  if (cookieStatus === null) {
+    document.querySelector(".cookie").classList.remove("hide");
   }
 }
 
