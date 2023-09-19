@@ -19,29 +19,19 @@
         <div class="menu-section survey"><a class="btn btn-primary" type="button" href="https://forms.gle/ayCYEZ6BN43GNKGs9" target="_blank">QUESTIONARIO</a></div>
       </div>
     </nav>
-    <div class="cookie box hide"><img src="./assets/img/cookie.png" alt="Cookie">
-      <p class="cookie-title">Vuoi i biscottini?</p>
-      <p>I biscottini ci aiutano a far andare meglio il nostro sito, mangiali!</p>
-      <div class="cookie-buttons">
-        <button class="btn btn-outline-primary cookie-cancel">No grazie</button>
-        <button class="btn btn-primary cookie-accep">Accetto</button>
-      </div>
-    </div>
+    <!--include ./pug/fragments/cookie.pug-->
     <div class="parallax-wrapper scrollbar">
       <div class="parallax-image"><img src="../assets/bg/bg.png"></div>
       <main>
         <section class="section-header" id="studybuddy">
           <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-2 py-5">
-              <div class="col-10 col-sm-8 col-lg-6"><img class="d-block mx-lg-auto img-fluid" src="../assets/bg/estudianti.png" alt="Bootstrap Themes" width="700" height="500" loading="lazy"></div>
+              <div class="col-10 col-sm-8 col-lg-6">
+                <!--img.d-block.mx-lg-auto.img-fluid(src='../assets/bg/estudianti.png', alt='Bootstrap Themes', width='700', height='300', loading='lazy')-->
+              </div>
               <div class="col-lg-6">
                 <h1 class="display-4 fw-bold lh-1 mb-3">Il tuo assistente all'Università</h1>
-                <p class="lead">
-                  StudyBuddy offrirà una serie di strumenti per rendere piu efficace lo studio. <br /><br />
-                  Se sei uno studente, 
-                  ti invitiamo a compilare il nostro questionario e a condividere le tue opinioni! 
-                </p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start"><a class="btn btn-primary btn-lg px-4 me-md-2" type="button" href="https://forms.gle/ayCYEZ6BN43GNKGs9" target="_blank">Rispondi al questionario</a><a class="btn btn-outline-primary btn-lg px-4" type="button" href="#newsletter" target="_blank">Provalo</a></div>
+                <p class="lead">StudyBuddy offrirà una serie di strumenti per rendere piu efficace lo studio. </p>
               </div>
             </div>
           </div>
@@ -52,7 +42,7 @@
               <div class="text-box"><img class="side-img" src="../assets/img/newsletter.png">
                 <div class="text">
                   <h3>Diventa un tester</h3>
-                  <p> Se vuoi essere tra i primi a provare StudyBuddy, lasciaci la tua email per entrare nella waiting list!</p>
+                  <p> Se vuoi essere tra i primi a provare StudyBuddy, lasciaci la tua email oppure entra nel canale Telegram!</p>
                 </div>
               </div>
               <form action="https://formsubmit.co/d6d13748e9012c5c053a84cc8fdf3375" method="POST">
