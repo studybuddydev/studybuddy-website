@@ -12,8 +12,7 @@ function closeCookie(accepted) {
     localStorage.setItem("cookie", accepted ? "true" : "false");
     document.querySelector(".cookie").classList.add("hide");
     // @ts-ignore
-    if (accepted)
-        gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
+    gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' });
 }
 document.querySelector(".cookie-cancel").addEventListener("click", (e) => closeCookie(false));
 document.querySelector(".cookie-accep").addEventListener("click", (e) => closeCookie(true));
