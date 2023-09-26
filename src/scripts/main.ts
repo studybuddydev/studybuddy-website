@@ -14,7 +14,7 @@ function closeCookie(accepted: boolean) {
   localStorage.setItem("cookie", accepted ? "true" : "false");
   document.querySelector(".cookie").classList.add("hide");
   // @ts-ignore
-  if (accepted) gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted'});
+  gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted'});
 }
 
 
