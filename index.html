@@ -10,7 +10,9 @@
     <link rel="icon" href="./assets/favicon.ico">
     <script src="https://www.googletagmanager.com/gtag/js?id=G-FR9JDD39YJ"></script>
     <script type="module" src="./script/main.js"></script>
-    <script type="module" src="./script/hotjar.js"></script>
+    <script src="./script/hotjar.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="./script/app.js"></script>
   </head>
   <body>
     <nav class="main-navbar">
@@ -51,13 +53,10 @@
               <div class="text-box"><img class="side-img" src="../assets/img/newsletter.png">
                 <div class="text">
                   <h3>Provalo in anteprima</h3>
-                  <p> Se vuoi essere tra i primi a provare StudyBuddy, lasciaci la tua email oppure entra nel canale Telegram!</p>
+                  <p> Se vuoi essere tra i primi a provare StudyBuddy, accedi premendo qui sotto!</p>
                 </div>
               </div>
-              <form action="https://formsubmit.co/d6d13748e9012c5c053a84cc8fdf3375" method="POST">
-                <input class="form-control" name="email" type="email" placeholder="La tua email">
-                <button class="btn btn-primary" type="submit">Iscriviti</button>
-              </form>
+              <button class="btn btn-primary" id="btn-login" onclick="login()">Provala ora!</button>
               <div class="social"><a href="https://www.instagram.com/studybuddy.ita/" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://t.me/stubud" target="_blank"><i class="fa-brands fa-telegram"></i></a><a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/studybuddydev" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://discord.com/invite/wscTEHjhkW" target="_blank"><i class="fa-brands fa-discord"></i></a><a href="https://www.tiktok.com/@studybuddy_" target="_blank"><i class="fa-brands fa-tiktok"></i></a></div>
             </div>
           </div>
@@ -99,11 +98,11 @@
         <section class="team" id="team">
           <h2 class="text-primary">Il Team</h2>
           <div class="team-wrapper"><a href="https://gandelli.dev" target="_blank">
-              <div class="team-card box"><img src="../assets/img/team/alessio.jpg">
+              <div class="team-card box"><img src="../assets/img/team/alessio_old.jpg">
                 <h3 class="text-secondary"> Alessio</h3>
                 <p>Co-Founder</p>
               </div></a><a href="https://www.linkedin.com/in/gabriele-salvi-b7a748263/" target="_blank">
-              <div class="team-card box"><img src="../assets/img/team/gabriele.jpg">
+              <div class="team-card box"><img src="../assets/img/team/gabriele_old.jpg">
                 <h3 class="text-secondary">Gabriele</h3>
                 <p>Co-Founder</p>
               </div></a></div>
