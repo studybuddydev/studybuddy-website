@@ -1,4 +1,6 @@
+//import { createAuth0Client } from '@auth0/auth0-spa-js';
 let auth0Client = null;
+declare const auth0: any;
 
 
 //const fetchAuthConfig = () => fetch("/auth_config.json");
