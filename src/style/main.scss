@@ -6,7 +6,7 @@ $red: #F95C19;
 $orange: #FF7600;
 $yellow: #FFAF0F;
 $green: #00BA77;
-$teal: #53F283;
+$teal: #009999;
 $cyan: #00CEC2;
 $white: #FFFEFE;
 $gray: #7B7A8B;
@@ -138,6 +138,15 @@ section {
   display: none !important;
 }
 
+button {
+  margin: 0.5rem 0;
+  background-color:  $teal;
+  ;
+  font-size: 2rem;
+
+  
+}
+
 @import "navbar";
 @import "cookie";
 @import "policy";
@@ -147,3 +156,4 @@ section {
 @import "roadmap";
 @import "team";
 @import "footer";
+@import "pomoflex";
