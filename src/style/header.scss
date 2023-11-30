@@ -5,6 +5,11 @@
   background-repeat: no-repeat;
   padding-top: 12vh;
 
+  margin-bottom: 100em;
+  
+  h2 {
+    margin: 1em 0 0.5em 0;
+  }
   .row {
     justify-content: center;
   }
@@ -18,10 +23,35 @@
   }
   button {
     margin: 0.5rem 0;
-    background-color:  $teal;
     font-size: 2rem;
- 
-    
   }
 
+  .lead {
+    font-weight: 400;
+    margin-bottom: 2em;
+  }
+
+  .floating-timer {
+    position: absolute;
+    right: -20%;
+    bottom: -20%;
+    z-index: -10;
+
+    width: 70vw;
+    min-width: 600px;
+    max-width: 800px;
+    opacity: 0.3;
+  }
+  .sub-header {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    .call-to-action {
+      width: 11em;
+      align-self: center !important;
+      font-weight: 600;
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
+    }
+  }
 }
