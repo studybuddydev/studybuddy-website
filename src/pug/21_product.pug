@@ -1,15 +1,13 @@
-section.pomoflex#pomoflex
-  .container.col-xxl-8.px-4.py-3
-    .row.flex-lg-row-reverse.align-items-center.g-2.py-1
-      .col-lg-7
-        h3.display-5.fw-bold.lh-1.mb-3 Prendi il controllo del tuo tempo con il nostro timer flessibile
-        p.lead
-          | la tecnica del pomodoro non è nuova, ma noi l'abbiamo migliorata, rendendola flessibile e adattabile alle tue esigenze, scopri di più 
-          a(href="/pomoflex.html") qui
-        button.btn.btn-primary(id = 'btn-login', onclick = 'login()') Ottimizza il tuo tempo!
+section.sb-card-wrapper.pomoflex#pomoflex
+  .sb-card.frost
+    .img
+      img.d-block.mx-lg-auto.img-fluid(src='../assets/bg/pomo.png', alt='timer', width='700', height='300', loading='lazy')
+    .text
+      h3.display-5.fw-bold.lh-1.mb-3 Prendi il controllo del tuo tempo con il nostro timer flessibile
+      p.lead
+        | La tecnica del pomodoro non è nuova, ma noi l'abbiamo migliorata, rendendola flessibile e adattabile alle tue esigenze, scopri di più 
+        a(href="/pomoflex.html") qui
+      button.btn.btn-primary(id = 'btn-login', onclick = 'login()') Ottimizza il tuo tempo!
 
-      .col-10.col-sm-.col-lg-4
-        img.d-block.mx-lg-auto.img-fluid(src='../assets/bg/pomo.jpg', alt='timer', width='700', height='300', loading='lazy')
-
-      .social
-          include ./fragments/social.pug
+      //- .social
+      //-     include ./fragments/social.pug

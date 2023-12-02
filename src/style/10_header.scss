@@ -3,10 +3,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 12vh;
-
-  margin-bottom: 100em;
+  padding-top: 18vh;
   
+
   h2 {
     margin: 1em 0 0.5em 0;
   }
@@ -52,6 +51,28 @@
       font-weight: 600;
       padding: 0.5em 1em;
       border-radius: 0.5em;
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    a {
+      padding: 0.8rem;
+      &:hover {
+        // shadow effect filter with lighter $secondary;
+        filter: drop-shadow(0 0 0.75rem rgba($secondary, .2));
+      }
+    }
+    @media screen and (max-width: 700px) {
+      font-size: 1.5em;
+      a {
+        padding: 0.5rem;
+      }
     }
   }
 }

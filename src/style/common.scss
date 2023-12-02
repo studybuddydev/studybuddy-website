@@ -1,0 +1,48 @@
+.sb-card-wrapper {
+  margin: 3em 1.5em;
+
+  .sb-card {
+    max-width: 1000px;
+    border-radius: 1em;
+    padding: 2em;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    img {
+      max-width: 20vw;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .btn {
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+        border-radius: 0.5em;
+      }
+
+      ul {
+        width: 100%;
+      }
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    @media screen and (max-width: 520px) {
+      flex-direction: column;
+      img {
+        max-width: 220px;
+      }
+    }
+  }
+}
+
+.text-primary {
+  text-align: center;
+}
