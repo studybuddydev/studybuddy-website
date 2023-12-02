@@ -1,10 +1,10 @@
-.services {
+.values {
 
   img {
     height: 200px;
   }
 
-  .services-list {
+  .values-list {
     max-width: 1400px;
     margin: auto;
     display: grid;
@@ -41,8 +41,8 @@
 }
 
 @media screen and (max-width: 768px) {
-  .services {
-    .services-list {
+  .values {
+    .values-list {
       flex-direction: column;
 
       .service {

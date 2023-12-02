@@ -15,6 +15,13 @@
   p {
     margin: 0;
     text-decoration: none;
+
+    .beta {
+      color: white;
+      background-color: $primary;
+      padding: 0.2em 0.3em;
+      border-radius: 0.5em;
+    }
   }
 
   img {
