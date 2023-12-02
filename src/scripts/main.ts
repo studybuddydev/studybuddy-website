@@ -54,3 +54,14 @@ function main() {
 
 
 main();
+
+// remove to top when on top of page
+const toTop = document.querySelector(".to-top");
+const scrollArea = document.querySelector(".scrollbar");
+scrollArea.addEventListener("scroll", () => {
+  if (scrollArea.scrollTop > 1800) {
+    toTop.classList.remove("hide");
+  } else {
+    toTop.classList.add("hide");
+  }
+});

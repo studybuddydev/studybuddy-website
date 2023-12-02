@@ -1,12 +1,15 @@
 nav.main-navbar
   .wrapper
-    a(href="/").menu-section.logo
+    a(href="#studybuddy").menu-section.logo
       img(src='../assets/bg/sb.png')
       p StudyBuddy 
         span.beta BETA
     .menu-section.menu
-      a(href='#pomoflex') Pomoflex
-      a(href='#values') Values
+      a(href='#pomoflex') Timer
+      a(href='#values') Principi
       a(href='#team') Team
     .menu-section.survey
       a.btn.btn-primary.btn-login(id = 'btn-login', onclick = 'login()') Accedi alla Beta
+
+a(href='#studybuddy').to-top.hide
+  .fa.fa-rocket
