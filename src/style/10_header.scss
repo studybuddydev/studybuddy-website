@@ -4,11 +4,28 @@
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 18vh;
-  
 
-  h2 {
-    margin: 1em 0 0.5em 0;
+  .header-container {
+    margin: auto;
+    padding: 0 8vw;
+    max-width: 1400px;
   }
+
+  h1 {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  h2 {
+    font-weight: bold;
+    margin: 1em 0 0.5em 0;
+    font-size: 3vw;
+  }
+  .lead {
+    font-weight: 400;
+    margin-bottom: 2em;
+    font-size: 2vw;
+  }
+
   .row {
     justify-content: center;
   }
@@ -22,13 +39,10 @@
   }
   button {
     margin: 0.5rem 0;
-    font-size: 2rem;
+    font-size: 3vw;
   }
 
-  .lead {
-    font-weight: 400;
-    margin-bottom: 2em;
-  }
+
 
   .floating-timer {
     position: absolute;
@@ -59,7 +73,7 @@
     align-items: center;
     justify-content: center;
     font-size: 2.5em;
-    margin-top: 1.5em;
+    margin-top: 1em;
     margin-bottom: 1em;
     a {
       padding: 0.8rem;
@@ -69,27 +83,56 @@
       }
     }
     @media screen and (max-width: 700px) {
-  
       a {
         padding: 0.5rem;
       }
-
     }
   }
 
-  @media screen and (max-width: 700px) {
-  h1 {
-    font-size: 2.5rem;
-  }
+
+  @media screen and (max-width: 1000px) {
+    h1 {
+      font-size: 6vw;
+    }
     h2 {
-      font-size: 2rem;
+      font-size: 4vw;
     }
-    .sub-header {
-
-      width: 90vw;
+    .lead {
+      font-size: 3vw;
     }
-
-
   }
 
+  @media screen and (max-width: 850px) {
+    .sub-header {
+      width: 84vw;
+    }
+    h1 {
+      font-size: 8vw;
+      text-align: center;
+    }
+    h2 {
+      font-size: 4.5vw;
+    }
+    .lead {
+      font-size: 3vw;
+    }
+    button {
+      font-size: 4vw;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    .lead {
+      font-size: 1.3em;
+    }
+    button {
+      font-size: 1.7em;
+    }
+  }
 }

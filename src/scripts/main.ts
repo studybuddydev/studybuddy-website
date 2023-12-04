@@ -25,6 +25,8 @@ document.querySelector(".cookie-cancel").addEventListener("click", (e) => closeC
 document.querySelector(".cookie-accep").addEventListener("click", (e) => closeCookie(true));
 
 function getCookieStatus(): boolean | null {
+  // temporary, to remove asap
+  return true;
   const cookieStatus = localStorage.getItem("cookie");
   if (cookieStatus === null) return null;
   return cookieStatus === "true" ? true : false;
