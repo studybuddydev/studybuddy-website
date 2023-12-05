@@ -25,6 +25,8 @@ document.querySelector(".cookie-cancel").addEventListener("click", (e) => closeC
 document.querySelector(".cookie-accep").addEventListener("click", (e) => closeCookie(true));
 
 function getCookieStatus(): boolean | null {
+  // temporary, to remove asap
+  return true;
   const cookieStatus = localStorage.getItem("cookie");
   if (cookieStatus === null) return null;
   return cookieStatus === "true" ? true : false;
@@ -54,3 +56,14 @@ function main() {
 
 
 main();
+
+// remove to top when on top of page
+const toTop = document.querySelector(".to-top");
+const scrollArea = document.querySelector(".scrollbar");
+scrollArea.addEventListener("scroll", () => {
+  if (scrollArea.scrollTop > 1800) {
+    toTop.classList.remove("hide");
+  } else {
+    toTop.classList.add("hide");
+  }
+});

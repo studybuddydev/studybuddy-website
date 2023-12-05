@@ -6,13 +6,13 @@ $red: #F95C19;
 $orange: #FF7600;
 $yellow: #FFAF0F;
 $green: #00BA77;
-$teal: #53F283;
+$teal: #009999;
 $cyan: #00CEC2;
 $white: #FFFEFE;
 $gray: #7B7A8B;
 $gray-dark: #464558;
 $primary: #0c6978;
-$secondary: #F95C19;
+$secondary: #FF7600;
 $success: #00BA77;
 $info: #00CEC2;
 $warning: #FFAF0F;
@@ -63,6 +63,12 @@ body {
   padding: 0;
 }
 
+a {
+  &:hover {
+    color: $secondary;
+  }
+}
+
 .parallax-wrapper {
   perspective: 1px;
   height: 100vh;
@@ -99,17 +105,8 @@ body {
 }
 
 h2 {
-  text-align: center;
   font-weight: bold;
   font-size: 2.5em;
-  margin: 1em;
-  margin-top: 3em;
-}
-
-.box {
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -138,12 +135,29 @@ section {
   display: none !important;
 }
 
-@import "navbar";
+button {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.orange-text {
+  color: $orange
+}
+
+.box, .frost {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+}
+
+@import "common";
+@import "01_navbar";
 @import "cookie";
 @import "policy";
-@import "header";
-@import "newsletter";
-@import "services";
-@import "roadmap";
-@import "team";
-@import "footer";
+@import "10_header";
+@import "30_values";
+@import "40_roadmap";
+@import "50_team";
+@import "90_footer";
+@import "pomoflex";

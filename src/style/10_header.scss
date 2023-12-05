@@ -1,0 +1,138 @@
+.section-header {
+  background-image: url(../assets/bg/hero-header-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 18vh;
+
+  .header-container {
+    margin: auto;
+    padding: 0 8vw;
+    max-width: 1400px;
+  }
+
+  h1 {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  h2 {
+    font-weight: bold;
+    margin: 1em 0 0.5em 0;
+    font-size: 3vw;
+  }
+  .lead {
+    font-weight: 400;
+    margin-bottom: 2em;
+    font-size: 2vw;
+  }
+
+  .row {
+    justify-content: center;
+  }
+
+  .btn-primary {
+    color: $white;
+  }
+
+  .img-wrapper {
+    justify-content: center;
+  }
+  button {
+    margin: 0.5rem 0;
+    font-size: 3vw;
+  }
+
+
+
+  .floating-timer {
+    position: absolute;
+    right: -20%;
+    bottom: -20%;
+    z-index: -10;
+
+    width: 70vw;
+    min-width: 600px;
+    max-width: 800px;
+    opacity: 0.3;
+  }
+  .sub-header {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    .call-to-action {
+      width: 11em;
+      align-self: center !important;
+      font-weight: 600;
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    a {
+      padding: 0.8rem;
+      &:hover {
+        // shadow effect filter with lighter $secondary;
+        filter: drop-shadow(0 0 0.75rem rgba($secondary, .2));
+      }
+    }
+    @media screen and (max-width: 700px) {
+      a {
+        padding: 0.5rem;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1000px) {
+    h1 {
+      font-size: 6vw;
+    }
+    h2 {
+      font-size: 4vw;
+    }
+    .lead {
+      font-size: 3vw;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .sub-header {
+      width: 84vw;
+    }
+    h1 {
+      font-size: 8vw;
+      text-align: center;
+    }
+    h2 {
+      font-size: 4.5vw;
+    }
+    .lead {
+      font-size: 3vw;
+    }
+    button {
+      font-size: 4vw;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    .lead {
+      font-size: 1.3em;
+    }
+    button {
+      font-size: 1.7em;
+    }
+  }
+}

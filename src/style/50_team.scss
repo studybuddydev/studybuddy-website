@@ -42,3 +42,17 @@
     }
   }
 }
+
+.closing {
+  max-width: 1000px;
+  margin: 4em auto 2em;
+  padding: 1em;
+  text-align: center;
+
+  .btn {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    border-radius: 0.5em;
+  }
+}
