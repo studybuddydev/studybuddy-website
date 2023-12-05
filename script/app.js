@@ -14,7 +14,7 @@ const configureClient = async () => {
 const login = async () => {
     await auth0Client.loginWithRedirect({
         authorizationParams: {
-            redirect_uri: "https://dev.studybuddy.it/"
+            redirect_uri: "https://test.studybuddy.it/"
         }
     });
 };

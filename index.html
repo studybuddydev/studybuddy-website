@@ -16,12 +16,13 @@
   </head>
   <body>
     <nav class="main-navbar">
-      <div class="wrapper"><a class="menu-section logo" href="/"><img src="../assets/bg/sb.png">
-          <p>StudyBuddy</p></a>
-        <div class="menu-section menu"><a href="#mission">Missione</a><a href="#roadmap">Roadmap</a><a href="#team">Team</a></div>
-        <div class="menu-section survey"><a class="btn btn-primary" type="button" href="https://forms.gle/ayCYEZ6BN43GNKGs9" target="_blank">QUESTIONARIO</a></div>
+      <div class="wrapper"><a class="menu-section logo" href="#studybuddy"><img src="../assets/bg/sb.png">
+          <p>StudyBuddy <span class="beta">BETA</span></p></a>
+        <div class="menu-section menu"><a href="#pomoflex">Timer</a><a href="#values">Principi</a><a href="#team">Team</a></div>
+        <div class="menu-section survey"><a class="btn btn-primary btn-login" id="btn-login" onclick="login()">Accedi alla Beta</a></div>
       </div>
-    </nav>
+    </nav><a class="to-top hide" href="#studybuddy">
+      <div class="fa fa-rocket"></div></a>
     <div class="cookie box hide"><img src="./assets/img/cookie.png" alt="Cookie">
       <p class="cookie-title">Vuoi i biscottini?</p>
       <p>I biscottini ci aiutano a far andare meglio il nostro sito, mangiali!</p>
@@ -34,84 +35,109 @@
     <div class="parallax-wrapper scrollbar">
       <div class="parallax-image"><img src="../assets/bg/bg.png"></div>
       <main>
-        <section class="section-header" id="studybuddy">
-          <div class="container col-xxl-8 px-4 py-3">
-            <div class="row flex-lg-row-reverse align-items-center g-2 py-1">
-              <div class="col-10 col-sm-8 col-lg-4">
-                <!--img.d-block.mx-lg-auto.img-fluid(src='../assets/bg/estudianti.png', alt='Bootstrap Themes', width='700', height='300', loading='lazy')-->
-              </div>
-              <div class="col-lg-6">
-                <h1 class="display-4 fw-bold lh-1 mb-3">Il tuo assistente all'Università</h1>
-                <p class="lead">StudyBuddy offre strumenti e funzionalità basate sulle evidenze scientifiche per rendere più efficace il tuo studio.</p>
-              </div>
+        <section class="section-header" id="studybuddy"><img class="floating-timer img-fluid" src="../assets/bg/timer.png" alt="timer" width="700" height="300" loading="lazy">
+          <div class="flex-column align-items-left header-container">
+            <div class="col-12">
+              <h1>Il tuo assistente all'<span class="orange-text">Università</span></h1>
+            </div>
+            <div class="sub-header">
+              <h2>Il tempo è tuo amico o nemico?<br>Con StudyBuddy la scelta è tua </h2>
+              <p class="lead">Dimentica l'ansia da ultimo giorno nella <strong>preparazione degli esami</strong>, metti in pratica i tuoi piani di studio e raggiungi i tuoi obiettivi con il nostro <strong>timer </strong>innovativo!</p>
+              <button class="btn btn-primary call-to-action" id="btn-login" onclick="login()">Registrati Ora</button>
+              <div class="social"><a href="https://www.instagram.com/studybuddy.ita/" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://t.me/stubud" target="_blank"><i class="fa-brands fa-telegram"></i></a><a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/studybuddydev" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://discord.com/invite/wscTEHjhkW" target="_blank"><i class="fa-brands fa-discord"></i></a></div>
             </div>
           </div>
         </section>
-        <section class="newsletter" id="newsletter"> 
-          <div class="newsletter-wrapper box"><img class="top-img" src="../assets/img/newsletter.png">
-            <div class="form">
-              <div class="text-box"><img class="side-img" src="../assets/img/newsletter.png">
-                <div class="text">
-                  <h3>Provalo in anteprima</h3>
-                  <p> Se vuoi essere tra i primi a provare StudyBuddy, accedi premendo qui sotto!</p>
-                </div>
-              </div>
-              <button class="btn btn-primary" id="btn-login" onclick="login()">Provala ora!</button>
-              <div class="social"><a href="https://www.instagram.com/studybuddy.ita/" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://t.me/stubud" target="_blank"><i class="fa-brands fa-telegram"></i></a><a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/studybuddydev" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://discord.com/invite/wscTEHjhkW" target="_blank"><i class="fa-brands fa-discord"></i></a><a href="https://www.tiktok.com/@studybuddy_" target="_blank"><i class="fa-brands fa-tiktok"></i></a></div>
+        <section class="sb-card-wrapper pomoflex" id="pomoflex">
+          <div class="sb-card frost">
+            <div class="img"><img class="d-block mx-lg-auto img-fluid" src="../assets/bg/pomo.png" alt="timer" width="700" height="300" loading="lazy"></div>
+            <div class="text">
+              <h3 class="display-5 fw-bold lh-1 mb-3">Prendi il controllo del tuo tempo con il nostro timer flessibile</h3>
+              <p class="lead">La tecnica del pomodoro non è nuova, ma noi l'abbiamo migliorata, rendendola flessibile e adattabile alle tue esigenze. Scopri di più <a href="/pomoflex.html">qui</a></p>
+              <button class="btn btn-primary" id="btn-login" onclick="login()">Ottimizza il tuo tempo</button>
             </div>
           </div>
         </section>
-        <section class="services" id="mission">
-          <h2 class="text-primary">La nostra missione</h2>
-          <div class="services-list">
-            <div class="service box"><img src="../assets/img/mission/organization.svg">
+        <section class="values" id="values">
+          <h2 class="text-primary">I nostri principi</h2>
+          <div class="values-list">
+            <div class="service box"><img src="../assets/img/principles/planning.webp">
               <h3 class="text-primary">Pianificazione</h3>
-              <p>StudyBuddy semplifica la tua vita, eliminando la necessità di preoccuparti della pianificazione degli esami. Con la nostra interfaccia intuitiva, potrai creare un piano di studio personalizzato in modo rapido ed efficiente, consentendoti di concentrarti su ciò che conta davvero.</p>
+              <p> </p>
+              <p>Siamo convinti che una pianificazione accurata sia il fondamento essenziale per uno studio efficace.</p>
             </div>
-            <div class="service box"><img src="../assets/img/mission/optimization.svg">
+            <div class="service box"><img src="../assets/img/principles/productivity.webp">
               <h3 class="text-primary">Produttività</h3>
-              <p>Massimizza la tua produttività con gli strumenti adatti: prova il nostro innovativo timer per la concentrazione e sfrutta al meglio il tuo tempo di studio per ottenere risultati straordinari con meno sforzo!</p>
+              <p></p>
+              <p>Essere produttivi è il risultato diretto di un efficiente utilizzo del proprio tempo.</p>
             </div>
-            <div class="service box"><img src="../assets/img/mission/motivation.svg">
-              <h3 class="text-primary">Motivazione</h3>
-              <p>Scopri come mantenere alta la tua motivazione durante le sessioni di studio. Con StudyBuddy, troverai il supporto necessario per rimanere sempre concentrato e appassionato nel perseguire i tuoi obiettivi accademici. Studiare non sarà mai stato così gratificante!</p>
+            <div class="service box"><img src="../assets/img/principles/health.webp">
+              <h3 class="text-primary">Benessere psicofisico</h3>
+              <p>Non siamo macchine da esami ma persone: gestire meglio il tempo ti permette di dedicarti anche a te e alle tue passioni.</p>
             </div>
           </div>
         </section>
-        <section class="roadmap" id="roadmap">
-          <h2 class="text-primary">Roadmap</h2>
-          <div class="roadmap-wrapper"><img src="../assets/img/roadmap.png">
-            <div class="milestone box">
-              <h3 class="text-secondary">Prototipo</h3>
-              <p>Scorso semestre</p>
+        <section class="sb-card-wrapper pomoflex" id="science">
+          <div class="sb-card frost">
+            <div class="img"><img class="d-block mx-lg-auto img-fluid" src="../assets/img/science.webp" alt="timer" width="700" height="300" loading="lazy"></div>
+            <div class="text">
+              <h3 class="display-5 fw-bold lh-1 mb-3">È scientificamente provato!</h3>
+              <p>Ci basiamo sui principi dell'evidence based learning come la <a href="https://en.wikipedia.org/wiki/Metacognition" target="_blank">metacognizione </a>e la <a href="https://it.wikipedia.org/wiki/Ripetizione_dilazionata" target="_blank">spaced repetition </a>qualche esempio:</p>
+              <ul> 
+                <li>un sistema di gestione del tempo migliora risultati e benessere <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245066" target="_blank"> <em>[Link]</em></a></li>
+                <li>Perchè ha senso fare le pause <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010027710002994?via%3Dihub" target="_blank"><em>[Link]</em></a></li>
+                <li>Usare il telefono non vale come pausa <a href="https://akjournals.com/view/journals/2006/8/3/article-p395.xml" target="_blank"><em>[Link]</em></a></li>
+                <li>Learning how to learn by Barbara Oakley <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank"><em>[Link]</em></a></li>
+              </ul>
+              <button class="btn btn-primary" id="btn-login" onclick="login()">Segui la scienza!</button>
             </div>
-            <div class="milestone box">
-              <h3 class="text-secondary">Test</h3>
-              <p> Questo semestre</p>
+          </div>
+        </section>
+        <section class="values" id="soon">
+          <h2 class="text-primary">Prossimi passi</h2>
+          <div class="values-list">
+            <div class="service box"><img src="../assets/img/soon/exam.webp">
+              <h3 class="text-primary">Esami precompilati</h3>
+              <p>Con i dati della tua Università.</p>
             </div>
-            <div class="milestone box">
-              <h3 class="text-secondary">Lancio</h3>
-              <p>Prossimo semestre</p>
+            <div class="service box"><img src="../assets/img/soon/automatize.webp">
+              <h3 class="text-primary">Piani di studio automatici </h3>
+              <p>Personalizzati secondo le tue esigenze.</p>
+            </div>
+            <div class="service box"><img src="../assets/img/soon/extension.webp">
+              <h3 class="text-primary">Chrome extension</h3>
+              <p>Per avere il tempo sempre sotto controllo.</p>
             </div>
           </div>
         </section>
         <section class="team" id="team">
           <h2 class="text-primary">Il Team</h2>
-          <div class="team-wrapper"><a href="https://gandelli.dev" target="_blank">
-              <div class="team-card box"><img src="../assets/img/team/alessio_old.jpg">
+          <div class="team-wrapper"><a href="https://www.linkedin.com/in/alessiogandelli/" target="_blank">
+              <div class="team-card box"><img src="../assets/img/team/alessio.webp">
                 <h3 class="text-secondary"> Alessio</h3>
+                <p>Università di Trento</p>
                 <p>Co-Founder</p>
               </div></a><a href="https://www.linkedin.com/in/gabriele-salvi-b7a748263/" target="_blank">
-              <div class="team-card box"><img src="../assets/img/team/gabriele_old.jpg">
+              <div class="team-card box"><img src="../assets/img/team/gabriele.webp">
                 <h3 class="text-secondary">Gabriele</h3>
+                <p>Università di Brescia</p>
                 <p>Co-Founder</p>
+              </div></a><a href="https://toscan.dev" target="_blank">
+              <div class="team-card box"><img src="../assets/img/team/nicola.webp">
+                <h3 class="text-secondary">Nicola</h3>
+                <p>KTH Stockolm</p>
+                <p>Developer</p>
               </div></a></div>
+          <div class="closing">
+            <h2 class="text-secondary">Siamo in missione per cambiare il futuro dell'apprendimento</h2>
+            <button class="btn btn-primary" id="btn-login" onclick="login()">Unisciti a noi!</button>
+          </div>
         </section>
         <footer><a href="/"> 
             <div class="logo"> <img src="../assets/bg/sb.png">
               <p>StudyBuddy</p>
-            </div></a>
-          <div class="follow"><a href="https://www.instagram.com/studybuddy.ita/" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://t.me/stubud" target="_blank"><i class="fa-brands fa-telegram"></i></a><a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/studybuddydev" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://discord.com/invite/wscTEHjhkW" target="_blank"><i class="fa-brands fa-discord"></i></a><a href="https://www.tiktok.com/@studybuddy_" target="_blank"><i class="fa-brands fa-tiktok"></i></a></div>
+            </div></a><a class="contattaci" href="mailto:info@studybuddy.it">Contattaci!</a>
+          <div class="follow"><a href="https://www.instagram.com/studybuddy.ita/" target="_blank"><i class="fa-brands fa-instagram"></i></a><a href="https://t.me/stubud" target="_blank"><i class="fa-brands fa-telegram"></i></a><a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/studybuddydev" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://discord.com/invite/wscTEHjhkW" target="_blank"><i class="fa-brands fa-discord"></i></a></div>
           <div class="info">
             <div class="legal"><a href="./policy.html">Privacy Policy</a></div>
             <p>Fatto con ❤️ dal team StudyBuddy</p>
