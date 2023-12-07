@@ -13,7 +13,7 @@ const configureClient = async () => {
   
     auth0Client = await auth0.createAuth0Client({
       domain: "studybuddyit.eu.auth0.com",
-      clientId: "VgaXnwKnIIQdnXxllOjDehbbxnH2d0dC"
+      clientId: "ZyUtaogYVjzqmWoglOEV5vT7XeHRzDtz"
     });
   };
 
