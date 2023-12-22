@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="it")
   include ./pug/00_head.pug
   body
     include ./pug/01_navbar.pug
@@ -7,7 +7,7 @@ html
     //include ./pug/fragments/cookie.pug
     .parallax-wrapper.scrollbar
       .parallax-image
-        img(src='../assets/bg/bg.png')
+        img(src='./assets/img/bg/bg.webp', alt='background',loading='lazy')
       main
         include ./pug/10_header.pug
 
