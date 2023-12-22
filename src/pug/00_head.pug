@@ -11,4 +11,21 @@ head
   script(src='./script/hotjar.js')
   script(src='https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js')
   script( src='./script/app.js')
+  script(type='application/ld+json').
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StudyBuddy",
+    "url": "https://studybuddy.it",
+    "logo": "https://studybuddy.it/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@studybuddy.it",
+      "contactType": "Customer service"
+    },
+    "sameAs": [
+      "https://www.instagram.com/studybuddy.ita/",
+      "https://www.linkedin.com/company/studybuddio/about/"
+    ]
+  }
   
