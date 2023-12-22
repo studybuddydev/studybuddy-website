@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf dist && cpx 'src/assets/**' 'dist/assets'",
+    "prebuild": "rimraf dist && cpx 'src/assets/**' 'dist/assets' && cpx 'src/seo/robots.txt' 'dist/' && cpx 'src/seo/sitemap.xml' 'dist/'",
     "build-ts": "tsc",
     "build-sass": "sass src/style/main.scss:dist/style/main.css --style compressed",
     "build-pug": "pug ./src -o ./dist -P",
