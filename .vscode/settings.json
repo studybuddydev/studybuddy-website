@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Andromeda",
+  "workbench.colorTheme": "Visual Studio Dark",
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
   },
