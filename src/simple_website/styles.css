@@ -25,8 +25,8 @@
 
 /* General Styles */
 * {
-    padding: 0;
-    box-sizing: border-box;
+    padding: 16;
+    
 }
 
 body {
@@ -34,7 +34,7 @@ body {
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-background);
-    padding-top: 80px;
+    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -47,29 +47,40 @@ a {
     color: inherit;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+.container{
+    text-align: center;
 }
+
+
 
 /* Header Styles */
 header {
     background-color: var(--color-inverse-surface);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
-    position: fixed;
+    width: 95%;
     top: 20px;
-    width: calc(100% - 40px);
-    max-width: 1200px;
     border-radius: 25px;
     z-index: 1000;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+
+}
+
+
+@media(max-width: 768px) {
+    header  {
+        left: 16px;
+    }
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    right: 0;
 }
 
 header .logo {
@@ -91,6 +102,12 @@ header ul {
     list-style: none;
     display: flex;
     gap: 20px;
+}
+
+@media (max-width: 768px) {
+    header ul {
+        display: none;
+    }
 }
 
 header ul li a {
@@ -128,18 +145,23 @@ header ul li a:hover {
     overflow: hidden;
 }
 
-.hero-image {
+.mockup {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
 }
 
-.hero-image img {
+.mockup img {
     height: 50vh;
     width: auto;
     border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+
 }
 
 .hero h1 {
@@ -151,6 +173,10 @@ header ul li a:hover {
     font-size: 1.2rem;
     margin-bottom: 40px;
     color: var(--color-text);
+}
+
+.cta{
+    height: 300px;
 }
 
 /* Call-to-action buttons */
@@ -414,19 +440,3 @@ footer {
     color: #bbb;
 }
 
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    header {
-        transform: none;
-        width: 100%;
-        
-    }
-
-    header ul {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: block;
-    }
-}

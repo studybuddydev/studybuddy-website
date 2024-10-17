@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     heroTl.from('.hero h1', { y: 50, opacity: 0, duration: 0.8 })
           .from('.hero p', { y: 30, opacity: 0, duration: 0.8 }, '-=0.4')
           .from('.cta-buttons', { y: 30, opacity: 0, duration: 0.8 }, '-=0.4')
-          .from('.hero-image', { scale: 0.9, opacity: 0, duration: 1 }, '-=0.4');
+          .from('.mockup', { scale: 0.9, opacity: 0, duration: 1 }, '-=0.4');
   
     // Features section animation
     ScrollTrigger.batch('.feature-card', {
