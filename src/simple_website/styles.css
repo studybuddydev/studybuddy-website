@@ -193,7 +193,7 @@ header ul li a:hover {
 }
 
 .cta-buttons .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: white;
 }
 
