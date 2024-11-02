@@ -1,156 +1,110 @@
-// Wait for the DOM to be fully loaded
+// scripts.js
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Register ScrollTrigger plugin
-  gsap.registerPlugin(ScrollTrigger);
+  // Mobile Menu Toggle
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Navbar animation
-  gsap.from('header', {
-    y: -100,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
+  menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      menuToggle.querySelector('i').classList.toggle('fa-times');
   });
 
-  // Hero section animations
-  const heroTl = gsap.timeline();
-  heroTl.from('.hero h1', { y: 50, opacity: 0, duration: 0.8 })
-        .from('.hero p', { y: 30, opacity: 0, duration: 0.8 }, '-=0.4')
-        .from('.cta-buttons', { y: 30, opacity: 0, duration: 0.8 }, '-=0.4')
-        .from('.mockup', { scale: 0.9, opacity: 0, duration: 1 }, '-=0.4');
-
-  // Features section animation
-  ScrollTrigger.batch('.feature-card', {
-    onEnter: (elements) => {
-      gsap.from(elements, {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-      });
-    },
-    start: 'top 80%',
+  // Floating CTA Visibility
+  const floatingCTA = document.querySelector('.floating-cta');
+  window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+          floatingCTA.style.display = 'flex';
+      } else {
+          floatingCTA.style.display = 'none';
+      }
   });
 
-  // App showcase animation
-  gsap.from('.phone-mockup', {
-    scrollTrigger: {
-      trigger: '.app-showcase',
-      start: 'top 70%'
-    },
-    scale: 0.9,
-    opacity: 0,
-    duration: 1,
-    ease: 'back.out(1.2)'
-  });
+  // Waitlist Signup Form
+  const waitlistForm = document.getElementById('waitlist-form');
+  const exitWaitlistForm = document.getElementById('exit-waitlist-form');
+  const progressBar = document.getElementById('progress-bar');
 
-  // How it works animation
-  ScrollTrigger.batch('.step', {
-    onEnter: (elements) => {
-      gsap.from(elements, {
-        x: -50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-      });
-    },
-    start: 'top 80%',
-  });
-
-  // Testimonials animation
-  ScrollTrigger.batch('.testimonial', {
-    onEnter: (elements) => {
-      gsap.from(elements, {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-      });
-    },
-    start: 'top 80%',
-  });
-
-  // Pricing cards animation
-  ScrollTrigger.batch('.pricing-card', {
-    onEnter: (elements) => {
-      gsap.from(elements, {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        overwrite: 'auto'
-      });
-    },
-    start: 'top 80%',
-  });
-
-  // CTA section animation
-  gsap.from('.cta', {
-    scrollTrigger: {
-      trigger: '.cta',
-      start: 'top 80%'
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  });
-
-  // Contact form animation
-  gsap.from('.contact form', {
-    scrollTrigger: {
-      trigger: '.contact',
-      start: 'top 80%'
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  });
-
-  // Parallax effect for hero background
-  gsap.to('.parallax-bg', {
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true
-    },
-    y: (i, target) => -ScrollTrigger.maxScroll(window) * 0.2,
-    ease: 'none'
-  });
-
-  // Smooth scroll for navigation links
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+  const handleSignup = (e) => {
       e.preventDefault();
-      const target = document.querySelector(e.target.getAttribute('href'));
-      gsap.to(window, {duration: 1, scrollTo: target, ease: 'power2.inOut'});
-    });
-  });
+      const email = e.target.querySelector('input').value;
+      // Simulate signup process
+      progressBar.style.width = '100%';
 
-  // Testimonial slider functionality
-  const slider = document.querySelector('.testimonial-slider');
-  const leftArrow = document.querySelector('.arrow-left');
-  const rightArrow = document.querySelector('.arrow-right');
-  const testimonialWidth = 400; // width + gap
+      // Track conversion
+      trackConversion(email);
 
-  if (slider && leftArrow && rightArrow) {
-      leftArrow.addEventListener('click', () => {
-          slider.scrollLeft -= testimonialWidth;
-      });
+      // Show success message
+      alert('Grazie per esserti iscritto alla waitlist!');
 
-      rightArrow.addEventListener('click', () => {
-          slider.scrollLeft += testimonialWidth;
-      });
+      // Reset form
+      e.target.reset();
+      progressBar.style.width = '0%';
+  };
+
+  waitlistForm.addEventListener('submit', handleSignup);
+  exitWaitlistForm.addEventListener('submit', handleSignup);
+
+  // Conversion Tracking Function
+  function trackConversion(email) {
+      // Implement your tracking logic here (e.g., Google Analytics, Mixpanel)
+      console.log(`Conversion tracked for email: ${email}`);
   }
 
-  
+  // Exit-Intent Popup
+  const exitIntentPopup = document.getElementById('exit-intent-popup');
+  const closePopup = exitIntentPopup.querySelector('.close-popup');
+
+  let hasShownPopup = false;
+
+  document.addEventListener('mouseout', (e) => {
+      if (!hasShownPopup && e.clientY < 50) {
+          exitIntentPopup.style.display = 'flex';
+          hasShownPopup = true;
+      }
+  });
+
+  closePopup.addEventListener('click', () => {
+      exitIntentPopup.style.display = 'none';
+  });
+
+  // Social Proof Notifications
+  const socialProofContainer = document.getElementById('social-proof-notifications');
+
+  function showSocialProof(message) {
+      const notification = document.createElement('div');
+      notification.classList.add('notification');
+      notification.textContent = message;
+      socialProofContainer.appendChild(notification);
+
+      // Remove after 3 seconds
+      setTimeout(() => {
+          notification.style.animation = 'slide-out 0.5s forwards';
+          notification.addEventListener('animationend', () => {
+              notification.remove();
+          });
+      }, 3000);
+  }
+
+  // Simulate social proof notifications
+  setInterval(() => {
+      const messages = [
+          'Giulia si è appena iscritta alla waitlist!',
+          'Marco ha appena condiviso StudyBuddy sui social!',
+          'Laura ha completato il suo primo obiettivo di studio!'
+      ];
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      showSocialProof(randomMessage);
+  }, 10000);
+
+  // GSAP Animations Optimization
+  if (window.innerWidth < 768) {
+      // Optimize GSAP animations for mobile
+      gsap.to('.hero-content', { opacity: 1, y: 0, duration: 1, ease: 'power2.out' });
+      gsap.to('.hero-image img', { opacity: 1, scale: 1, duration: 1, delay: 0.5, ease: 'power2.out' });
+  } else {
+      // Desktop GSAP animations
+      gsap.from('.hero-content', { opacity: 0, y: -50, duration: 1, ease: 'power2.out' });
+      gsap.from('.hero-image img', { opacity: 0, scale: 0.8, duration: 1, delay: 0.5, ease: 'power2.out' });
+  }
 });

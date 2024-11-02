@@ -1,0 +1,128 @@
+@import 'variables.css';
+
+.contact {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-white);
+}
+
+.contact__container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.contact__header h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.contact__header p {
+  color: var(--color-text-light);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  transition: border-color var(--transition-normal);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact__form button {
+  align-self: center;
+  min-width: 200px;
+}
+
+/* Form validation styles */
+.form-group input:invalid,
+.form-group textarea:invalid {
+  border-color: #ff4646;
+}
+
+.error-message {
+  color: #ff4646;
+  font-size: 0.875rem;
+  margin-top: var(--spacing-xs);
+}
+
+/* Success message styles */
+.success-message {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+  border-radius: var(--radius-md);
+  margin-top: var(--spacing-lg);
+}
+
+/* Loading state */
+.btn--loading {
+  position: relative;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn--loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-left: var(--spacing-md);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+  .contact__form {
+    gap: var(--spacing-lg);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}

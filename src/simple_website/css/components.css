@@ -1,0 +1,139 @@
+/* components.css */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: #008b8b; /* Slightly darker shade */
+}
+
+.btn--secondary {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn--link {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn--link:hover {
+    text-decoration: underline;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+}
+
+form button {
+    width: 100%;
+}
+
+/* Header */
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.header__menu li {
+    position: relative;
+}
+
+.header__menu a {
+    font-weight: 500;
+}
+
+/* Floating CTA */
+.floating-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+@media (max-width: 767px) {
+    .floating-cta {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* Testimonials Slider */
+.testimonials__slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1rem;
+}
+
+.testimonials__slider .testimonial {
+    flex: 0 0 80%;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+/* Trust Indicators */
+.trust__logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trust__logos img {
+    max-height: 50px;
+}
+
+/* Floating Language Toggle */
+#language-toggle {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#language-toggle:hover {
+    text-decoration: underline;
+}
