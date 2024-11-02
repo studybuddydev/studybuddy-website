@@ -1,110 +1,297 @@
 // scripts.js
 
+// Ensure the DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Menu Toggle
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
+  // Initialize GSAP and its plugins
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-      menuToggle.querySelector('i').classList.toggle('fa-times');
+  // =========================
+  // 1. Page Load Animations
+  // =========================
+
+  // Animate Header Elements
+  gsap.from('header .logo', {
+      duration: 1,
+      y: -50,
+      opacity: 0,
+      ease: 'power2.out'
   });
 
-  // Floating CTA Visibility
-  const floatingCTA = document.querySelector('.floating-cta');
-  window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-          floatingCTA.style.display = 'flex';
-      } else {
-          floatingCTA.style.display = 'none';
-      }
+  gsap.from('header ul li a', {
+      duration: 1,
+      y: -20,
+      opacity: 0,
+      stagger: 0.2,
+      delay: 0.5,
+      ease: 'power2.out'
   });
 
-  // Waitlist Signup Form
-  const waitlistForm = document.getElementById('waitlist-form');
-  const exitWaitlistForm = document.getElementById('exit-waitlist-form');
-  const progressBar = document.getElementById('progress-bar');
-
-  const handleSignup = (e) => {
-      e.preventDefault();
-      const email = e.target.querySelector('input').value;
-      // Simulate signup process
-      progressBar.style.width = '100%';
-
-      // Track conversion
-      trackConversion(email);
-
-      // Show success message
-      alert('Grazie per esserti iscritto alla waitlist!');
-
-      // Reset form
-      e.target.reset();
-      progressBar.style.width = '0%';
-  };
-
-  waitlistForm.addEventListener('submit', handleSignup);
-  exitWaitlistForm.addEventListener('submit', handleSignup);
-
-  // Conversion Tracking Function
-  function trackConversion(email) {
-      // Implement your tracking logic here (e.g., Google Analytics, Mixpanel)
-      console.log(`Conversion tracked for email: ${email}`);
-  }
-
-  // Exit-Intent Popup
-  const exitIntentPopup = document.getElementById('exit-intent-popup');
-  const closePopup = exitIntentPopup.querySelector('.close-popup');
-
-  let hasShownPopup = false;
-
-  document.addEventListener('mouseout', (e) => {
-      if (!hasShownPopup && e.clientY < 50) {
-          exitIntentPopup.style.display = 'flex';
-          hasShownPopup = true;
-      }
+  gsap.from('header .btn-primary', {
+      duration: 1,
+      scale: 0.8,
+      opacity: 0,
+      ease: 'back.out(1.7)',
+      delay: 1
   });
 
-  closePopup.addEventListener('click', () => {
-      exitIntentPopup.style.display = 'none';
+  // Animate Hero Section
+  gsap.from('.hero-content h1', {
+      duration: 1,
+      x: -100,
+      opacity: 0,
+      ease: 'power2.out'
   });
 
-  // Social Proof Notifications
-  const socialProofContainer = document.getElementById('social-proof-notifications');
+  gsap.from('.hero-content p', {
+      duration: 1,
+      x: -100,
+      opacity: 0,
+      ease: 'power2.out',
+      delay: 0.5
+  });
 
-  function showSocialProof(message) {
-      const notification = document.createElement('div');
-      notification.classList.add('notification');
-      notification.textContent = message;
-      socialProofContainer.appendChild(notification);
+  gsap.from('.cta-buttons .btn', {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      stagger: 0.2,
+      ease: 'power2.out',
+      delay: 1
+  });
 
-      // Remove after 3 seconds
-      setTimeout(() => {
-          notification.style.animation = 'slide-out 0.5s forwards';
-          notification.addEventListener('animationend', () => {
-              notification.remove();
+  gsap.from('.hero-image img', {
+      duration: 1.5,
+      scale: 0.8,
+      opacity: 0,
+      ease: 'power2.out',
+      delay: 1
+  });
+
+  // ================================
+  // 2. Scroll-Based Section Animations
+  // ================================
+
+  // Features Section Animation
+  gsap.utils.toArray('.features .feature-row').forEach((section) => {
+      gsap.from(section, {
+          scrollTrigger: {
+              trigger: section,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+          },
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.out',
+          stagger: 0.2
+      });
+  });
+
+  // Pricing Section Animation
+  gsap.utils.toArray('.pricing .pricing-card').forEach((card) => {
+      gsap.from(card, {
+          scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+          },
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power2.out',
+          stagger: 0.2
+      });
+  });
+
+  // Testimonials Section Animation
+  gsap.from('.testimonials-header h2', {
+      scrollTrigger: {
+          trigger: '.testimonials',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+  });
+
+  gsap.from('.testimonial', {
+      scrollTrigger: {
+          trigger: '.testimonials',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out'
+  });
+
+  // Contact Section Animation
+  gsap.from('.contact h2', {
+      scrollTrigger: {
+          trigger: '.contact',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+  });
+
+  gsap.from('.contact p', {
+      scrollTrigger: {
+          trigger: '.contact',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: 'power2.out'
+  });
+
+  gsap.from('.contact form', {
+      scrollTrigger: {
+          trigger: '.contact',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+  });
+
+  // =============================
+  // 3. Testimonials Slider
+  // =============================
+
+  const testimonialSlider = document.querySelector('.testimonial-slider');
+  const arrowLeft = document.querySelector('.arrow-left');
+  const arrowRight = document.querySelector('.arrow-right');
+
+  // Function to slide testimonials
+  function slideTestimonials(direction) {
+      const slideWidth = testimonialSlider.querySelector('.testimonial').offsetWidth + 30; // width + gap
+      if (direction === 'left') {
+          gsap.to(testimonialSlider, {
+              x: `+=${slideWidth}`,
+              duration: 1,
+              ease: 'power2.out'
           });
-      }, 3000);
+      } else if (direction === 'right') {
+          gsap.to(testimonialSlider, {
+              x: `-=${slideWidth}`,
+              duration: 1,
+              ease: 'power2.out'
+          });
+      }
   }
 
-  // Simulate social proof notifications
-  setInterval(() => {
-      const messages = [
-          'Giulia si è appena iscritta alla waitlist!',
-          'Marco ha appena condiviso StudyBuddy sui social!',
-          'Laura ha completato il suo primo obiettivo di studio!'
-      ];
-      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-      showSocialProof(randomMessage);
-  }, 10000);
+  // Add event listeners to arrows
+  arrowLeft.addEventListener('click', () => {
+      slideTestimonials('left');
+  });
 
-  // GSAP Animations Optimization
-  if (window.innerWidth < 768) {
-      // Optimize GSAP animations for mobile
-      gsap.to('.hero-content', { opacity: 1, y: 0, duration: 1, ease: 'power2.out' });
-      gsap.to('.hero-image img', { opacity: 1, scale: 1, duration: 1, delay: 0.5, ease: 'power2.out' });
-  } else {
-      // Desktop GSAP animations
-      gsap.from('.hero-content', { opacity: 0, y: -50, duration: 1, ease: 'power2.out' });
-      gsap.from('.hero-image img', { opacity: 0, scale: 0.8, duration: 1, delay: 0.5, ease: 'power2.out' });
-  }
+  arrowRight.addEventListener('click', () => {
+      slideTestimonials('right');
+  });
+
+  // Optional: Loop the slider infinitely
+  // You can implement an infinite loop by resetting position when end/start is reached
+
+  // =============================
+  // 4. Smooth Scroll for Navigation
+  // =============================
+
+  const navLinks = document.querySelectorAll('header ul li a');
+
+  navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          gsap.to(window, {
+              duration: 1.5,
+              scrollTo: {
+                  y: targetId,
+                  offsetY: 80 // Adjust based on header height
+              },
+              ease: 'power2.out'
+          });
+      });
+  });
+
+  // =============================
+  // 5. Mobile Menu Toggle
+  // =============================
+
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('header ul');
+
+  mobileMenuToggle.addEventListener('click', () => {
+      if (navMenu.style.display === 'flex') {
+          gsap.to(navMenu, {
+              height: 0,
+              duration: 0.5,
+              ease: 'power2.inOut',
+              onComplete: () => {
+                  navMenu.style.display = 'none';
+              }
+          });
+      } else {
+          navMenu.style.display = 'flex';
+          gsap.fromTo(navMenu, 
+              { height: 0, opacity: 0 }, 
+              { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
+          );
+      }
+  });
+
+  // =============================
+  // 6. Additional Animations
+  // =============================
+
+  // Animate Footer Elements
+  gsap.from('footer .logo', {
+      scrollTrigger: {
+          trigger: 'footer',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+  });
+
+  gsap.from('footer .footer-section', {
+      scrollTrigger: {
+          trigger: 'footer',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power2.out'
+  });
+
+  gsap.from('.footer-bottom-content', {
+      scrollTrigger: {
+          trigger: '.footer-bottom',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power2.out'
+  });
+
 });
