@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyBuddy - Your Ultimate Study Companion</title>
+    <title>StudyBuddy - Il tuo assistente all'università</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="container">
             <div class="logo">
-                <img class= "logo" src="imgs/favicon.ico" alt="StudyBuddy Logo">
+                <img class="logo" src="imgs/favicon.ico" alt="StudyBuddy Logo">
                 StudyBuddy
             </div>
             <ul class="header">
-                <li><a href="#features">Features</a></li>
+                <li><a href="#features">Funzionalità</a></li>
                 <li><a href="#app-showcase">App</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#testimonials">Recensioni</a></li>
+                <li><a href="#pricing">Prezzi</a></li>
+                <li><a href="#contact">Contatti</a></li>
             </ul>
+            <a href="#" class="btn btn-primary">Comincia ora</a>
         </nav>
     </header>
 
@@ -28,56 +30,79 @@
         <section class="hero">
             <div class="parallax-bg"></div>
             <div class="container">
-
-                <h1>Boost Your Study Productivity</h1>
-                <p>Join thousands of university students maximizing their study sessions with StudyBuddy</p>
+            <div class="hero-content">
+                <h1>Rivoluziona il tuo studio</h1>
+                <p>Trova compagni di studio, aumenta la tua produttività e passa gli esami senza stress</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Try Web App</a>
-                    <a href="#" class="btn btn-secondary">Download Mobile App</a>
+                <a href="#" class="btn btn-primary">Prova WebApp</a>
+                <a href="#" class="btn btn-secondary">Scarica App</a>
                 </div>
-
+            </div>
+            <div class="hero-image">
+                <img src="imgs/phone3D.png" alt="3D model of a phone">
+            </div>
             </div>
         </section>
 
+        <section id="scheme" class="scheme">
+            <div class="container">
+            <h1>Tutto. In. Uno.</h1>
+            <p>Tutto ciò di cui hai bisogno in un'unica piattaforma</p>
+            <img src="imgs/study.png" alt="Study Scheme">
+            </div>
+        </section>
 
         <section id="features" class="features">
-            <div class="mockup">
-                <img src="imgs/mobile_buddies.png" alt="StudyBuddy App Screenshot" class="mockup">
-                <img src="imgs/webapp.png" alt="webapp" class="mockup">
-                <img src="imgs/mobile_buddies.png" alt="StudyBuddy App Screenshot" class="mockup">
-            </div>
             <div class="container">
-                <h2>Why Choose StudyBuddy?</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <img src="imgs/principles/planning.webp" alt="Pomodoro Timer">
-                        <h3>Pomodoro Timer</h3>
-                        <p>Optimize your study sessions with our customizable Pomodoro timer.</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="imgs/principles/health.webp" alt="Study Statistics">
-                        <h3>Study Statistics</h3>
-                        <p>Track your progress and gain insights into your study habits.</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="imgs/principles/productivity.webp" alt="Study Buddies">
-                        <h3>Find Study Buddies</h3>
-                        <p>Connect with students preparing for the same exams as you.</p>
-                    </div>
+            <h2 class="section-title">Cosa offre StudyBuddy?</h2>
+            
+            <!-- Feature Row 1 (Text - Image) -->
+            <div class="feature-row reverse">
+                <div class="feature-content">
+                <h3>Time Tracker</h3>
+                <p>Dimentica la tecnica del pomodoro. Tieni traccia del tuo tempo e mantieni la concentrazione con il nostro sistema, progettato specificamente per le esigenze degli studenti. Scopri di più qui.</p>
                 </div>
+                <div class="feature-image">
+                <img src="imgs/principles/timer.webp" alt="Pomodoro Timer">
+                </div>
+            </div>
+        
+            <!-- Feature Row 2 (Image - Text) -->
+            <div class="feature-row">
+                <div class="feature-content">
+                <h3>Statistiche di Studio</h3>
+                <p>Monitora i tuoi progressi e ottieni informazioni sulle tue abitudini di studio. Visualizza i tuoi schemi di produttività, identifica i momenti di massima performance e prendi decisioni basate sui dati per migliorare la tua routine di studio.</p>
+                </div>
+                <div class="feature-image">
+                <img src="imgs/principles/stats.webp" alt="Study Statistics">
+                </div>
+            </div>
+        
+            <!-- Feature Row 3 (Text - Image) -->
+            <div class="feature-row reverse">
+                <div class="feature-content">
+                <h3>Trova compagni di studio</h3>
+                <p>Connettiti con studenti che stanno preparando i tuoi stessi esami.  Insieme potete scambiarvi consigli, risorse utili e motivarvi per ottenere risultati straordinari.</p>
+                <a href="#" class="btn btn-primary">Comincia ora</a>
+                </div>
+                <div class="feature-image">
+                <img src="imgs/principles/buddies.webp" alt="Study Buddies">
+                </div>
+            </div>
             </div>
         </section>
 
         <section id="app-showcase" class="app-showcase">
             <div class="container">
-                <h2>Experience StudyBuddy</h2>
-                <p>Our intuitive interface makes studying a breeze</p>
+                <h1>L'esperienza StudyBuddy</h1>
+                <p>Studiare non è mai stato così semplice</p>
                 <div class="phone-mockup">
                     <img src="imgs/screen.jpeg" alt="StudyBuddy App Screenshot">
                 </div>
             </div>
         </section>
 
+        <!--
         <section id="how-it-works" class="how-it-works">
             <div class="container">
                 <h2>How StudyBuddy Works</h2>
@@ -105,79 +130,118 @@
                 </div>
             </div>
         </section>
+        -->
 
         <section id="testimonials" class="testimonials">
             <div class="container">
-                <h2>What Our Users Say</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial">
-                        <p>"StudyBuddy has completely transformed my study habits. I'm more focused and productive than ever!"</p>
-                        <div class="testimonial-author">- Sarah J., Computer Science Student</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"The Pomodoro timer and study statistics have helped me stay on track with my med school preparations."</p>
-                        <div class="testimonial-author">- Mike T., Medical Student</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Finding study buddies for my specific courses has made a huge difference in my understanding of complex topics."</p>
-                        <div class="testimonial-author">- Emily R., Physics Major</div>
+                <div class="testimonials-header">
+                    <button class="arrow arrow-left" onclick="scrollLeft()">
+                        <i class="fa-sharp fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h2>Dicono di noi</h2>
+                    <button class="arrow arrow-right" onclick="scrollRight()">
+                        <i class="fa-sharp fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="testimonials-wrapper">
+                    <div class="testimonial-slider">
+                        <div class="testimonial">
+                            <p>"StudyBuddy has completely transformed my study habits. I'm more focused and productive than ever!"</p>
+                            <div class="testimonial-author">- Sarah J., Computer Science Student</div>
+                        </div>
+                        <div class="testimonial">
+                            <p>"The Pomodoro timer and study statistics have helped me stay on track with my med school preparations."</p>
+                            <div class="testimonial-author">- Mike T., Medical Student</div>
+                        </div>
+                        <div class="testimonial">
+                            <p>"Finding study buddies for my specific courses has made a huge difference in my understanding of complex topics."</p>
+                            <div class="testimonial-author">- Emily R., Physics Major</div>
+                        </div>
+                        <div class="testimonial">
+                            <p>"StudyBuddy's features are a game-changer. The AI recommendations have been spot on for my study needs."</p>
+                            <div class="testimonial-author">- John D., Engineering Student</div>
+                        </div>
+                        <div class="testimonial">
+                            <p>"I love the community aspect of StudyBuddy. Connecting with other students has been incredibly motivating."</p>
+                            <div class="testimonial-author">- Lisa M., Literature Student</div>
+                        </div>
+                        <div class="testimonial">
+                            <p>"The study analytics have given me insights into my study patterns that I never had before. Highly recommend!"</p>
+                            <div class="testimonial-author">- Alex P., Business Student</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        
 
         <section id="pricing" class="pricing">
             <div class="container">
-                <h2>Choose Your Plan</h2>
+                <h2>Scegli il tuo piano</h2>
                 <div class="pricing-grid">
                     <div class="pricing-card">
-                        <h3>Basic</h3>
-                        <div class="price">Free</div>
-                        <ul>
-                            <li>Basic Pomodoro Timer</li>
-                            <li>Limited Study Statistics</li>
-                            <li>Access to Public Study Groups</li>
-                        </ul>
-                        <a href="#" class="btn btn-secondary">Get Started</a>
+                        <div class="card-section title">
+                            <h2>Free</h2>
+                        </div>
+                        <div class="card-section price">
+                            <div class="price">€0</div>
+                            <p>Perfetto per chi vuole iniziare a migliorare le proprie abitudini di studio senza costi.</p>
+                        </div>
+                        <div class="card-section cta">
+                            <a href="#" class="btn btn-secondary">Comincia ora</a>
+                        </div>
+                        <div class="card-section features">
+                            <ul>
+                                <li>Focus Timer</li>
+                                <li>Ricerca buddies</li>
+                                <li>Note</li>
+                                <li>ToDo lists</li>
+                                <li>Link</li>
+                                <li>Statistiche base</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="pricing-card featured">
-                        <h3>Pro</h3>
-                        <div class="price">$9.99/month</div>
-                        <ul>
-                            <li>Advanced Pomodoro Techniques</li>
-                            <li>Comprehensive Study Analytics</li>
-                            <li>Unlimited Study Group Creation</li>
-                            <li>AI-Powered Study Recommendations</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Go Pro</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>Team</h3>
-                        <div class="price">$19.99/month</div>
-                        <ul>
-                            <li>All Pro Features</li>
-                            <li>Team Collaboration Tools</li>
-                            <li>Progress Tracking for Groups</li>
-                            <li>Priority Support</li>
-                        </ul>
-                        <a href="#" class="btn btn-secondary">Start Team Plan</a>
+                        <div class="card-section title">
+                            <h2><span class="brand-name">StudyBuddy</span><span class="pro-label">Plus</span></h2>
+                        </div>
+                        <div class="card-section price">
+                            <div class="price"><span class="bold-price">€1.99</span><span class="light-price">/mese</span></div>
+                            <p>Ideale per studenti che vogliono sfruttare al massimo le funzionalità avanzate.</p>
+                        </div>
+                        <div class="card-section cta">
+                            <a href="#" class="btn btn-primary">Sblocca il Plus</a>
+                        </div>
+                        <div class="card-section features">
+                            <ul>
+                                <li class="highlight-feature">Timer avanzato</li>
+                                <li>Ricerca buddies</li>
+                                <li>Note</li>
+                                <li>ToDo lists</li>
+                                <li>Link</li>
+                                <li class="highlight-feature">Statistiche avanzate</li>
+                                <li class="highlight-feature">Supporto prioritario</li>
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        
 
-        <section id="cta" class="cta">
+        <section id="cta" class="action-section">
             <div class="container">
-                <h2>Ready to Boost Your Study Game?</h2>
-                <p>Join StudyBuddy today and transform the way you learn!</p>
-                <a href="#" class="btn btn-primary">Get Started Now</a>
+                <h1>Pronto a mettere il turbo?</h1>
+                <p>Unisciti a StudyBuddy e rivoluziona il tuo studio!</p>
+                <a href="#" class="btn btn-primary">Comincia ora</a>
             </div>
         </section>
 
         <section id="contact" class="contact">
             <div class="container">
-                <h2>Contact Us</h2>
-                <p>Have questions or need help? Reach out to our support team.</p>
+                <h2>Contattaci</h2>
+                <p>Hai bisogno di assistenza o chiarimenti? Il nostro team di supporto è a tua disposizione.</p>
                 <form>
                     <div class="form-group">
                         <input type="text" placeholder="Your Name" required>
@@ -188,7 +252,7 @@
                     <div class="form-group">
                         <textarea placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary">Invia messaggio</button>
                 </form>
             </div>
         </section>
@@ -198,11 +262,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>StudyBuddy</h3>
-                    <p>Your ultimate study companion for academic success.</p>
+                    <div class="logo">
+                        <img class="logo" src="imgs/favicon.ico" alt="StudyBuddy Logo">
+                        StudyBuddy
+                    </div>
+                    <p>Il tuo assistente all'università.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                <div class="footer-section centered-section">
+                    <h3></h3>
                     <ul>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#pricing">Pricing</a></li>
@@ -210,7 +277,8 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect</h3>
+                    <h3></h3>
+                    <p class="contact-text">Contact us:</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon">FB</a>
                         <a href="#" class="social-icon">TW</a>
@@ -219,7 +287,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 StudyBuddy. All rights reserved.</p>
+                <div class="footer-bottom-content">
+                    <div class="legal-links">
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/tos">Terms of Service</a>
+                    </div>
+                    <p class="copyright">&copy; 2024 StudyBuddy</p>
+                    <p class="funny-message">Fatto col ❤️ dal team StudyBuddy</p>
+                </div>
             </div>
         </div>
     </footer>
