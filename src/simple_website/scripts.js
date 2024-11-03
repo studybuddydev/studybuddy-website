@@ -177,20 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to slide testimonials
   function slideTestimonials(direction) {
-      const slideWidth = testimonialSlider.querySelector('.testimonial').offsetWidth + 30; // width + gap
-      if (direction === 'left') {
-          gsap.to(testimonialSlider, {
-              x: `+=${slideWidth}`,
-              duration: 1,
-              ease: 'power2.out'
-          });
-      } else if (direction === 'right') {
-          gsap.to(testimonialSlider, {
-              x: `-=${slideWidth}`,
-              duration: 1,
-              ease: 'power2.out'
-          });
-      }
+    const slideWidth = testimonialSlider.querySelector('.testimonial').offsetWidth + 60; // width + gap
+    if (direction === 'left') {
+        testimonialSlider.scrollLeft -= slideWidth;
+    } else if (direction === 'right') {
+        testimonialSlider.scrollLeft += slideWidth;
+    }
   }
 
   // Add event listeners to arrows
