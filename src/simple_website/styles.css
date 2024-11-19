@@ -181,7 +181,7 @@
         text-align: center;
         width: 100%;
         /* Occupies all the space horizontally */
-        height: 85vh;
+        min-height: 90vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -303,6 +303,7 @@
     .scheme img {
         max-height: 40vh;
         width: auto;
+        max-width: 100%;
         border-radius: 1.5rem;
     }
 
@@ -920,11 +921,6 @@
 
         .hero p {
             font-size: 1.8rem;
-        }
-
-        /* Adjust spacing for tablet */
-        .hero {
-            padding-top: 16rem;
         }
 
         /* Adjust feature section layout */
