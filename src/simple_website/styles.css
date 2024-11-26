@@ -104,6 +104,34 @@
         display: flex;
         align-items: center;
     }
+    /* Container styling */
+
+    main {
+        padding-top: 90px;
+    }
+
+    main .privacy-policy {
+        padding: 20px;
+        padding: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left; /* Align text to the left */
+        max-width: 800px;
+        margin: 0 auto;
+    }
+/* Container styling */
+
+
+/* Section styling */
+    #privacy-policy {
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left; /* Align text to the left */
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+
 
     img.logo {
         height: 3rem;
