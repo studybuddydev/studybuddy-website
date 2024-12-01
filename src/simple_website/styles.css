@@ -74,7 +74,7 @@
     header {
         background-color: var(--color-inverse-surface);
         box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.1);
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         width: 95%;
         max-width: 120rem;
         top: 2rem;
@@ -209,7 +209,7 @@
         text-align: center;
         width: 100%;
         /* Occupies all the space horizontally */
-        min-height: 90vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -265,7 +265,7 @@
     }
 
     .cta-buttons .btn {
-        padding: 1rem 1rem;
+        padding: 0.5rem 1rem;
         border-radius: 3rem;
         font-weight: bold;
         min-height: unset;
@@ -281,6 +281,7 @@
         background-color: var(--color-primary);
         color: white;
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        display: none;
     }
 
     .cta-buttons .btn-primary:hover {
@@ -441,7 +442,7 @@
 
     .app-showcase p {
         font-size: 1rem;
-        margin-bottom: 4rem;
+        margin: 2rem 0;
         color: var(--color-text);
     }
 
@@ -878,25 +879,24 @@
 
     .social-icons {
         display: flex;
-        gap: 1rem;
+        gap: 0;
         justify-content: center;
     }
-
+    
     .social-icon {
-        background-color: var(--color-primary);
         color: white;
-        padding: 1rem;
+        padding: 0;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: opacity 0.3s ease;
+        transition: color 0.3s ease;
         width: 3rem;
-        height: 3rem;
+        height: 2rem;
     }
-
+    
     .social-icon:hover {
-        opacity: 0.8;
+        color: var(--color-primary);
     }
 
     .footer-bottom {
@@ -999,6 +999,7 @@
         /* Hero section */
         .hero {
             padding-bottom: 0;
+            min-height: 85vh;
         }
 
         .hero .container {
@@ -1054,6 +1055,10 @@
         .cta-buttons .btn {
             padding: 1rem 3rem;
             min-height: unset;
+        }
+
+        .cta-buttons .btn-primary {
+            display: inline-block;
         }
 
         /* Scheme Section */
@@ -1129,24 +1134,34 @@
             margin-top: 2.5rem;
             min-height: unset;
         }
-
+        
         /* App Showcase */
         .app-showcase {
             display: block;
             padding: 3rem 0;
         }
-
-        .app-showcase h1 {
-            font-size: 2rem;
+        
+        .app-showcase .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .app-showcase .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .app-showcase .section-header h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
-        .app-showcase p {
+        
+        .app-showcase .section-header p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
             color: var(--color-text);
         }
-
+        
         .app-showcase .row {
             display: flex;
             justify-content: space-between;
@@ -1155,37 +1170,60 @@
         
         .app-showcase .column {
             flex: 1;
-            padding: 3rem 3rem; /* Increased padding for more spacing */
-            justify-content: space-between; /* Distribute space between items */
-        }
-
-        .app-showcase .column-1 .card,
-        .app-showcase .column-3 .card {
-             margin-bottom: 2rem; /* Adds space between cards */
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
         }
         
-        .app-showcase .text-stack {
-            margin-bottom: 2rem;
-        }
-        
-        .app-showcase .phone-mockup img {
-            width: 60%;
-            height: auto;
-            border-radius: 2rem;
-        }
-
-        .app-showcase .text-stack-description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--color-text);
-        }
-
         .app-showcase .card {
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
             background-color: #fff;
-            text-align: left;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: auto;
+            max-height: 100px; /* Initial small height to fit only title */
+        }
+        
+        .app-showcase .card .text-stack h2 {
+            margin: 0;
+            transition: margin 0.3s ease;
+            color: var(--color-primary)
+        }
+        
+        .app-showcase .card .card-hover-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            position: relative;
+            margin-top: 1rem;
+        }
+        
+        .app-showcase .card:hover {
+            max-height: 500px; /* Expanded height to show additional content */
+            height: auto;
+        }
+        
+        .app-showcase .card:hover .card-hover-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .app-showcase .phone-mockup img {
+            width: 70%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 2rem;
+            box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.15);
+            transition: opacity 0.3s ease;
+        }
+        
+        .app-showcase .phone-mockup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Testimonials */

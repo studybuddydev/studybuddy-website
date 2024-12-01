@@ -244,6 +244,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /* sta roba dovrebbe far cambiare l'immagine del telefono quando passi sopra le card ma non funziona */
+    document.addEventListener('DOMContentLoaded', () => {
+        const phoneMockup = document.querySelector('.phone-mockup img');
+        const cards = document.querySelectorAll('.card');
+        
+        // Array of image paths for each card
+        const images = [
+            'imgs/iPhone2D_home.png',  // Image for first column, first card
+            'imgs/iPhone2D_buddies.png',  // Image for first column, second card
+            'imgs/iphone2D.png',  // Image for third column, first card
+            'imgs/mobile_buddies.png'   // Image for third column, second card
+        ];
+    
+        cards.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                phoneMockup.src = images[index];
+                phoneMockup.style.opacity = 1;
+            });
+    
+            card.addEventListener('mouseleave', () => {
+                // Optional: You can reset to a default image if needed
+                // phoneMockup.src = 'imgs/default-screen.jpeg';
+            });
+        });
+    });
+
     // =============================
     // 6. Additional Animations
     // =============================
