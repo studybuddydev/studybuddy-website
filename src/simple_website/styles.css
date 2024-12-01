@@ -419,10 +419,12 @@
     }
 
     /* App Showcase */
+
     .app-showcase {
         padding: 8rem 0;
         background-color: var(--color-primary-light);
         text-align: center;
+        display: none;
     }
 
     .app-showcase .container {
@@ -976,6 +978,7 @@
         .footer-content {
             flex-direction: row;
             text-align: left;
+            margin: 0 2rem;
         }
     }
 
@@ -1005,7 +1008,7 @@
             justify-content: space-between;
             /* Space between text and image */
             gap: 0;
-            margin: 5rem auto 0 auto;
+            margin: 0 auto 0 auto;
             max-width: 1120px;
         }
 
@@ -1129,6 +1132,7 @@
 
         /* App Showcase */
         .app-showcase {
+            display: block;
             padding: 3rem 0;
         }
 
@@ -1139,14 +1143,49 @@
 
         .app-showcase p {
             font-size: 1.2rem;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             color: var(--color-text);
         }
 
-        .app-showcase img {
-            width: 25%;
+        .app-showcase .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .app-showcase .column {
+            flex: 1;
+            padding: 3rem 3rem; /* Increased padding for more spacing */
+            justify-content: space-between; /* Distribute space between items */
+        }
+
+        .app-showcase .column-1 .card,
+        .app-showcase .column-3 .card {
+             margin-bottom: 2rem; /* Adds space between cards */
+        }
+        
+        .app-showcase .text-stack {
+            margin-bottom: 2rem;
+        }
+        
+        .app-showcase .phone-mockup img {
+            width: 60%;
             height: auto;
             border-radius: 2rem;
+        }
+
+        .app-showcase .text-stack-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        .app-showcase .card {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: left;
         }
 
         /* Testimonials */
