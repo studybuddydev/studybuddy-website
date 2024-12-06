@@ -167,6 +167,47 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: 'power2.out'
     });
 
+    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = document.getElementById('email-input');
+        const messageElement = document.getElementById('waitlist-message');
+        const email = emailInput.value.trim();
+    
+        // Basic email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailRegex.test(email)) {
+            messageElement.textContent = 'Inserisci un\'email valida';
+            messageElement.className = 'waitlist-message error';
+            return;
+        }
+    
+        // Here you would typically add AJAX call to your backend
+        // This is a placeholder implementation
+        fetch('/api/waitlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Errore durante l\'iscrizione');
+            }
+            return response.json();
+        })
+        .then(data => {
+            messageElement.textContent = 'Grazie! Sei stato aggiunto alla waitlist.';
+            messageElement.className = 'waitlist-message success';
+            emailInput.value = ''; // Clear input
+        })
+        .catch(error => {
+            messageElement.textContent = 'Si è verificato un errore. Riprova.';
+            messageElement.className = 'waitlist-message error';
+        });
+    });
+ 
     // =============================
     // 3. Testimonials Slider
     // =============================
@@ -221,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =============================
     // 5. Mobile Menu Toggle
     // =============================
-
+    
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('header ul');
 
@@ -243,33 +284,73 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
     });
-
-    /* sta roba dovrebbe far cambiare l'immagine del telefono quando passi sopra le card ma non funziona */
+    
+    // =============================
+    /* 
+       sta roba dovrebbe far cambiare l'immagine del telefono 
+       quando passi sopra le card ma non funziona 
+    */
+    // =============================
     document.addEventListener('DOMContentLoaded', () => {
-        const phoneMockup = document.querySelector('.phone-mockup img');
-        const cards = document.querySelectorAll('.card');
-        
-        // Array of image paths for each card
-        const images = [
-            'imgs/iPhone2D_home.png',  // Image for first column, first card
-            'imgs/iPhone2D_buddies.png',  // Image for first column, second card
-            'imgs/iphone2D.png',  // Image for third column, first card
-            'imgs/mobile_buddies.png'   // Image for third column, second card
-        ];
+        // Use more specific and error-resistant selectors
+        const phoneImage = document.querySelector('#app-showcase .phone-mockup img');
+        const cards = document.querySelectorAll('#app-showcase .card');
     
-        cards.forEach((card, index) => {
+        // Detailed error checking
+        if (!phoneImage) {
+            console.error('Phone image element not found!');
+            return;
+        }
+    
+        if (cards.length === 0) {
+            console.error('No cards found!');
+            return;
+        }
+    
+        // Define image mapping for each card
+        const imageMap = {
+            'Traccia i progressi': 'imgs/iPhone2D_progress.png',
+            'Studia in compagnia': 'imgs/iPhone2D_study_group.png',
+            'Mantieni il focus': 'imgs/iPhone2D_timer.png',
+            'Gestisci i tuoi esami': 'imgs/iPhone2D_exams.png'
+        };
+    
+        cards.forEach(card => {
+            // More robust title selection
+            const titleElement = card.querySelector('.text-stack h2');
+            
+            if (!titleElement) {
+                console.warn('No title found for a card');
+                return;
+            }
+    
+            const cardTitle = titleElement.textContent.trim();
+    
             card.addEventListener('mouseenter', () => {
-                phoneMockup.src = images[index];
-                phoneMockup.style.opacity = 1;
-            });
-    
-            card.addEventListener('mouseleave', () => {
-                // Optional: You can reset to a default image if needed
-                // phoneMockup.src = 'imgs/default-screen.jpeg';
+                // Fallback to default image if no specific image found
+                const newImageSrc = imageMap[cardTitle] || 'imgs/iPhone2D_home.png';
+                
+                phoneImage.style.opacity = 0;
+                
+                setTimeout(() => {
+                    phoneImage.src = newImageSrc;
+                    phoneImage.style.opacity = 1;
+                }, 300);
             });
         });
+    
+        // Optional: Reset to home image when mouse leaves the section
+        const section = document.querySelector('#app-showcase');
+        if (section) {
+            section.addEventListener('mouseleave', () => {
+                phoneImage.style.opacity = 0;
+                setTimeout(() => {
+                    phoneImage.src = 'imgs/iPhone2D_home.png';
+                    phoneImage.style.opacity = 1;
+                }, 300);
+            });
+        }
     });
-
     // =============================
     // 6. Additional Animations
     // =============================
