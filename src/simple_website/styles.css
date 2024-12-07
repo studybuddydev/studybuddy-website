@@ -479,6 +479,13 @@
         box-shadow: 0 0 1rem var(--color-secondary);
     }
 
+    /*add style for highlighted features*/
+
+    .highlight-feature {
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+
     /* App Showcase */
 
     .app-showcase {
