@@ -43,6 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: 'back.out(1.7)',
         delay: 1
     });
+    
+    gsap.from('.lang-switch-link', {
+        duration: 1,
+        scale: 0.8,
+        opacity: 0,
+        ease: 'back.out(1.7)',
+        delay: 1
+    });
 
     // Animate Hero Section
     gsap.from('.hero-content h1', {
@@ -66,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 0,
         stagger: 0.2,
         ease: 'power2.out',
-        delay: 1
+        delay: 0.5
     });
 
     gsap.from('.hero-image img', {
@@ -74,9 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         scale: 0.8,
         opacity: 0,
         ease: 'power2.out',
-        delay: 1
+        delay: 0
     });
 
+
+    
     // ================================
     // 2. Scroll-Based Section Animations
     // ================================
