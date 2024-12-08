@@ -1,5 +1,13 @@
 // scripts.js
 
+// get lang params from url
+const lang = (new URLSearchParams(window.location.search)).get('lang');
+const userLang = navigator.language || navigator.userLanguage;
+if (lang !== 'it' && userLang !== 'it-IT') {
+    window.location.href = '/en.html';
+}
+
+
 // Ensure the DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize GSAP and its plugins
@@ -167,46 +175,46 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: 'power2.out'
     });
 
-    document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const emailInput = document.getElementById('email-input');
-        const messageElement = document.getElementById('waitlist-message');
-        const email = emailInput.value.trim();
+    // document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+    //     e.preventDefault();
+    //     const emailInput = document.getElementById('email-input');
+    //     const messageElement = document.getElementById('waitlist-message');
+    //     const email = emailInput.value.trim();
     
-        // Basic email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //     // Basic email validation
+    //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-        if (!emailRegex.test(email)) {
-            messageElement.textContent = 'Inserisci un\'email valida';
-            messageElement.className = 'waitlist-message error';
-            return;
-        }
+    //     if (!emailRegex.test(email)) {
+    //         messageElement.textContent = 'Inserisci un\'email valida';
+    //         messageElement.className = 'waitlist-message error';
+    //         return;
+    //     }
     
-        // Here you would typically add AJAX call to your backend
-        // This is a placeholder implementation
-        fetch('/api/waitlist', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email: email })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Errore durante l\'iscrizione');
-            }
-            return response.json();
-        })
-        .then(data => {
-            messageElement.textContent = 'Grazie! Sei stato aggiunto alla waitlist.';
-            messageElement.className = 'waitlist-message success';
-            emailInput.value = ''; // Clear input
-        })
-        .catch(error => {
-            messageElement.textContent = 'Si è verificato un errore. Riprova.';
-            messageElement.className = 'waitlist-message error';
-        });
-    });
+    //     // Here you would typically add AJAX call to your backend
+    //     // This is a placeholder implementation
+    //     fetch('/api/waitlist', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ email: email })
+    //     })
+    //     .then(response => {
+    //         if (!response.ok) {
+    //             throw new Error('Errore durante l\'iscrizione');
+    //         }
+    //         return response.json();
+    //     })
+    //     .then(data => {
+    //         messageElement.textContent = 'Grazie! Sei stato aggiunto alla waitlist.';
+    //         messageElement.className = 'waitlist-message success';
+    //         emailInput.value = ''; // Clear input
+    //     })
+    //     .catch(error => {
+    //         messageElement.textContent = 'Si è verificato un errore. Riprova.';
+    //         messageElement.className = 'waitlist-message error';
+    //     });
+    // });
  
     // =============================
     // 3. Testimonials Slider
@@ -393,4 +401,23 @@ document.addEventListener('DOMContentLoaded', () => {
     //     ease: 'power2.out'
     // });
 
+
 });
+
+const experienceImg = document.getElementById('experience-img');
+let timeoutSetOriginal = null;
+for (let i = 1; i <= 4; i++) {
+    const exp = document.getElementById(`experience-${i}`);
+    console.log(`experience-${i}`)
+    console.log(exp)
+    exp.addEventListener('mouseover',  () => {
+        if(timeoutSetOriginal) clearTimeout(timeoutSetOriginal);
+        experienceImg.src = `imgs/experiences/screenshot${i}.png`;
+    });
+    exp.addEventListener('mouseleave', () => {
+        timeoutSetOriginal = setTimeout(() => {
+            experienceImg.src = "imgs/experiences/experience.png";
+            timeoutSetOriginal = null;
+        }, 500);
+    });
+}

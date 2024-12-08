@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyBuddy - Il tuo assistente all'università</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=League+Spartan:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/brands.min.css" integrity="sha512-QH1LgIu+/AMwFQUhCZxzXHzhOmyrAH74cj6Q35quQVYONu72vd5INbC1cgER+Cbjdk6xIfYdV5xtsAAMwpxd7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/brands.min.css"
+        integrity="sha512-QH1LgIu+/AMwFQUhCZxzXHzhOmyrAH74cj6Q35quQVYONu72vd5INbC1cgER+Cbjdk6xIfYdV5xtsAAMwpxd7g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <header>
         <nav class="container">
@@ -20,11 +28,15 @@
                 <li><a href="#features">Funzionalità</a></li>
                 <li><a href="#app-showcase">App</a></li>
                 <li><a href="#testimonials">Recensioni</a></li>
-                <li><a href="#pricing">Prezzi</a></li>
+                <!-- <li><a href="#pricing">Prezzi</a></li> -->
                 <li><a href="#contact">Contatti</a></li>
             </ul>
             <!-- <div class="mobile-menu-toggle">&#9776;</div> -->
-            <a href="#" class="btn btn-primary">Registrati ora!</a>
+            <div>
+                <a href="en.html" class="lang-switch-link"><i class="fa-solid fa-globe"></i><span>EN</span></a>
+
+            </div>
+            <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-primary">Registrati ora!</a>
         </nav>
     </header>
 
@@ -60,16 +72,13 @@
                     <h1>Rivoluziona il tuo studio</h1>
                     <p>Trova compagni di studio, aumenta la tua produttività e passa gli esami senza stress</p>
                     <div class="waitlist-container">
-                        <form id="waitlist-form" class="waitlist-form">
-                            <input 
-                                type="email" 
-                                id="email-input" 
-                                placeholder="Inserisci la tua email" 
-                                required
-                            >
-                            <button type="submit" class="btn btn-primary">Iscriviti alla Waitlist</button>
+                        <form id="waitlist-form" class="waitlist-form"
+                            action="https://formsubmit.co/1b3764d491f91b476f47021ce4f876b5" method="POST">
+                            <input type="email" id="email-input" placeholder="Inserisci la tua email" required
+                                name="waiting-list">
+                            <button type="submit" class="btn btn-primary">Iscriviti alla Waiting List</button>
                         </form>
-                        <div id="waitlist-message" class="waitlist-message"></div>
+                        <!-- <div id="waitlist-message" class="waitlist-message"></div> -->
                     </div>
                 </div>
             </div>
@@ -77,51 +86,56 @@
 
         <section id="scheme" class="scheme">
             <div class="container">
-            <h1>Tutto. In. Uno.</h1>
-            <p>Quante volte hai pensato "se solo avessi un giorno in più"?</p>
-            <p>Con StudyBuddy cancelli la difficoltà a concentrarti, la fatica nella pianificazione e trovi i compagni di studio perfetti per te.</p>
-            <p>Tutto in un'unica piattaforma.</p>
-            <img src="imgs/ecosystem.png" alt="Study Scheme">
+                <h1>Tutto. In. Uno.</h1>
+                <p>Quante volte hai pensato "se solo avessi un giorno in più"?</p>
+                <p>Con StudyBuddy cancelli la difficoltà a concentrarti, la fatica nella pianificazione e trovi i
+                    compagni di studio perfetti per te.</p>
+                <p>Tutto in un'unica piattaforma.</p>
+                <img src="imgs/ecosystem.png" alt="Study Scheme" />
             </div>
         </section>
 
         <section id="features" class="features">
             <div class="container">
-            <h2 class="section-title">Cosa offre StudyBuddy?</h2>
-            
-            <!-- Feature Row 1 (Text - Image) -->
-            <div class="feature-row reverse">
-                <div class="feature-content">
-                <h3>Time Tracker</h3>
-                <p>Tieni traccia del tuo tempo e mantieni la concentrazione con il nostro sistema, progettato specificamente per le esigenze degli studenti. Scopri di più qui.</p>
+                <h2 class="section-title">Cosa offre StudyBuddy?</h2>
+
+                <!-- Feature Row 1 (Text - Image) -->
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h3>Time Tracker</h3>
+                        <p>Tieni traccia del tuo tempo e mantieni la concentrazione con il nostro sistema, progettato
+                            specificamente per le esigenze degli studenti. Scopri di più qui.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="imgs/principles/timer.webp" alt="Pomodoro Timer" />
+                    </div>
                 </div>
-                <div class="feature-image">
-                <img src="imgs/principles/timer.webp" alt="Pomodoro Timer">
+
+                <!-- Feature Row 2 (Image - Text) -->
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>Statistiche di Studio</h3>
+                        <p>Monitora i tuoi progressi e ottieni informazioni sulle tue abitudini di studio. Visualizza i
+                            tuoi schemi di produttività, identifica i momenti di massima performance e prendi decisioni
+                            basate sui dati per migliorare la tua routine di studio.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="imgs/principles/stats.webp" alt="Study Statistics" />
+                    </div>
                 </div>
-            </div>
-        
-            <!-- Feature Row 2 (Image - Text) -->
-            <div class="feature-row">
-                <div class="feature-content">
-                <h3>Statistiche di Studio</h3>
-                <p>Monitora i tuoi progressi e ottieni informazioni sulle tue abitudini di studio. Visualizza i tuoi schemi di produttività, identifica i momenti di massima performance e prendi decisioni basate sui dati per migliorare la tua routine di studio.</p>
+
+                <!-- Feature Row 3 (Text - Image) -->
+                <div class="feature-row reverse">
+                    <div class="feature-content">
+                        <h3>Trova compagni di studio</h3>
+                        <p>Connettiti con studenti che stanno preparando i tuoi stessi esami. Insieme potete scambiarvi
+                            consigli, risorse utili e motivarvi per ottenere risultati straordinari.</p>
+                        <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-primary">Comincia ora</a>
+                    </div>
+                    <div class="feature-image">
+                        <img src="imgs/principles/buddies.webp" alt="Study Buddies">
+                    </div>
                 </div>
-                <div class="feature-image">
-                <img src="imgs/principles/stats.webp" alt="Study Statistics">
-                </div>
-            </div>
-        
-            <!-- Feature Row 3 (Text - Image) -->
-            <div class="feature-row reverse">
-                <div class="feature-content">
-                <h3>Trova compagni di studio</h3>
-                <p>Connettiti con studenti che stanno preparando i tuoi stessi esami.  Insieme potete scambiarvi consigli, risorse utili e motivarvi per ottenere risultati straordinari.</p>
-                <a href="#" class="btn btn-primary">Comincia ora</a>
-                </div>
-                <div class="feature-image">
-                <img src="imgs/principles/buddies.webp" alt="Study Buddies">
-                </div>
-            </div>
             </div>
         </section>
 
@@ -131,10 +145,10 @@
                     <h1>L'esperienza StudyBuddy</h1>
                     <p>Studiare non è mai stato così semplice</p>
                 </div>
-                
+
                 <div class="row">
-                    <div class="column column-1">
-                        <div class="card">
+                    <div class="column column-card column-1">
+                        <div class="card" id="experience-1">
                             <div class="text-stack">
                                 <h2>Traccia i progressi</h2>
                             </div>
@@ -142,7 +156,7 @@
                                 <p>Monitora le ore di studio e scopri quanto stai migliorando ogni giorno.</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" id="experience-2">
                             <div class="text-stack">
                                 <h2>Studia in compagnia</h2>
                             </div>
@@ -151,15 +165,15 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="column column-2">
                         <div class="phone-mockup">
-                            <img src="imgs/iPhone2D_home.png" alt="StudyBuddy App Screenshot">
+                            <img src="imgs/experiences/experience.png" id="experience-img" alt="StudyBuddy App Screenshot">
                         </div>
                     </div>
-                    
-                    <div class="column column-3">
-                        <div class="card">
+
+                    <div class="column column-card column-3">
+                        <div class="card"  id="experience-3">
                             <div class="text-stack">
                                 <h2>Mantieni il focus</h2>
                             </div>
@@ -167,7 +181,7 @@
                                 <p>Un timer integrato per sessioni di studio senza distrazioni.</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card"  id="experience-4">
                             <div class="text-stack">
                                 <h2>Gestisci i tuoi esami</h2>
                             </div>
@@ -224,7 +238,8 @@
                 <div class="testimonials-wrapper">
                     <div class="testimonial-slider">
                         <div class="testimonial">
-                            <p>“Molto chiaro e veloce da utilizzare, senza pubblicità o quant’altro, perfetto per lo studio!!”</p>
+                            <p>“Molto chiaro e veloce da utilizzare, senza pubblicità o quant’altro, perfetto per lo
+                                studio!!”</p>
                             <div class="testimonial-author">- Piergiorgio, Giurisprudenza</div>
                         </div>
                         <div class="testimonial">
@@ -232,11 +247,13 @@
                             <div class="testimonial-author">- Elia, Ingegneria</div>
                         </div>
                         <div class="testimonial">
-                            <p>“Adoro il fatto che posso inserire sullo sfondo i video che sono solita guardare mentre studio, sistemo appunti ecc."</p>
+                            <p>“Adoro il fatto che posso inserire sullo sfondo i video che sono solita guardare mentre
+                                studio, sistemo appunti ecc."</p>
                             <div class="testimonial-author">- Alicia, Scienze Linguistiche</div>
                         </div>
                         <div class="testimonial">
-                            <p>“Amo l’estetica, lo uso sempre per studiare, non vedo l’ora escano le nuove funzionalità”</p>
+                            <p>“Amo l’estetica, lo uso sempre per studiare, non vedo l’ora escano le nuove funzionalità”
+                            </p>
                             <div class="testimonial-author">- Luisa, Psicologia</div>
                         </div>
                         <div class="testimonial">
@@ -244,16 +261,17 @@
                             <div class="testimonial-author">- Mirko, Medicina e Chirurgia</div>
                         </div>
                         <div class="testimonial">
-                            <p>"E' davvero il bello il fatto che ti permette di creare il tuo spazio di studio personale”</p>
+                            <p>"E' davvero il bello il fatto che ti permette di creare il tuo spazio di studio
+                                personale”</p>
                             <div class="testimonial-author">- Giulia, Economia</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
 
-        <section id="pricing" class="pricing">
+
+        <!-- <section id="pricing" class="pricing">
             <div class="container">
                 <h2>Scegli il tuo piano</h2>
                 <div class="pricing-grid">
@@ -305,14 +323,14 @@
                     </div>
                 </div>
             </div>
-        </section>
-        
+        </section> -->
+
 
         <section id="cta" class="action-section">
             <div class="container">
                 <h1>Pronto a mettere il turbo?</h1>
                 <p>Unisciti a StudyBuddy e rivoluziona il tuo studio!</p>
-                <a href="#" class="btn btn-primary">Comincia ora</a>
+                <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-primary">Comincia ora</a>
             </div>
         </section>
 
@@ -320,15 +338,15 @@
             <div class="container">
                 <h2>Contattaci</h2>
                 <p>Hai bisogno di assistenza o chiarimenti? Il nostro team di supporto è a tua disposizione.</p>
-                <form>
+                <form action="https://formsubmit.co/1b3764d491f91b476f47021ce4f876b5" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea placeholder="Your Message" name="message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Invia messaggio</button>
                 </form>
@@ -358,11 +376,16 @@
                     <h3></h3>
                     <p class="contact-text">I nostri social:</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://t.me/stubud" target="_blank" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/studybuddydev" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                        <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://t.me/stubud" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"
+                            class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/studybuddydev" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-discord"></i></a>
                     </div>
                 </div>
             </div>
@@ -384,9 +407,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <!-- If using ScrollToPlugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/all.min.js" integrity="sha512-8py0AXTY8pfAroJmBkYfJ+VuKUKMMsUOC1MldW9kkC/k4SZi6AexSDS60QYn41U2rp8KL9IpVHy8FxW2TDmjDA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/brands.min.js" integrity="sha512-yUy+qTOfuRlPHA2tSJNx8n06odcIHYO0WDgVl3b1cS4gCVmKci8fbW1HcKGM1Wk3Q5odQJ9qgDLMY3IRKcxJ8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/all.min.js"
+        integrity="sha512-8py0AXTY8pfAroJmBkYfJ+VuKUKMMsUOC1MldW9kkC/k4SZi6AexSDS60QYn41U2rp8KL9IpVHy8FxW2TDmjDA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/brands.min.js"
+        integrity="sha512-yUy+qTOfuRlPHA2tSJNx8n06odcIHYO0WDgVl3b1cS4gCVmKci8fbW1HcKGM1Wk3Q5odQJ9qgDLMY3IRKcxJ8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Your Custom Scripts -->
     <script src="scripts.js"></script>
 </body>
+
 </html>

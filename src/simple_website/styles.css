@@ -96,6 +96,15 @@
         padding: 0;
     }
 
+    header .container .lang-switch-link {
+        color: white;
+        font-size: 1.2rem;
+
+    }
+    header .container .lang-switch-link span {
+        margin-left: 10px;
+    }
+
     header .logo {
         font-size: 1.2rem;
         font-weight: 700;
@@ -131,7 +140,9 @@
         margin: 0 auto;
     }
 
-
+    .btn {
+        cursor: pointer;
+    }
 
     img.logo {
         height: 3rem;
@@ -172,7 +183,6 @@
         padding: 0.8rem 2rem;
         border-radius: 3rem;
         font-size: 0.9rem;
-        transition: background-color 0.3s ease;
         white-space: nowrap;
         font-weight: bold;
         display: inline-block;
@@ -183,7 +193,6 @@
         padding: 0.8rem 2rem;
         border-radius: 3rem;
         font-size: 0.9rem;
-        transition: background-color 0.3s ease;
         white-space: nowrap;
         font-weight: bold;
     }
@@ -191,7 +200,10 @@
     header .btn-primary {
         background-color: var(--color-primary);
         color: white;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
     header .btn-primary:hover {
@@ -291,12 +303,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .waitlist-form .btn-primary:hover {
+    .btn-primary:hover {
         background-color: var(--color-secondary);
         box-shadow: 0 0 1rem var(--color-secondary);
+        border-color: var(--color-secondary);
     }
     
     .waitlist-message {
@@ -339,7 +351,6 @@
     .cta-buttons .btn-primary {
         background-color: var(--color-primary);
         color: white;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
         display: none;
     }
 
@@ -352,7 +363,6 @@
         background-color: white;
         color: var(--color-secondary);
         border: 0.2rem solid var(--color-secondary);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .cta-buttons .btn-secondary:hover {
@@ -469,7 +479,6 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
         margin-top: 2rem;
         margin-left: 2rem;
     }
@@ -753,7 +762,6 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card-section.cta .btn:hover {
@@ -795,7 +803,6 @@
         border-radius: 3rem;
         font-size: 1.1rem;
         font-weight: bold;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .action-section .btn-primary {
@@ -868,7 +875,6 @@
         text-decoration: none;
         font-family: var(--font-primary);
         font-weight: bold;
-        transition: background-color 0.3s ease;
         cursor: pointer;
     }
 
@@ -1234,16 +1240,16 @@
         }
         
         .app-showcase .row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
         
-        .app-showcase .column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+        .app-showcase .column.column-card {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
             gap: 3rem;
+            height: 500px;
         }
         
         .app-showcase .card {
@@ -1287,7 +1293,6 @@
             max-width: 300px;
             height: auto;
             border-radius: 2rem;
-            box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.15);
             transition: opacity 0.3s ease;
         }
         
