@@ -1,10 +1,12 @@
 // scripts.js
 
 // get lang params from url
-const lang = (new URLSearchParams(window.location.search)).get('lang');
-const userLang = navigator.language || navigator.userLanguage;
-if (lang !== 'it' && userLang !== 'it-IT') {
-    window.location.href = '/en.html';
+if (!window.location.pathname.includes('en.html')) {
+    const lang = (new URLSearchParams(window.location.search)).get('lang');
+    const userLang = navigator.language || navigator.userLanguage;
+    if (lang !== 'it' && userLang !== 'it-IT') {
+        window.location.href = '/en.html';
+    }
 }
 
 
