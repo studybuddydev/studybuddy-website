@@ -144,6 +144,13 @@
         cursor: pointer;
     }
 
+    .btn-primary {
+        border-color: var(--color-primary);
+    }
+    button {
+        border-style:none;
+    }
+
     img.logo {
         height: 3rem;
         width: auto;
@@ -274,6 +281,17 @@
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+    }
+
+    .waitlist-container .action-link {
+        font-weight: bold;
+        color: var(--color-primary);
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .waitlist-container .action-link:hover {
+        color: var(--color-secondary);
     }
     
     .waitlist-form {

@@ -408,8 +408,6 @@ const experienceImg = document.getElementById('experience-img');
 let timeoutSetOriginal = null;
 for (let i = 1; i <= 4; i++) {
     const exp = document.getElementById(`experience-${i}`);
-    console.log(`experience-${i}`)
-    console.log(exp)
     exp.addEventListener('mouseover',  () => {
         if(timeoutSetOriginal) clearTimeout(timeoutSetOriginal);
         experienceImg.src = `imgs/experiences/screenshot${i}.png`;
