@@ -422,11 +422,11 @@ for (let i = 1; i <= 4; i++) {
     const exp = document.getElementById(`experience-${i}`);
     exp.addEventListener('mouseover',  () => {
         if(timeoutSetOriginal) clearTimeout(timeoutSetOriginal);
-        experienceImg.src = `imgs/experiences/screenshot${i}.png`;
+        experienceImg.src = `imgs/experiences/screenshot${i}.webp`;
     });
     exp.addEventListener('mouseleave', () => {
         timeoutSetOriginal = setTimeout(() => {
-            experienceImg.src = "imgs/experiences/experience.png";
+            experienceImg.src = "imgs/experiences/home_screen.webp";
             timeoutSetOriginal = null;
         }, 500);
     });
