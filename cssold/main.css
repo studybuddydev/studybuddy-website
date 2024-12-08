@@ -1,9 +1,0 @@
-/* Importing each CSS subfile */
-@import url('variables.css');
-@import url('global.css');
-@import url('header.css');
-@import url('hero.css');
-@import url('sections.css');
-@import url('contact.css');
-@import url('footer.css');
-@import url('responsive.css');
