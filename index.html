@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" itemscope itemtype="http://schema.org/WebPage">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="App per lo studio per migliorare le tue performance accademiche e per trovare compagni di studio" />
-    <title>StudyBuddy - Il tuo assistente all'università</title>
+    <meta itemprop="name" content="StudyBuddy - trova compagnidi studio e usa il nostro timer pomodoro">
+    <meta itemprop="description" content="App per lo studio per migliorare le tue performance accademiche e per trovare compagni di studio">
+    <meta itemprop="image" content="https://studybuddy.it/imgs/favicon.ico">
+    <title>StudyBuddy - trova compagnidi studio e usa il nostro timer pomodoro</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=League+Spartan:wght@700&display=swap"
         rel="stylesheet">
@@ -27,11 +30,11 @@
 </head>
 
 <body>
-    <header>
+    <header itemscope itemtype="http://schema.org/WPHeader">
         <nav class="container">
-            <div class="logo">
-                <img class="logo" src="favicon.ico" alt="StudyBuddy Logo">
-                StudyBuddy
+            <div class="logo" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <img class="logo" src="favicon.ico" alt="StudyBuddy Logo" itemprop="logo">
+                <span itemprop="name">StudyBuddy</span>
             </div>
             <ul class="header">
                 <li><a href="#features">Funzionalità</a></li>
@@ -70,7 +73,7 @@
         -->
 
         <!-- Hero with waitlist-->
-        <section class="hero">
+        <section class="hero" itemscope itemtype="http://schema.org/WebPageElement">
             <a href="en.html" aria-label="cambia lingua in inglese" class="lang-switch-link lang-switch-link-mobile"><i class="fa-solid fa-globe"></i><span>EN</span></a>
             <div class="parallax-bg"></div>
             <div class="container">
@@ -79,7 +82,7 @@
                 </div>
                 <div class="hero-content">
                     <h1>Rivoluziona il tuo studio</h1>
-                    <p>Trova compagni di studio, aumenta la tua produttività e passa gli esami senza stress</p>
+                    <p>Trova compagni di studio, aumenta la tua produttività e vivi l'università senza stress</p>
                     <div class="waitlist-container">
                         <form id="waitlist-form" class="waitlist-form" action="https://formsubmit.co/info@studybuddy.it"
                             method="POST">
@@ -122,9 +125,9 @@
             </div>
         </section>
 
-        <section id="features" class="features">
+        <section id="features" class="features" itemscope itemtype="http://schema.org/WebPageElement">
             <div class="container">
-                <h2 class="section-title">Cosa offre StudyBuddy?</h2>
+                <h2 class="section-title" itemprop="headline">Cosa offre StudyBuddy?</h2>
 
                 <!-- Feature Row 1 (Text - Image) -->
                 <div class="feature-row reverse">
@@ -252,7 +255,7 @@
         </section>
         -->
 
-        <section id="testimonials" class="testimonials">
+        <section id="testimonials" class="testimonials" itemscope itemtype="http://schema.org/UserReview">
             <div class="container">
                 <div class="testimonials-header">
                     <button aria-label="scroll testimonials left" class="arrow arrow-left" onclick="scrollLeft()">
@@ -265,16 +268,16 @@
                 </div>
                 <div class="testimonials-wrapper">
                     <div class="testimonial-slider">
-                        <div class="testimonial">
-                            <p>“Molto chiaro e veloce da utilizzare, senza pubblicità o quant’altro, perfetto per lo
+                        <div class="testimonial" itemprop="review">
+                            <p itemprop="reviewBody">“Molto chiaro e veloce da utilizzare, senza pubblicità o quant’altro, perfetto per lo
                                 studio!!”</p>
-                            <div class="testimonial-author">
+                            <div class="testimonial-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
                                 <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=piergiorgio&backgroundColor=FF8C33" alt="Propic" />
-                                <p>- Piergiorgio, Giurisprudenza</p>
+                                <p>- <span itemprop="name">Piergiorgio</span>, Giurisprudenza</p>
                             </div>
                         </div>
                         <div class="testimonial">
-                            <p>“Facile da usare, coinvolgente e user friendly”</p>
+                            <p>“Facile da usare, coinvolgente e user friendly” </br></br></p>
                             <div class="testimonial-author">
                                 <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=elia&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Elia, Ingegneria</p>
@@ -297,7 +300,7 @@
                             </div>
                         </div>
                         <div class="testimonial">
-                            <p>“Ben fatto, super utile ed efficiente. Ottimo lavoro!”</p>
+                            <p>“Ben fatto, super utile ed efficiente. Ottimo lavoro!”</br></br></p>
                             <div class="testimonial-author">
                                 <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=mirko&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Mirko, Medicina e Chirurgia</p>
@@ -380,11 +383,11 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" itemscope itemtype="http://schema.org/ContactPage">
             <div class="container">
-                <h2>Contattaci</h2>
-                <p>Hai bisogno di assistenza o chiarimenti? Il nostro team di supporto è a tua disposizione.</p>
-                <form action="https://formsubmit.co/info@studybuddy.it" method="POST">
+                <h2 itemprop="headline">Contattaci</h2>
+                <p itemprop="description">Hai bisogno di assistenza o chiarimenti? Il nostro team di supporto è a tua disposizione.</p>
+                <form action="https://formsubmit.co/info@studybuddy.it" method="POST" itemprop="potentialAction" itemscope itemtype="http://schema.org/Action">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
@@ -400,15 +403,15 @@
         </section>
     </main>
 
-    <footer>
+    <footer itemscope itemtype="http://schema.org/WPFooter">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="logo">
-                        <img class="logo" src="favicon.ico" alt="StudyBuddy Logo">
-                        StudyBuddy
+                        <img class="logo" src="favicon.ico" alt="StudyBuddy Logo" itemprop="logo">
+                        <span itemprop="name">StudyBuddy</span>
                     </div>
-                    <p>Il tuo assistente all'università.</p>
+                    <p itemprop="description">Il tuo assistente all'università.</p>
                 </div>
                 <div class="footer-section centered-section">
                     <h3></h3>
