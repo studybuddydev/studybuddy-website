@@ -286,24 +286,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('header ul');
 
-    mobileMenuToggle.addEventListener('click', () => {
-        if (navMenu.style.display === 'flex') {
-            gsap.to(navMenu, {
-                height: 0,
-                duration: 0.5,
-                ease: 'power2.inOut',
-                onComplete: () => {
-                    navMenu.style.display = 'none';
-                }
-            });
-        } else {
-            navMenu.style.display = 'flex';
-            gsap.fromTo(navMenu,
-                { height: 0, opacity: 0 },
-                { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
-            );
-        }
-    });
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            if (navMenu.style.display === 'flex') {
+                gsap.to(navMenu, {
+                    height: 0,
+                    duration: 0.5,
+                    ease: 'power2.inOut',
+                    onComplete: () => {
+                        navMenu.style.display = 'none';
+                    }
+                });
+            } else {
+                navMenu.style.display = 'flex';
+                gsap.fromTo(navMenu,
+                    { height: 0, opacity: 0 },
+                    { height: 'auto', opacity: 1, duration: 0.5, ease: 'power2.inOut' }
+                );
+            }
+        });
+    } else {
+        console.error('Element not found: .mobile-menu-toggle or header ul');
+    }
+
     
     // =============================
     /* 
@@ -416,18 +421,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-const experienceImg = document.getElementById('experience-img');
-let timeoutSetOriginal = null;
-for (let i = 1; i <= 4; i++) {
-    const exp = document.getElementById(`experience-${i}`);
-    exp.addEventListener('mouseover',  () => {
-        if(timeoutSetOriginal) clearTimeout(timeoutSetOriginal);
-        experienceImg.src = `imgs/experiences/screenshot${i}.webp`;
-    });
-    exp.addEventListener('mouseleave', () => {
-        timeoutSetOriginal = setTimeout(() => {
-            experienceImg.src = "imgs/experiences/home_screen.webp";
-            timeoutSetOriginal = null;
-        }, 500);
-    });
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const experienceImg = document.getElementById('experience-img');
+    if (!experienceImg) {
+        console.error('Element not found: experience-img');
+        return;
+    }
+
+    let timeoutSetOriginal = null;
+    for (let i = 1; i <= 4; i++) {
+        const exp = document.getElementById(`experience-${i}`);
+        if (exp) {
+            exp.addEventListener('mouseover', () => {
+                if (timeoutSetOriginal) clearTimeout(timeoutSetOriginal);
+                experienceImg.src = `imgs/experiences/screenshot${i}.webp`;
+            });
+            exp.addEventListener('mouseleave', () => {
+                timeoutSetOriginal = setTimeout(() => {
+                    experienceImg.src = "imgs/experiences/home_screen.webp";
+                    timeoutSetOriginal = null;
+                }, 500);
+            });
+        } else {
+            console.error(`Element not found: experience-${i}`);
+        }
+    }
+});

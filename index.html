@@ -86,7 +86,7 @@
                             <input type="email" id="email-input"
                                 placeholder="Inserisci la tua email" required
                                 name="waiting-list">
-                            <button type="submit" class="btn btn-primary">Iscriviti e prova la nuova app in anteprima</button>
+                            <button aria-label="submit waiting-list" type="submit" class="btn btn-primary">Iscriviti e prova la nuova app in anteprima</button>
                             <a href="https://test.studybuddy.it/" target="_blank" class="action-link">Prova subito la
                                 WebApp</a>
                         </form>
@@ -255,11 +255,11 @@
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <div class="testimonials-header">
-                    <button class="arrow arrow-left" onclick="scrollLeft()">
+                    <button aria-label="scroll testimonials left" class="arrow arrow-left" onclick="scrollLeft()">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     <h2>Dicono di noi</h2>
-                    <button class="arrow arrow-right" onclick="scrollRight()">
+                    <button aria-label="scroll testimonials right" class="arrow arrow-right" onclick="scrollRight()">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
@@ -394,7 +394,7 @@
                     <div class="form-group">
                         <textarea placeholder="Your Message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Invia messaggio</button>
+                    <button aria-label="submit message" type="submit" class="btn btn-primary">Invia messaggio</button>
                 </form>
             </div>
         </section>
