@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } else {
-        console.error('Element not found: .mobile-menu-toggle or header ul');
+        console.log('Element not found: .mobile-menu-toggle or header ul');
     }
 
     
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const experienceImg = document.getElementById('experience-img');
     if (!experienceImg) {
-        console.error('Element not found: experience-img');
+        console.log('Element not found: experience-img');
         return;
     }
 
