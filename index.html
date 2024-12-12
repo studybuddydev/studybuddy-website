@@ -27,6 +27,28 @@
     <meta property="og:image" content="https://studybuddy.it/imgs/favicon.ico">
     <meta property="og:url" content="https://studybuddy.it">
     <meta property="og:type" content="website">
+
+    <!-- Google tag (gtag.js) we need analytics to see how many users arrive on this site :) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9JDD39YJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FR9JDD39YJ', { 'page_language': 'it' });
+    </script>
+    <!-- Your Custom Scripts -->
+
+    <!-- Hotjar  -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3675434,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 </head>
 
 <body>
@@ -310,7 +332,7 @@
         </section>
         -->
 
-        <section id="testimonials" class="testimonials" itemscope itemtype="http://schema.org/UserReview">
+        <section id="testimonials" class="testimonials" >
             <div class="container">
                 <div class="testimonials-header">
                     <button aria-label="scroll testimonials left" class="arrow arrow-left" onclick="scrollLeft()">

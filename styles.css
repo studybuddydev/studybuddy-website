@@ -1326,7 +1326,8 @@
         .app-showcase .card .text-stack h2 {
             margin: 0;
             transition: margin 0.3s ease;
-            color: var(--color-primary)
+            color: var(--color-primary);
+            font-size: 1.5rem;
         }
         
         .app-showcase .card .card-hover-content {
