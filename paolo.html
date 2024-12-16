@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paolo - Consulenza Impronta di CO2 per Eventi</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.js"></script>
+    <style>
+        /* Improved color contrast */
+        body {
+            background-color: #121212; /* Darker background */
+            color: #e0e0e0; /* Lighter text color */
+        }
+        .bg-white {
+            background-color: #1e1e1e !important; /* Darker background for sections */
+        }
+        .text-gray-600 {
+            color: #cfd8dc !important; /* Lighter text color */
+        }
+        .text-gray-900 {
+            color: #ffffff !important; /* Lighter text color */
+        }
+        .bg-gray-50 {
+            background-color: #2d2d2d !important; /* Darker background for sections */
+        }
+        .bg-gray-900 {
+            background-color: #121212 !important; /* Dark background for footer */
+        }
+        .text-gray-400 {
+            color: #b0bec5 !important; /* Lighter text color */
+        }
+        .text-white {
+            color: #ffffff !important; /* Lighter text color */
+        }
+        .border-gray-800 {
+            border-color: #37474f !important; /* Darker border color */
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav x-data="{ isOpen: false }" class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-green-600">EcoEvents</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-green-600">Home</a>
+                    <a href="#servizi" class="text-gray-600 hover:text-green-600">Servizi</a>
+                    <a href="#processo" class="text-gray-600 hover:text-green-600">Processo</a>
+                    <a href="#about" class="text-gray-600 hover:text-green-600">Chi Sono</a>
+                    <a href="#contatti" class="text-gray-600 hover:text-green-600">Contatti</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="isOpen = !isOpen" class="text-gray-600 hover:text-green-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="isOpen" class="md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-600 hover:text-green-600">Home</a>
+                <a href="#servizi" class="block px-3 py-2 text-gray-600 hover:text-green-600">Servizi</a>
+                <a href="#processo" class="block px-3 py-2 text-gray-600 hover:text-green-600">Processo</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600 hover:text-green-600">Chi Sono</a>
+                <a href="#contatti" class="block px-3 py-2 text-gray-600 hover:text-green-600">Contatti</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 md:pt-32 md:pb-24 bg-cover bg-center" style="background-image: url('heropaolo.png');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Rendi il tuo evento <span class="text-green-600">ecosostenibile</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8">
+                    Calcola e compensa l'impronta di CO2 dei tuoi eventi aziendali
+                </p>
+                <a href="#contatti" class="inline-block bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition duration-300">
+                    Richiedi una consulenza
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servizi" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">I Nostri Servizi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-calculator text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">Calcolo Impronta CO2</h3>
+                    <p class="text-gray-600">Analisi dettagliata delle emissioni di CO2 generate dal tuo evento, considerando trasporti, energia, catering e materiali.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-leaf text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">Strategie di Compensazione</h3>
+                    <p class="text-gray-600">Sviluppo di piani personalizzati per compensare le emissioni attraverso progetti certificati di riforestazione e energia rinnovabile.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <i class="fas fa-certificate text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-4">Certificazione Verde</h3>
+                    <p class="text-gray-600">Documentazione ufficiale dell'impatto ambientale e delle azioni di compensazione per il tuo evento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="processo" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Il Nostro Processo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Analisi Iniziale</h3>
+                    <p class="text-gray-600">Valutazione dettagliata delle caratteristiche del tuo evento</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Calcolo Emissioni</h3>
+                    <p class="text-gray-600">Misurazione precisa dell'impronta di CO2</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Piano d'Azione</h3>
+                    <p class="text-gray-600">Sviluppo strategie di compensazione</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Implementazione</h3>
+                    <p class="text-gray-600">Esecuzione e monitoraggio delle azioni</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="paolo.jpg" alt="Paolo" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Chi Sono</h2>
+                    <p class="text-gray-600 mb-6">
+                        Mi chiamo Paolo e sono un consulente specializzato nel calcolo e nella compensazione dell'impronta di CO2 per eventi aziendali. Con oltre 5 anni di esperienza nel settore della sostenibilità ambientale, ho aiutato numerose aziende a rendere i loro eventi più ecosostenibili.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        La mia missione è quella di supportare le aziende nel loro percorso verso la sostenibilità, offrendo soluzioni concrete e misurabili per ridurre l'impatto ambientale dei loro eventi.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-green-600 hover:text-green-700">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-green-600 hover:text-green-700">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contatti" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contattami</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">Nome e Cognome</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-2">Messaggio</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                        Invia Messaggio
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">EcoEvents</h3>
+                    <p class="text-gray-400">Consulenza professionale per eventi sostenibili</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
+                    <p class="text-gray-400">Email: paolo@ecoevents.it</p>
+                    <p class="text-gray-400">Tel: +39 XXX XXX XXXX</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                &copy; 2023 EcoEvents. Tutti i diritti riservati.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

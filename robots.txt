@@ -2,5 +2,6 @@ User-agent: *
 Disallow: /policy.html
 Disallow: /pomoflex.html
 Disallow: /tos.html
+Disallow: /paolo.html
 
 Sitemap: https://studybuddy.it/sitemap.xml
