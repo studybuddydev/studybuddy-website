@@ -3,26 +3,37 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
    <url>
       <loc>https://studybuddy.it/</loc>
-      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/" />
-      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en.html" />
+      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/it/" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/" />
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://studybuddy.it/en.html</loc>
-      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/" />
-      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en.html" />
+      <loc>https://studybuddy.it/en/</loc>
+      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/it/" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/" />
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://studybuddy.it/policy.html</loc>
-      <changefreq>yearly</changefreq>
-      <priority>0.2</priority>
+      <loc>https://studybuddy.it/it/</loc>
+      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/it/" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/" />
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://studybuddy.it/tos.html</loc>
+      <loc>https://studybuddy.it/en/policy.html</loc>
+      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/it/policy.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/policy.html" />
       <changefreq>yearly</changefreq>
-      <priority>0.2</priority>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://studybuddy.it/en/tos.html</loc>
+      <xhtml:link rel="alternate" hreflang="it" href="https://studybuddy.it/it/tos.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/tos.html" />
+      <changefreq>yearly</changefreq>
+      <priority>1.0</priority>
    </url>
 </urlset>
