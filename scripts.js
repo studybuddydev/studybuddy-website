@@ -8,6 +8,9 @@
 //     }
 // }
 
+const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
+
 
 // Ensure the DOM is fully loaded before running scripts
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================
     // 1. Page Load Animations
     // =========================
+    if (isDesktop) {
 
     // Animate Header Elements
     gsap.from('header .logo', {
@@ -84,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 0
     });
 
-
+    }
     
     // ================================
     // 2. Scroll-Based Section Animations
@@ -447,3 +451,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
