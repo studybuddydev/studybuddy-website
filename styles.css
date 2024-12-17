@@ -620,6 +620,10 @@
         scroll-snap-align: center;
         /* Snap to the center of the viewport */
     }
+    .testimonial > p {
+        height: 3.5rem;
+    }
+
 
     .testimonial-author {
         color: var(--color-primary);
