@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=League+Spartan:wght@700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
         integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" async />
@@ -17,11 +17,14 @@
         integrity="sha512-QH1LgIu+/AMwFQUhCZxzXHzhOmyrAH74cj6Q35quQVYONu72vd5INbC1cgER+Cbjdk6xIfYdV5xtsAAMwpxd7g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" async  />
 
-        <meta property="og:title" content="StudyBuddy - Boost your academic performance">
-        <meta property="og:description" content="App to boost your performance, using the flexible Pomodoro technique and viewing beautiful charts about your study progress.">
-        <meta property="og:image" content="https://studybuddy.it/imgs/favicon.ico">
-        <meta property="og:url" content="https://studybuddy.it">
-        <meta property="og:type" content="website">
+    <meta property="og:title" content="StudyBuddy - Boost your academic performance">
+    <meta property="og:description" content="App to boost your performance, using the flexible Pomodoro technique and viewing beautiful charts about your study progress.">
+    <meta property="og:image" content="https://studybuddy.it/imgs/favicon.ico">
+    <meta property="og:url" content="https://studybuddy.it">
+    <meta property="og:type" content="website">
+
+    <link rel="alternate" hreflang="en" href="https://studybuddy.it/en/">
+    <link rel="alternate" hreflang="it" href="https://studybuddy.it/it/">
 
     <!-- Google tag (gtag.js) we need analytics to see how many users arrive on this site :) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9JDD39YJ"></script>
@@ -49,7 +52,7 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img class="logo" src="favicon.ico" alt="StudyBuddy Logo">
+                <img class="logo" src="/favicon.ico" alt="StudyBuddy Logo">
                 <h1>StudyBuddy</h1>
             </div>
             <ul class="header">
@@ -60,7 +63,7 @@
             </ul>
             <!-- <div class="mobile-menu-toggle">&#9776;</div> -->
             <div class="header-right">
-                <a href="/?lang=it" class="lang-switch-link" aria-label="go to italian page" ><i class="fa-solid fa-globe"></i><span>IT</span></a>
+                <a href="/it/" class="lang-switch-link" aria-label="go to italian page" ><i class="fa-solid fa-globe"></i><span>IT</span></a>
                 <a href="https://test.studybuddy.it/" target="_blank" aria-label="go to webapp" class="btn btn-primary">Sign Up Now!</a>
             </div>
         </nav>
@@ -69,11 +72,11 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <a href="/?lang=it" class="lang-switch-link lang-switch-link-mobile" aria-label="go to italian page" ><i class="fa-solid fa-globe"></i><span>IT</span></a>
+            <a href="/it/" class="lang-switch-link lang-switch-link-mobile" aria-label="go to italian page" ><i class="fa-solid fa-globe"></i><span>IT</span></a>
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="hero-image">
-                    <img src="imgs/phone3D.webp" alt="Screenshot with time tracker and study statistics">
+                    <img src="/imgs/phone3D.webp" alt="Screenshot with time tracker and study statistics">
                 </div>
                 <div class="hero-content">
                     <h2>Study like never before</h2>
@@ -91,7 +94,7 @@
                 <p>How many times have you thought "If only I had one more day"?</p>
                 <p>With StudyBuddy, you eliminate difficulties with focusing, planning and procrastination.</p>
                 <p>All on one platform.</p>
-                <img src="imgs/ecosystem.webp" alt="Study Scheme">
+                <img src="/imgs/ecosystem.webp" alt="Study Scheme">
             </div>
         </section>
 
@@ -107,7 +110,7 @@
                             students' needs. Like the Pomodoro Technique, but better. Learn more here.</p>
                     </div>
                     <div class="feature-image">
-                        <img src="imgs/principles/timer.webp" alt="Pomodoro Timer with gamification">
+                        <img src="/imgs/principles/timer.webp" alt="Pomodoro Timer with gamification">
                     </div>
                 </div>
 
@@ -120,7 +123,7 @@
                             study routine.</p>
                     </div>
                     <div class="feature-image">
-                        <img src="imgs/principles/stats.webp" alt="Study Statistics">
+                        <img src="/imgs/principles/stats.webp" alt="Study Statistics">
                     </div>
                 </div>
 
@@ -133,7 +136,7 @@
                         <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-primary" aria-label="go to webapp">Start Now</a>
                     </div>
                     <div class="feature-image">
-                        <img src="imgs/principles/buddies.webp" alt="Study Buddies">
+                        <img src="/imgs/principles/buddies.webp" alt="Study Buddies">
                     </div>
                 </div>
 
@@ -301,7 +304,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="logo">
-                        <img class="logo" src="favicon.ico" alt="StudyBuddy Logo">
+                        <img class="logo" src="/favicon.ico" alt="StudyBuddy Logo">
                         StudyBuddy
                     </div>
                     <p>Your university assistant.</p>
@@ -332,8 +335,8 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <div class="legal-links">
-                        <a href="/policy.html" aria-label="go to privacy policy">Privacy Policy</a>
-                        <a href="/tos.html" aria-label="go to tos">Terms of Service</a>
+                        <a href="/en/policy.html" aria-label="go to privacy policy">Privacy Policy</a>
+                        <a href="/en/tos.html" aria-label="go to tos">Terms of Service</a>
                     </div>
                     <p class="copyright">&copy; 2024 StudyBuddy</p>
                     <p class="funny-message">Made with ❤️, lots of ☕ and many 🤌 by StudyBuddy Team</p>
@@ -354,7 +357,7 @@
         integrity="sha512-yUy+qTOfuRlPHA2tSJNx8n06odcIHYO0WDgVl3b1cS4gCVmKci8fbW1HcKGM1Wk3Q5odQJ9qgDLMY3IRKcxJ8w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Your Custom Scripts -->
-    <script src="scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 
 </html>

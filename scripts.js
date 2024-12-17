@@ -1,13 +1,12 @@
 // scripts.js
 
-// get lang params from url
-if (!window.location.pathname.includes('en.html')) {
-    const lang = (new URLSearchParams(window.location.search)).get('lang');
-    const userLang = navigator.language || navigator.userLanguage;
-    if (lang !== 'it' && userLang !== 'it-IT') {
-        window.location.href = '/en.html';
-    }
-}
+// if (!window.location.pathname.includes('en.html')) {
+//     const lang = (new URLSearchParams(window.location.search)).get('lang');
+//     const userLang = navigator.language || navigator.userLanguage;
+//     if (lang !== 'it' && userLang !== 'it-IT') {
+//         window.location.href = '/en.html';
+//     }
+// }
 
 
 // Ensure the DOM is fully loaded before running scripts
@@ -334,10 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Define image mapping for each card
         const imageMap = {
-            'Traccia i progressi': 'imgs/iPhone2D_progress.png',
-            'Studia in compagnia': 'imgs/iPhone2D_study_group.png',
-            'Mantieni il focus': 'imgs/iPhone2D_timer.png',
-            'Gestisci i tuoi esami': 'imgs/iPhone2D_exams.png'
+            'Traccia i progressi': '/imgs/iPhone2D_progress.png',
+            'Studia in compagnia': '/imgs/iPhone2D_study_group.png',
+            'Mantieni il focus': '/imgs/iPhone2D_timer.png',
+            'Gestisci i tuoi esami': '/imgs/iPhone2D_exams.png'
         };
     
         cards.forEach(card => {
@@ -353,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             card.addEventListener('mouseenter', () => {
                 // Fallback to default image if no specific image found
-                const newImageSrc = imageMap[cardTitle] || 'imgs/iPhone2D_home.png';
+                const newImageSrc = imageMap[cardTitle] || '/imgs/iPhone2D_home.png';
                 
                 phoneImage.style.opacity = 0;
                 
@@ -370,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
             section.addEventListener('mouseleave', () => {
                 phoneImage.style.opacity = 0;
                 setTimeout(() => {
-                    phoneImage.src = 'imgs/iPhone2D_home.png';
+                    phoneImage.src = '/imgs/iPhone2D_home.png';
                     phoneImage.style.opacity = 1;
                 }, 300);
             });
@@ -435,11 +434,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (exp) {
             exp.addEventListener('mouseover', () => {
                 if (timeoutSetOriginal) clearTimeout(timeoutSetOriginal);
-                experienceImg.src = `imgs/experiences/screenshot${i}.webp`;
+                experienceImg.src = `/imgs/experiences/screenshot${i}.webp`;
             });
             exp.addEventListener('mouseleave', () => {
                 timeoutSetOriginal = setTimeout(() => {
-                    experienceImg.src = "imgs/experiences/home_screen.webp";
+                    experienceImg.src = "/imgs/experiences/home_screen.webp";
                     timeoutSetOriginal = null;
                 }, 500);
             });
