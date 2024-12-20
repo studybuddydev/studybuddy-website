@@ -38,6 +38,10 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-FR9JDD39YJ', { 'page_language': 'it' });
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
     </script>
     <!-- Your Custom Scripts -->
 
@@ -548,6 +552,11 @@
         </div>
     </footer>
 
+    <div id="cookie-banner" class="hidden">
+        <p>We use cookies to ensure you get the best experience on our website. <a href="#" style="color: #1abc9c; text-decoration: underline;">Learn more</a>.</p>
+        <button id="accept-cookies">Accept</button>
+    </div>
+
     <!-- GSAP and Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
@@ -559,14 +568,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/js/brands.min.js"
         integrity="sha512-yUy+qTOfuRlPHA2tSJNx8n06odcIHYO0WDgVl3b1cS4gCVmKci8fbW1HcKGM1Wk3Q5odQJ9qgDLMY3IRKcxJ8w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9JDD39YJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FR9JDD39YJ');
-    </script>
     <!-- Your Custom Scripts -->
     <script src="/scripts.js"></script>
 </body>

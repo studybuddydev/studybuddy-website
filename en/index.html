@@ -33,6 +33,10 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-FR9JDD39YJ', { 'page_language': 'en' });
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
     </script>
 
     <!-- Hotjar  -->
@@ -344,6 +348,11 @@
             </div>
         </div>
     </footer>
+
+    <div id="cookie-banner" class="hidden">
+        <p>We use cookies to ensure you get the best experience on our website. <a href="#" style="color: #1abc9c; text-decoration: underline;">Learn more</a>.</p>
+        <button id="accept-cookies">Accept</button>
+    </div>
 
     <!-- GSAP and Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
