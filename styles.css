@@ -494,7 +494,6 @@
         text-decoration: none;
         font-weight: bold;
         margin-top: 2rem;
-        margin-left: 2rem;
     }
 
     .feature-content .btn:hover {
@@ -1079,6 +1078,10 @@
             padding: 4rem;
         }
 
+        .feature-content .btn {
+            margin-left: 2rem;
+        }
+
         /* Optimize text size and line lengths */
         body {
             font-size: 1.6rem;
@@ -1259,6 +1262,7 @@
             padding: 1rem 3rem;
             margin-top: 2.5rem;
             min-height: unset;
+            margin-left: 2rem;
         }
 
         /* App Showcase */
