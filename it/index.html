@@ -78,35 +78,42 @@
             <!-- <div class="mobile-menu-toggle">&#9776;</div> -->
             <div class="header-right">
                 <a href="/en/" class="lang-switch-link"><i class="fa-solid fa-globe"></i><span>EN</span></a>
-                <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-primary">Prova l'App!</a>
+                <a href="/it/app.html" class="btn btn-primary">Scarica l'App!</a>
             </div>
         </nav>
     </header>
 
     <main>
 
-        <!-- Hero Section
-        <section class="hero">
+        <!-- Hero Section-->
+        <section class="hero" itemscope itemtype="http://schema.org/WebPageElement">
+
+            <a href="/en/" aria-label="cambia lingua in inglese" class="lang-switch-link lang-switch-link-mobile">
+                <i class="fa-solid fa-globe"></i><span>EN</span>
+            </a>
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="hero-image">
-                    <img src="/imgs/phone3D.png" alt="3D model of a phone">
+                    <img src="/imgs/phone3D.webp" alt="3D model of a phone">
                 </div>
                 <div class="hero-content">
-                    <h1>Rivoluziona il tuo studio</h1>
-                    <p>Trova compagni di studio, aumenta la tua produttività e passa gli esami senza stress</p>
+                    <h2>Rivoluziona il tuo studio</h2>
+                    <p>Trova compagni di studio, aumenta la tua produttività e vivi l'università senza stress</p>
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary">Prova WebApp</a>
-                        <a href="#" class="btn btn-secondary">Scarica App</a>
+                        <a href="/it/app.html" class="btn btn-primary">Scarica l'App!</a>
+                        <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-secondary">Prova la webapp</a>
                     </div>
                 </div>
             </div>
         </section>
-        -->
+        
 
-        <!-- Hero with waitlist-->
+        <!-- Hero with waitlist
         <section class="hero" itemscope itemtype="http://schema.org/WebPageElement">
-            <a href="/en/" aria-label="cambia lingua in inglese" class="lang-switch-link lang-switch-link-mobile"><i class="fa-solid fa-globe"></i><span>EN</span></a>
+        
+            <a href="/en/" aria-label="cambia lingua in inglese" class="lang-switch-link lang-switch-link-mobile">
+                <i class="fa-solid fa-globe"></i><span>EN</span>
+            </a>
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="hero-image">
@@ -116,20 +123,16 @@
                     <h2>Rivoluziona il tuo studio</h2>
                     <p>Trova compagni di studio, aumenta la tua produttività e vivi l'università senza stress</p>
                     <div class="waitlist-container">
-                        <form id="waitlist-form" class="waitlist-form" action="https://formsubmit.co/info@studybuddy.it"
-                            method="POST">
-                            <input type="email" id="email-input"
-                                placeholder="Inserisci la tua email" required
-                                name="waiting-list">
+                        <form id="waitlist-form" class="waitlist-form" action="https://formsubmit.co/info@studybuddy.it" method="POST">
+                            <input type="email" id="email-input" placeholder="Inserisci la tua email" required name="waiting-list">
                             <button aria-label="submit waiting-list" type="submit" class="btn btn-primary">Iscriviti e prova la nuova app in anteprima</button>
-                            <a href="https://test.studybuddy.it/" aria-label="vai alla webapp" target="_blank" class="action-link">Prova subito la
-                                WebApp</a>
+                            <a href="https://test.studybuddy.it/" aria-label="vai alla webapp" target="_blank" class="action-link">Prova subito la WebApp</a>
                         </form>
-                        <!-- <div id="waitlist-message" class="waitlist-message"></div> -->
+                        <div id="waitlist-message" class="waitlist-message"></div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <section id="social" class="social">
             <div class="social-icons">
@@ -148,12 +151,13 @@
 
         <section id="scheme" class="scheme">
             <div class="container">
-                <h2>Tutto. In. Uno.</h2>
-                <p>Quante volte hai pensato "se solo avessi un giorno in più"?</p>
-                <p>Con StudyBuddy cancelli la difficoltà a concentrarti, la fatica nella pianificazione e trovi i
-                    compagni di studio perfetti per te.</p>
-                <p>Tutto in un'unica piattaforma.</p>
+                    <h2>Tutto. In. Uno.</h2>
+                    <p>Quante volte hai pensato "se solo avessi un giorno in più"?</p>
+                    <p>Con StudyBuddy cancelli la difficoltà a concentrarti, la fatica nella pianificazione e trovi i
+                        compagni di studio perfetti per te.</p>
+                    <p>Tutto in un'unica piattaforma.</p>
                 <img src="/imgs/ecosystem.webp" alt="Study Scheme" />
+        
             </div>
         </section>
 
@@ -418,6 +422,10 @@
 
                     </div>
                 </div>
+                    <!-- Banner -->
+                    <div class="award-banner">
+                        <img src="/imgs/f6s_banner_feb25.webp" alt="banner f6s">
+                    </div>
             </div>
         </section>
 
