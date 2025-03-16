@@ -22,70 +22,70 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isDesktop) {
 
         // Animate Header Elements
-        gsap.from('header .logo', {
-            duration: 1,
-            y: -50,
-            opacity: 0,
-            ease: 'power2.out'
-        });
+        // gsap.from('header .logo', {
+        //     duration: 1,
+        //     y: -50,
+        //     opacity: 0,
+        //     ease: 'power2.out'
+        // });
 
-        gsap.from('header ul li a', {
-            duration: 1,
-            y: -20,
-            opacity: 0,
-            stagger: 0.2,
-            delay: 0.5,
-            ease: 'power2.out'
-        });
+        // gsap.from('header ul li a', {
+        //     duration: 1,
+        //     y: -20,
+        //     opacity: 0,
+        //     stagger: 0.2,
+        //     delay: 0.5,
+        //     ease: 'power2.out'
+        // });
 
-        gsap.from('header .btn-primary', {
-            duration: 1,
-            scale: 0.8,
-            opacity: 0,
-            ease: 'back.out(1.7)',
-            delay: 1
-        });
+        // gsap.from('header .btn-primary', {
+        //     duration: 1,
+        //     scale: 0.8,
+        //     opacity: 0,
+        //     ease: 'back.out(1.7)',
+        //     delay: 1
+        // });
 
-        gsap.from('.lang-switch-link', {
-            duration: 1,
-            scale: 0.8,
-            opacity: 0,
-            ease: 'back.out(1.7)',
-            delay: 1
-        });
+        // gsap.from('.lang-switch-link', {
+        //     duration: 1,
+        //     scale: 0.8,
+        //     opacity: 0,
+        //     ease: 'back.out(1.7)',
+        //     delay: 1
+        // });
 
-        // Animate Hero Section
-        gsap.from('.hero-content h1', {
-            duration: 1,
-            x: -100,
-            opacity: 0,
-            ease: 'power2.out'
-        });
+        // // Animate Hero Section
+        // gsap.from('.hero-content h1', {
+        //     duration: 1,
+        //     x: -100,
+        //     opacity: 0,
+        //     ease: 'power2.out'
+        // });
 
-        gsap.from('.hero-content p', {
-            duration: 1,
-            x: -100,
-            opacity: 0,
-            ease: 'power2.out',
-            delay: 0.5
-        });
+        // gsap.from('.hero-content p', {
+        //     duration: 1,
+        //     x: -100,
+        //     opacity: 0,
+        //     ease: 'power2.out',
+        //     delay: 0.5
+        // });
 
-        gsap.from('.cta-buttons .btn', {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            stagger: 0.2,
-            ease: 'power2.out',
-            delay: 0.5
-        });
+        // gsap.from('.cta-buttons .btn', {
+        //     duration: 1,
+        //     y: 50,
+        //     opacity: 0,
+        //     stagger: 0.2,
+        //     ease: 'power2.out',
+        //     delay: 0.5
+        // });
 
-        gsap.from('.hero-image img', {
-            duration: 1.5,
-            scale: 0.8,
-            opacity: 0,
-            ease: 'power2.out',
-            delay: 0
-        });
+        // gsap.from('.hero-image img', {
+        //     duration: 1.5,
+        //     scale: 0.8,
+        //     opacity: 0,
+        //     ease: 'power2.out',
+        //     delay: 0
+        // });
 
     }
 
@@ -93,101 +93,101 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Scroll-Based Section Animations
     // ================================
 
-    // Features Section Animation
-    gsap.utils.toArray('.features .feature-row').forEach((section) => {
-        gsap.from(section, {
-            scrollTrigger: {
-                trigger: section,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.out',
-            stagger: 0.2
-        });
-    });
+    // // Features Section Animation
+    // gsap.utils.toArray('.features .feature-row').forEach((section) => {
+    //     gsap.from(section, {
+    //         scrollTrigger: {
+    //             trigger: section,
+    //             start: 'top 80%',
+    //             toggleActions: 'play none none reverse',
+    //         },
+    //         y: 50,
+    //         opacity: 0,
+    //         duration: 1,
+    //         ease: 'power2.out',
+    //         stagger: 0.2
+    //     });
+    // });
 
-    // Pricing Section Animation
-    gsap.utils.toArray('.pricing .pricing-card').forEach((card) => {
-        gsap.from(card, {
-            scrollTrigger: {
-                trigger: card,
-                start: 'top 85%',
-                toggleActions: 'play none none reverse',
-            },
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.out',
-            stagger: 0.2
-        });
-    });
+    // // Pricing Section Animation
+    // gsap.utils.toArray('.pricing .pricing-card').forEach((card) => {
+    //     gsap.from(card, {
+    //         scrollTrigger: {
+    //             trigger: card,
+    //             start: 'top 85%',
+    //             toggleActions: 'play none none reverse',
+    //         },
+    //         y: 50,
+    //         opacity: 0,
+    //         duration: 1,
+    //         ease: 'power2.out',
+    //         stagger: 0.2
+    //     });
+    // });
 
-    // Testimonials Section Animation
-    gsap.from('.testimonials-header h2', {
-        scrollTrigger: {
-            trigger: '.testimonials',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-        },
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.out'
-    });
+    // // Testimonials Section Animation
+    // gsap.from('.testimonials-header h2', {
+    //     scrollTrigger: {
+    //         trigger: '.testimonials',
+    //         start: 'top 80%',
+    //         toggleActions: 'play none none reverse',
+    //     },
+    //     x: -100,
+    //     opacity: 0,
+    //     duration: 1,
+    //     ease: 'power2.out'
+    // });
 
-    gsap.from('.testimonial', {
-        scrollTrigger: {
-            trigger: '.testimonials',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power2.out'
-    });
+    // gsap.from('.testimonial', {
+    //     scrollTrigger: {
+    //         trigger: '.testimonials',
+    //         start: 'top 80%',
+    //         toggleActions: 'play none none reverse',
+    //     },
+    //     y: 50,
+    //     opacity: 0,
+    //     duration: 1,
+    //     stagger: 0.2,
+    //     ease: 'power2.out'
+    // });
 
-    // Contact Section Animation
-    gsap.from('.contact h2', {
-        scrollTrigger: {
-            trigger: '.contact',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-        },
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.out'
-    });
+    // // Contact Section Animation
+    // gsap.from('.contact h2', {
+    //     scrollTrigger: {
+    //         trigger: '.contact',
+    //         start: 'top 80%',
+    //         toggleActions: 'play none none reverse',
+    //     },
+    //     x: -100,
+    //     opacity: 0,
+    //     duration: 1,
+    //     ease: 'power2.out'
+    // });
 
-    gsap.from('.contact p', {
-        scrollTrigger: {
-            trigger: '.contact',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-        },
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        delay: 0.5,
-        ease: 'power2.out'
-    });
+    // gsap.from('.contact p', {
+    //     scrollTrigger: {
+    //         trigger: '.contact',
+    //         start: 'top 80%',
+    //         toggleActions: 'play none none reverse',
+    //     },
+    //     x: -100,
+    //     opacity: 0,
+    //     duration: 1,
+    //     delay: 0.5,
+    //     ease: 'power2.out'
+    // });
 
-    gsap.from('.contact form', {
-        scrollTrigger: {
-            trigger: '.contact',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.out'
-    });
+    // gsap.from('.contact form', {
+    //     scrollTrigger: {
+    //         trigger: '.contact',
+    //         start: 'top 80%',
+    //         toggleActions: 'play none none reverse',
+    //     },
+    //     y: 50,
+    //     opacity: 0,
+    //     duration: 1,
+    //     ease: 'power2.out'
+    // });
 
     // document.getElementById('waitlist-form').addEventListener('submit', function(e) {
     //     e.preventDefault();

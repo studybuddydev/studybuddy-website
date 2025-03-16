@@ -15,7 +15,9 @@
 
 
     <link rel="stylesheet" href="/styles.css">
-    <!-- <link rel="stylesheet" href="/styles/hero.css"> -->
+    <link rel="stylesheet" href="/styles/hero.css">
+    <link rel="stylesheet" href="/styles/scheme.css">
+    <!-- <link rel="stylesheet" href="/styles/testimonials.css"> -->
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
@@ -90,18 +92,20 @@
             </a>
             <div class="parallax-bg"></div>
             <div class="container">
-                <div class="hero-image">
-                    <img src="/imgs/phone3D.webp" alt="3D model of a phone">
-                </div>
                 <div class="hero-content">
                     <h2>Rivoluziona il tuo studio</h2>
                     <p>Trova compagni di studio, aumenta la tua produttività e vivi l'università senza stress</p>
                     <div class="cta-buttons">
                         <a href="/it/app.html" class="btn btn-primary">Scarica l'App!</a>
-                        <a href="https://app.studybuddy.it/" target="_blank" class="btn btn-secondary">Prova la webapp</a>
+                        <a href="https://test.studybuddy.it/" target="_blank" class="btn btn-secondary">Prova la webapp</a>
                     </div>
                 </div>
+                <div class="hero-image">
+                    <img src="/imgs/phone3D.webp" alt="3D model of a phone">
+                </div>
             </div>
+
+           
         </section>
         
 
@@ -131,32 +135,53 @@
             </div>
         </section> -->
 
-        <section id="social" class="social">
-            <div class="social-icons">
-                <a href="https://www.instagram.com/studybuddy.ita/" aria-label="vai a instagram" target="_blank" class="social-icon"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="https://t.me/stubud" target="_blank" aria-label="vai a telegram" class="social-icon"><i
-                        class="fa-brands fa-telegram"></i></a>
-                <a href="https://www.linkedin.com/company/studybuddio/about/" aria-label="vai a linkedin" target="_blank"
-                    class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/studybuddydev" target="_blank" aria-label="vai a github" class="social-icon"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" aria-label="vai a discord" class="social-icon"><i
-                        class="fa-brands fa-discord"></i></a>
-            </div>
-        </section>
+                <!-- Social media floating bar -->
+                <div class="social-floating">
+                    <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/stubud" target="_blank" class="social-icon" aria-label="telegram"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank" class="social-icon" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/studybuddydev" target="_blank" class="social-icon" aria-label="github"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon" aria-label="discord"><i class="fa-brands fa-discord"></i></a>
+                </div>
 
-        <section id="scheme" class="scheme">
-            <div class="container">
-                    <h2>Tutto. In. Uno.</h2>
-                    <p>Quante volte hai pensato "se solo avessi un giorno in più"?</p>
-                    <p>Con StudyBuddy cancelli la difficoltà a concentrarti, la fatica nella pianificazione e trovi i
-                        compagni di studio perfetti per te.</p>
-                    <p>Tutto in un'unica piattaforma.</p>
-                <img  loading="lazy" src="/imgs/ecosystem.webp" alt="Study Scheme" />
-        
-            </div>
-        </section>
+                <section id="scheme" class="scheme">
+                    <div class="container">
+                        <h2 class="slogan">Tutto. In. Uno.</h2>
+                        <p class="question">Quante volte hai pensato "se solo avessi un giorno in più"?</p>
+                        <p class="main-point">Con <strong>StudyBuddy</strong> cancelli la difficoltà a concentrarti, la fatica nella pianificazione e trovi i compagni di studio perfetti per te.</p>
+                        <p class="conclusion">Tutto in un'unica piattaforma.</p>
+                        
+                        <div class="scheme-image-container">
+                            <img src="/imgs/ecosystem.webp" alt="Ecosistema di Studio">
+                        </div>
+                        
+                        <div class="scheme-features">
+                            <div class="scheme-feature">
+                                <div class="scheme-feature-icon">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <h3>Miglioramento della Concentrazione</h3>
+                                <p>Le nostre tecniche scientificamente provate ti aiutano a mantenere una concentrazione profonda per periodi più lunghi, eliminando le distrazioni.</p>
+                            </div>
+                            
+                            <div class="scheme-feature">
+                                <div class="scheme-feature-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h3>Monitoraggio dei Progressi</h3>
+                                <p>Visualizza le tue abitudini di studio con grafici e analisi che ti aiutano a identificare modelli e ottimizzare la tua strategia di apprendimento.</p>
+                            </div>
+                            
+                            <div class="scheme-feature">
+                                <div class="scheme-feature-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <h3>Supporto della Community</h3>
+                                <p>Connettiti con studenti che condividono i tuoi interessi, scambia risorse e mantieni la motivazione con le nostre funzionalità di community.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
         <section id="features" class="features" itemscope itemtype="http://schema.org/WebPageElement">
             <div class="container">
@@ -357,17 +382,17 @@
                 <div class="testimonials-wrapper">
                     <div class="testimonial-slider">
                         <div class="testimonial" >
-                            <p itemprop="reviewBody">“Molto chiaro e veloce da utilizzare, senza pubblicità o quant’altro, perfetto per lo
+                            <p itemprop="reviewBody">“Molto chiaro e veloce da utilizzare, senza pubblicità o quant'altro, perfetto per lo
                                 studio!!”</p>
                             <div class="testimonial-author" >
-                                <img loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=piergiorgio&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=piergiorgio&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- <span itemprop="name">Piergiorgio</span>, Giurisprudenza</p>
                             </div>
                         </div>
                         <div class="testimonial">
                             <p>“Facile da usare, coinvolgente e user friendly”</p>
                             <div class="testimonial-author">
-                                <img  loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=elia&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=elia&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Elia, Ingegneria</p>
                             </div>
                         </div>
@@ -375,55 +400,58 @@
                             <p>“Adoro il fatto che posso inserire sullo sfondo i video che sono solita guardare mentre
                                 studio, sistemo appunti ecc."</p>
                             <div class="testimonial-author">
-                                <img  loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=aliciaaa03&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=aliciaaa03&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Alicia, Scienze Linguistiche</p>
                             </div>
                         </div>
                         <div class="testimonial">
-                            <p>“Amo l’estetica, lo uso sempre per studiare, non vedo l’ora escano le nuove funzionalità”
+                            <p>“Amo l'estetica, lo uso sempre per studiare, non vedo l'ora escano le nuove funzionalità”
                             </p>
                             <div class="testimonial-author">
-                                <img  loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=luisa&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=luisa&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Luisa, Psicologia</p>
                             </div>
                         </div>
                         <div class="testimonial">
                             <p>“Ben fatto, super utile ed efficiente. Ottimo lavoro!”</p>
                             <div class="testimonial-author">
-                                <img  loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=mirko&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=mirko&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Mirko, Medicina e Chirurgia</p>
                             </div>
                         </div>
                         <div class="testimonial">
                             <p>"E' davvero il bello il fatto che ti permette di creare il tuo spazio di studio
-                                personale”</p>
+                                personale"</p>
                             <div class="testimonial-author">
-                                <img  loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=giulia&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=giulia&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Giulia, Economia</p>
                             </div>
                         </div>
                         <div class="testimonial">
                             <p>“Prodotto versatile, perfetto non solo per lo studio ma per tracciare il tempo speso per attività lavorative e personali”</p>
                             <div class="testimonial-author">
-                                <img  loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=dilgo529&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=dilgo529&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Diletta, informatica, PhD student </p>
                             </div>
                         </div>
                         <div class="testimonial">
                             <p>“Mi ha aiutato tanto a rimanere concentrato e ad aumentare la mia produttività. Il sistema a punteggio crea dipendenza!”</p>
                             <div class="testimonial-author">
-                                <img loading="lazy" class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=alezuc&backgroundColor=FF8C33" alt="Propic" />
+                                <img class="propic" src="https://api.dicebear.com/9.x/adventurer-neutral/png?seed=alezuc&backgroundColor=FF8C33" alt="Propic" />
                                 <p>- Alessandro, Fisica, PhD student</p>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                    <!-- Banner -->
-                    <div class="award-banner">
-                        <a href="https://www.f6s.com/companies/education/italy/co" target="_blank" rel="noopener noreferrer" aria-label="View the f6s ranking">
-                        <img  loading="lazy" src="/imgs/f6s_banner_feb25.webp" alt="banner f6s">
-                    </div>
+                <!-- Slider indicators (dots) - will be populated by JS -->
+                <div class="slider-indicators"></div>
+                <!-- Banner -->
+                <div class="award-banner">
+                    <a href="https://www.f6s.com/companies/education/italy/co" target="_blank" rel="noopener noreferrer" aria-label="View the f6s ranking">
+                        <img src="/imgs/f6s_banner_feb25.webp" alt="banner f6s">
+                    </a>
+                </div>
             </div>
         </section>
 

@@ -215,60 +215,7 @@
         box-shadow: 0 0 1rem var(--color-secondary);
     }
 
-    /* Hero Section */
-    .hero {
-        color: var(--color-secondary);
-        background-color: var(--color-background);
-        position: relative;
-        /* height: auto; */
-        padding-bottom: 0;
-        text-align: center;
-        width: 100%;
-        /* Occupies all the space horizontally */
-        min-height: 70vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 
-    .hero .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin: 0 auto;
-        gap: 0;
-    }
-
-    .hero-content {
-        text-align: center;
-        padding: 0 2rem;
-    }
-
-    .hero-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-items: end;
-    }
-
-    .hero-image img {
-        max-width: 80%;
-        height: auto;
-        border-radius: 1.5rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
-        color: var(--color-text);
-    }
 
     /* Waitlist Section */
     .waitlist-container {
@@ -386,39 +333,7 @@
         box-shadow: 0 0 0.5rem var(--color-secondary);
     }
 
-    /* Scheme Section */
-    .scheme {
-        background-color: var(--color-background);
-        padding: 2rem 2rem;
-        text-align: center;
-    }
-
-    .scheme .container {
-        max-width: 120rem;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .scheme h2 {
-        color: var(--color-primary);
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .scheme p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .scheme img {
-        max-height: 40vh;
-        width: auto;
-        max-width: 100%;
-        border-radius: 1.5rem;
-    }
+    
 
     /* Features Section */
     .features {
@@ -1304,73 +1219,7 @@
 
 
         /* Hero section */
-        .hero {
-            padding-bottom: 0;
-            min-height: 71vh;
-        }
-
-        .hero .container {
-            flex-direction: row;
-            align-items: center;
-            /* Align items at the top */
-            justify-content: space-between;
-            /* Space between text and image */
-            gap: 0;
-            margin: 0 auto 0 auto;
-            max-width: 1120px;
-        }
-
-        .hero-content {
-            flex: 1;
-            text-align: left;
-            /* Align text to the left on desktop */
-            order: 1;
-            /*margin-left: 6rem;*/
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            order: 2;
-        }
-
-        .hero-image img {
-            max-height: 60vh;
-            width: auto;
-        }
-
-        h2,
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        .cta-buttons .btn {
-            padding: 1rem 3rem;
-            min-height: unset;
-        }
-
-        .cta-buttons .btn-primary {
-            display: inline-block;
-        }
-
-        .cta-buttons .btn-secondary {
-            display: inline-block;
-        }
+        
 
         /* Scheme Section */
         .scheme {

@@ -1,0 +1,678 @@
+/* Hero Section - Simplified */
+.hero {
+    margin-top: -90px;
+    padding-top: 180px;
+    padding-bottom: 10rem;
+    position: relative;
+    height: 100vh; /* Take at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+}
+
+/* Social media floating bar */
+.social-floating {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.social-floating .social-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-floating .social-icon:hover {
+    transform: translateY(-5px);
+    color: var(--color-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .social-floating {
+        left: 1rem;
+    }
+    
+    .social-floating .social-icon {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .hero .container {
+        padding-left: 5rem;
+    }
+    
+    .social-floating {
+        left: 0.5rem;
+    }
+    
+    .social-floating .social-icon {
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Struttura generale */
+    .hero {
+        text-align: center;
+        padding-top: 220px;
+        padding-bottom: 4rem;
+        min-height: auto;
+        overflow: hidden;
+    }
+    
+    .hero .container {
+        padding: 0 1.5rem;
+        gap: 2rem;
+        position: relative;
+        z-index: 5;
+    }
+    
+    /* Immagine */
+    .hero-image {
+        margin-top: 2rem;
+        order: -1;
+        position: relative;
+    }
+    
+    .hero-image img {
+        max-width: 85%;
+        /* Removed complex animation */
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    }
+    
+    /* Contenuto testuale */
+    .hero-content {
+        text-align: center;
+        padding: 0;
+        max-width: 100%;
+        margin-top: -0.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 1.8rem;
+        padding: 0 0.5rem;
+        opacity: 0.95;
+    }
+    
+    /* CTA buttons */
+    .cta-buttons {
+        justify-content: center;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+    }
+    
+    .cta-buttons .btn {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        min-width: 140px;
+    }
+    
+    /* Social icons - simplified */
+    .social-floating {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        transform: none;
+        margin: 2rem 0 1rem;
+        gap: 1.2rem;
+        order: 1;
+    }
+    
+    .social-floating .social-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    .social-floating .social-icon:hover {
+        transform: translateY(-3px);
+        color: var(--color-secondary);
+    }
+    
+    .social-floating .social-icon:active {
+        transform: scale(0.98);
+    }
+    
+    /* Language switcher */
+    .lang-switch-link span,
+    .lang-switch-link-mobile span {
+        display: none;
+    }
+    
+    .lang-switch-link {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    .lang-switch-link-mobile {
+        padding: 0.5rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(5px);
+        border-radius: 50%;
+        width: 2.8rem;
+        height: 2.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Simplified background effects */
+    .hero::before {
+        background: radial-gradient(circle at 50% 0%, rgba(0, 161, 161, 0.12) 0%, transparent 60%);
+        opacity: 0.7;
+    }
+    
+    /* Removed most animations and complex particles */
+    
+    /* Simplified float animation */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Effetto testo con gradiente e ombra */
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    position: relative;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Effetto decorativo sotto il titolo */
+.hero h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    border-radius: 2px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Immagine con effetti 3D avanzati */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 90%;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Removing the ::before shadow effect */
+.hero-image::before {
+    display: none;
+}
+
+@keyframes shadow-move {
+    0% {
+        transform: perspective(1000px) rotateX(60deg) scale(1, 0.2) translateY(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: perspective(1000px) rotateX(60deg) scale(1, 0.2) translateY(15px);
+        opacity: 0.2;
+    }
+    100% {
+        transform: perspective(1000px) rotateX(60deg) scale(1, 0.2) translateY(0);
+        opacity: 0.3;
+    }
+}
+
+.hero-image img:hover {
+    opacity: 1;
+    transform: translateY(-10px);
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.12));
+    animation-play-state: paused;
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Media queries for tablet devices */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .hero {
+        padding-top: 150px;
+        padding-bottom: 8rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        position: relative;
+        z-index: 5;
+    }
+    
+    .hero-content {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .hero h2 {
+        font-size: 3.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+    
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+    }
+    
+    /* Simplified background for tablet */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            linear-gradient(135deg, rgba(0, 161, 161, 0.08) 0%, transparent 70%),
+            linear-gradient(225deg, rgba(255, 133, 0, 0.05) 0%, transparent 70%);
+        z-index: 0;
+    }
+    
+    .hero::after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 60%;
+        right: -5%;
+        top: 10%;
+        animation: morphBlob 18s ease-in-out infinite alternate;
+        opacity: 0.5;
+    }
+    
+    .hero-decoration {
+        background-image: 
+            radial-gradient(circle at 80% 20%, rgba(0, 161, 161, 0.09) 0%, transparent 40%),
+            radial-gradient(circle at 20% 80%, rgba(255, 133, 0, 0.07) 0%, transparent 40%);
+        animation: pulse 16s ease-in-out infinite alternate;
+    }
+    
+    /* Simplified particles */
+    .particle {
+        opacity: 0.12;
+    }
+    
+    .particle:nth-child(1) {
+        width: 110px;
+        height: 110px;
+        top: 8%;
+        left: 8%;
+        filter: blur(35px);
+    }
+    
+    .particle:nth-child(2) {
+        width: 130px;
+        height: 130px;
+        bottom: 12%;
+        right: 12%;
+        filter: blur(45px);
+    }
+    
+    .particle:nth-child(3) {
+        width: 70px;
+        height: 70px;
+        top: 50%;
+        left: 15%;
+        filter: blur(25px);
+    }
+    
+    /* Improved social floating */
+    .social-floating {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        transform: none;
+        margin: 1rem 0;
+        gap: 1.2rem;
+        order: 1;
+    }
+    
+    .social-floating .social-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.3rem;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Override button styles for tablet */
+    .cta-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        margin: 2.5rem 0 1.5rem;
+        position: relative;
+        z-index: 100;
+        width: 100%;
+    }
+    
+    .cta-buttons .btn {
+        padding: 0.8rem 1.8rem;
+        border-radius: 3rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        min-width: 160px;
+        min-height: 3rem;
+        opacity: 1;
+        visibility: visible;
+        display: inline-flex !important;
+    }
+    
+    .cta-buttons .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.1),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+            0 0 20px rgba(0, 161, 161, 0.15);
+    }
+    
+    .cta-buttons .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--color-text);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.05),
+            0 0 0 1px rgba(0, 0, 0, 0.05) inset;
+    }
+    
+    /* Hero image adjustments */
+    .hero-image {
+        margin-top: 1rem;
+        position: relative;
+        z-index: 5;
+    }
+    
+    .hero-image img {
+        max-width: 85%;
+        animation: none;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+    }
+}
+
+/* Media queries for desktop */
+@media (min-width: 1024px) {
+    .hero {
+        
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 15rem;
+    }
+    
+    .hero .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        padding-left: 4rem; 
+    }
+    
+    .hero-content {
+        text-align: left;
+        flex: 1;
+        padding-left: 1rem;
+    }
+    
+    .hero h2::after {
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    .hero-image {
+        flex: 1;
+    }
+    
+    .hero h2 {
+        font-size: 3.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.4rem;
+    }
+    
+    /* Override button styles for desktop */
+    .cta-buttons {
+        justify-content: flex-start;
+        z-index: 100;
+        margin-top: 2.5rem;
+    }
+    
+    .cta-buttons .btn {
+        min-width: 200px;
+        min-height: 3.4rem;
+        opacity: 1;
+        visibility: visible;
+        display: inline-flex !important;
+        font-size: 1.2rem;
+    }
+    
+    .cta-buttons .btn-primary {
+        padding: 1rem 2.4rem;
+        font-size: 1.25rem;
+    }
+}
+
+/* Call-to-action buttons - OTTIMIZZATI PER GSAP */
+.cta-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 3rem !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    visibility: visible !important;
+}
+
+.cta-buttons .btn {
+    padding: 1.2rem 2.5rem !important;
+    border-radius: 3rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    min-height: 3.5rem !important;
+    min-width: 200px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    letter-spacing: 0.01em !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    position: relative !important;
+    overflow: visible !important;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+    will-change: transform, opacity !important;
+}
+
+.cta-buttons .btn-primary {
+    padding: 1.2rem 2.8rem !important;
+    font-size: 1.3rem !important;
+    background: var(--color-primary) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2) !important;
+    min-height: 3.5rem !important;
+}
+
+.cta-buttons .btn-primary:hover {
+    background: var(--color-secondary) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25) !important;
+    transform: translateY(-3px) !important;
+}
+
+.cta-buttons .btn-primary:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cta-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: var(--color-text) !important;
+    border: 2px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 1) !important;
+    border: 2px solid rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-3px) !important;
+}
+
+.cta-buttons .btn-secondary:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Media queries for desktop */
+@media (min-width: 1024px) {
+    .hero {
+        min-height: 85vh;
+        text-align: left;
+        padding-top: 220px;
+        padding-bottom: 15rem;
+    }
+    
+    .hero .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        padding-left: 4rem;
+    }
+    
+    .hero-content {
+        text-align: left;
+        flex: 1;
+        padding-left: 1rem;
+    }
+    
+    .hero h2::after {
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    .hero-image {
+        flex: 1;
+    }
+    
+    .hero h2 {
+        font-size: 3.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.4rem;
+    }
+    
+    /* Allineamento pulsanti a sinistra su desktop */
+    .cta-buttons {
+        justify-content: flex-start !important;
+    }
+}
+
+/* Fix for any potential issues with hero background elements */
+.hero::before,
+.hero::after,
+.hero-decoration,
+.particle {
+    pointer-events: none !important;
+}
