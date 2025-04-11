@@ -50,8 +50,11 @@
           const urlParams = new URLSearchParams(window.location.search);
           return urlParams.get(param);
         }
-      
+
         const source = getQueryParam('src');
+
+        console.log('Source:', source);  
+        
         if (source) {
           gtag('event', 'qr_scan', {
             source: source
