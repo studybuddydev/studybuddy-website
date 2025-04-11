@@ -40,9 +40,25 @@
         gtag('config', 'G-FR9JDD39YJ', { 'page_language': 'it' });
         gtag('consent', 'default', {
             'ad_storage': 'denied',
-            'analytics_storage': 'denied'
+            'analytics_storage': 'granted'
         });
     </script>
+
+    <!-- QR tracking to track which flyer they used-->
+    <script>
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
+      
+        const source = getQueryParam('src');
+        if (source) {
+          gtag('event', 'qr_scan', {
+            source: source
+          });
+        }
+      </script>
+      
     <!-- Your Custom Scripts -->
 
     <!-- Hotjar  -->
