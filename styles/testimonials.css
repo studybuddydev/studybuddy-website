@@ -209,26 +209,32 @@
 /* Award Banner - Simplified */
 .award-banner {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 3rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
+    gap: 1rem; /* gestisce lo spazio tra i banner */
     transition: transform 0.3s ease;
 }
 
 .award-banner a {
-    display: block;
-    max-width: 450px;
-    width: 80%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px; /* Altezza fissa, modificabile a piacere */
+    background-color: white; /* Se vuoi uno sfondo uniforme */
     border-radius: 16px;
-    overflow: hidden;   
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .award-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
 }
 
 .award-banner:hover {

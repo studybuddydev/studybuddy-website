@@ -215,11 +215,21 @@
 }
 
 /* Responsive styles */
-@media (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1023px) {
+    .scheme-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
     .scheme-features {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+}
+
+
+@media (max-width: 1200px) {
+
     .scheme h2.slogan {
         font-size: 3.6rem;
     }
