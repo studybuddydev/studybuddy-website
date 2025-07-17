@@ -212,7 +212,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1.5rem;
     gap: 1rem; /* gestisce lo spazio tra i banner */
     transition: transform 0.3s ease;
 }
@@ -221,7 +221,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 50%;
     height: 100px; /* Altezza fissa, modificabile a piacere */
     background-color: white; /* Se vuoi uno sfondo uniforme */
     border-radius: 16px;

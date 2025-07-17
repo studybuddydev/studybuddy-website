@@ -631,8 +631,8 @@
     .hero {
         min-height: 85vh;
         text-align: left;
-        padding-top: 220px;
-        padding-bottom: 15rem;
+        padding-top: 4rem;
+        padding-bottom: 16rem;
     }
     
     .hero .container {
