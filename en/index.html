@@ -36,17 +36,19 @@
     <link rel="alternate" hreflang="it" href="https://studybuddy.it/it/">
     
 
-    <!-- Google tag (gtag.js) we need analytics to see how many users arrive on this site :) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9JDD39YJ"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FR9JDD39YJ', { 'page_language': 'en' });
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied'
-        });
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    
+    posthog.init('phc_jpPoquCTZrIJTiqZcWTtm1VJAcFkndIOnlYdmSEipTR', {
+        api_host: 'https://a.studybuddy.it',
+        persistence: 'memory', // No cookies or localStorage
+        disable_session_recording: true,
+        disable_cookie: true,
+        respect_dnt: true,
+        property_blacklist: ['$ip'], // Don't collect IP addresses for extra privacy
+        cross_subdomain_cookie: false,
+        secure_cookie: false
+    });
     </script>
 
 
@@ -60,15 +62,15 @@
                 <h1>StudyBuddy</h1>
             </div>
             <ul class="header">
-                <li><a href="#features" aria-label="features" >Features</a></li>
-                <li><a href="#testimonials" aria-label="testimonials" >Testimonials</a></li>
+                <li><a href="#features" aria-label="features" onclick="posthog.capture('navigation_link_clicked', { link: 'features', location: 'header' })">Features</a></li>
+                <li><a href="#testimonials" aria-label="testimonials" onclick="posthog.capture('navigation_link_clicked', { link: 'testimonials', location: 'header' })">Testimonials</a></li>
                 <!-- <li><a href="#pricing">Pricing</a></li> -->
-                <li><a href="#contact" aria-label="contact">Contact</a></li>
+                <li><a href="#contact" aria-label="contact" onclick="posthog.capture('navigation_link_clicked', { link: 'contact', location: 'header' })">Contact</a></li>
             </ul>
             <!-- <div class="mobile-menu-toggle">&#9776;</div> -->
             <div class="header-right">
-                <a href="/it/" class="lang-switch-link" aria-label="go to italian page" ><i class="fa-solid fa-globe"></i><span>IT</span></a>
-                <a href="/en/app.html" class="btn btn-primary">Get the app!</a>
+                <a href="/it/" class="lang-switch-link" aria-label="go to italian page" onclick="posthog.capture('language_switch_clicked', { from: 'en', to: 'it', location: 'header' })"><i class="fa-solid fa-globe"></i><span>IT</span></a>
+                <a href="/en/app.html" class="btn btn-primary" onclick="posthog.capture('cta_button_clicked', { button: 'get_app', location: 'header' })">Get the app!</a>
             </div>
         </nav>
     </header>
@@ -76,15 +78,15 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <a href="/it/" class="lang-switch-link lang-switch-link-mobile" aria-label="go to italian page" ><i class="fa-solid fa-globe"></i><span>IT</span></a>
+            <a href="/it/" class="lang-switch-link lang-switch-link-mobile" aria-label="go to italian page" onclick="posthog.capture('language_switch_clicked', { from: 'en', to: 'it' })"><i class="fa-solid fa-globe"></i><span>IT</span></a>
             <div class="parallax-bg"></div>
             <div class="container">
                 <div class="hero-content">
                     <h2>Study like never before</h2>
                     <p>Track your time, boost your productivity and ace your university exams with no stress</p>
                     <div class="cta-buttons">
-                        <a href="/en/app.html" class="btn btn-primary">Download the app!</a>
-                        <a href="https://app.studybuddy.it/" target="_blank" class="btn btn-secondary">Try the webapp</a>                    </div>
+                        <a href="/en/app.html" class="btn btn-primary" onclick="posthog.capture('cta_button_clicked', { button: 'download_app', location: 'hero' })">Download the app!</a>
+                        <a href="https://app.studybuddy.it/" target="_blank" class="btn btn-secondary" onclick="posthog.capture('cta_button_clicked', { button: 'try_webapp', location: 'hero' })">Try the webapp</a>                    </div>
                 </div>
                 <div class="hero-image">
                     <img rel="preload" src="/imgs/phone3D.webp" alt="Screenshot with time tracker and study statistics">
@@ -163,7 +165,7 @@
                         <h3>Your own Space</h3>
                         <p>Set up your focus space according to your tastes. Choose background, colors and sounds to
                             bring you into the flow state in a matter of seconds.</p>
-                        <a href="/en/app.html" target="_blank" class="btn btn-primary" aria-label="go to webapp">Start Now</a>
+                        <a href="/en/app.html" target="_blank" class="btn btn-primary" aria-label="go to webapp" onclick="posthog.capture('cta_button_clicked', { button: 'start_now', location: 'features' })">Start Now</a>
                     </div>
                     <div class="feature-image">
                         <img loading="lazy" src="/imgs/apple3D_space.png" alt="Study Buddies">
@@ -178,11 +180,11 @@
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <div class="testimonials-header">
-                    <button class="arrow arrow-left" onclick="scrollLeft()" aria-label="scroll left">
+                    <button class="arrow arrow-left" onclick="scrollLeft(); posthog.capture('testimonial_navigation', { direction: 'left' })" aria-label="scroll left">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     <h2>What People Say</h2>
-                    <button class="arrow arrow-right" onclick="scrollRight()" aria-label="scroll right">
+                    <button class="arrow arrow-right" onclick="scrollRight(); posthog.capture('testimonial_navigation', { direction: 'right' })" aria-label="scroll right">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
@@ -380,11 +382,6 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="hidden">
-        <p>We use cookies to ensure you get the best experience on our website. <a href="/en/policy.html" style="color: #1abc9c; text-decoration: underline;">Learn more</a></p>
-        <button id="accept-cookies">Accept</button>
-    </div>
-
     <!-- GSAP and Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
@@ -398,6 +395,55 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Your Custom Scripts -->
     <script src="/scripts.js"></script>
+    
+    <!-- PostHog page view tracking -->
+    <script>
+        // Check for QR code source parameter
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
+
+        const source = getQueryParam('src');
+        
+        // Track page view with additional context
+        const pageViewData = {
+            page: 'homepage',
+            language: 'en',
+            url: window.location.href
+        };
+        
+        // Add QR source if present
+        if (source) {
+            pageViewData.qr_source = source;
+            pageViewData.flyer_type = source === 'buddies' ? 'buddies_flyer' : source === 'timer' ? 'timer_flyer' : 'unknown_flyer';
+            
+            // Track specific QR scan event
+            posthog.capture('qr_scan', {
+                source: source,
+                page: 'homepage',
+                flyer_type: pageViewData.flyer_type
+            });
+        }
+        
+        posthog.capture('page_viewed', pageViewData);
+        
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                // Track significant scroll milestones
+                if ([25, 50, 75, 90].includes(scrollPercent)) {
+                    posthog.capture('scroll_depth', { 
+                        depth: scrollPercent,
+                        qr_source: source || null
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

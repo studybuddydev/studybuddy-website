@@ -79,7 +79,7 @@
             </a>
             <ul class="header"></ul>
             <div class="header-right">
-                <a href="/it/" class="lang-switch-link"><i class="fa-solid fa-globe"></i><span>IT</span></a>
+                <a href="/it/" class="lang-switch-link" onclick="posthog.capture('language_switch_clicked', { from: 'en', to: 'it' })"><i class="fa-solid fa-globe"></i><span>IT</span></a>
             </div>
         </nav>
     </header>
@@ -98,18 +98,18 @@
                     <h3>Download the app <span role="img" aria-label="hand pointing down">👇</span></h3>
                     <p class="qr-instruction">Scan the QR code to download the app.</p>
                     <div class="store-buttons">
-                        <a href="https://play.google.com/store/apps/details?id=eu.studybuddyit.studybuddy&hl=it" class="store-btn play-store">
+                        <a href="https://play.google.com/store/apps/details?id=eu.studybuddyit.studybuddy&hl=it" class="store-btn play-store" onclick="posthog.capture('store_button_clicked', { store: 'google_play', location: 'main_buttons' })">
                             <img alt="Get it on Google Play" src="/imgs/playstore.webp" />
                         </a>
-                        <a href="https://apps.apple.com/us/app/studybuddy-universit%C3%A0/id6670455793" class="store-btn app-store">
+                        <a href="https://apps.apple.com/us/app/studybuddy-universit%C3%A0/id6670455793" class="store-btn app-store" onclick="posthog.capture('store_button_clicked', { store: 'app_store', location: 'main_buttons' })">
                             <img alt="Download on the App Store" src="/imgs/appstore.webp" />
                         </a>
                     </div>
                     <div class="store-qr-container">
-                        <a href="https://play.google.com/store/apps/details?id=eu.studybuddyit.studybuddy&hl=it" class="store-qr-link play-store">
+                        <a href="https://play.google.com/store/apps/details?id=eu.studybuddyit.studybuddy&hl=it" class="store-qr-link play-store" onclick="posthog.capture('store_button_clicked', { store: 'google_play', location: 'qr_code' })">
                             <img alt="Get it on Google Play" src="/imgs/playstoreQR.webp" />
                         </a>
-                        <a href="https://apps.apple.com/us/app/studybuddy-universit%C3%A0/id6670455793" class="store-qr-link app-store">
+                        <a href="https://apps.apple.com/us/app/studybuddy-universit%C3%A0/id6670455793" class="store-qr-link app-store" onclick="posthog.capture('store_button_clicked', { store: 'app_store', location: 'qr_code' })">
                             <img alt="Download on the App Store" src="/imgs/appstoreQR.webp" />
                         </a>
                     </div>
@@ -126,11 +126,11 @@
 
         <section id="social" class="social">
             <div class="social-icons">
-                <a href="https://www.instagram.com/studybuddy.ita/" aria-label="go to instagram" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://t.me/stubud" target="_blank" aria-label="go to telegram" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://www.linkedin.com/company/studybuddio/about/" aria-label="go to linkedin" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/studybuddydev" target="_blank" aria-label="go to github" class="social-icon"><i class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" aria-label="go to discord" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.instagram.com/studybuddy.ita/" aria-label="go to instagram" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'instagram', location: 'hero_section' })"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://t.me/stubud" target="_blank" aria-label="go to telegram" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'telegram', location: 'hero_section' })"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.linkedin.com/company/studybuddio/about/" aria-label="go to linkedin" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'linkedin', location: 'hero_section' })"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/studybuddydev" target="_blank" aria-label="go to github" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'github', location: 'hero_section' })"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" aria-label="go to discord" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'discord', location: 'hero_section' })"><i class="fa-brands fa-discord"></i></a>
             </div>
         </section>
 
@@ -147,23 +147,23 @@
                     <div class="footer-section centered-section">
                         <h3></h3>
                         <ul>
-                            <li><a href="https://studybuddy.it/en/#features" aria-label="features" > Features</a></li>
+                            <li><a href="https://studybuddy.it/en/#features" aria-label="features" onclick="posthog.capture('navigation_link_clicked', { link: 'features', location: 'footer' })">Features</a></li>
                             <!-- <li><a href="https://studybuddy.it/en/#pricing">Pricing</a></li> -->
-                            <li><a href="https://studybuddy.it/en/#contact" aria-label="contact" > Contact us</a></li>
+                            <li><a href="https://studybuddy.it/en/#contact" aria-label="contact" onclick="posthog.capture('navigation_link_clicked', { link: 'contact', location: 'footer' })">Contact us</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
                         <p class="contact-text">Follow us:</p>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon"><i
+                            <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'instagram', location: 'footer' })"><i
                                     class="fa-brands fa-instagram"></i></a>
-                            <a href="https://t.me/stubud" target="_blank" class="social-icon"><i
+                            <a href="https://t.me/stubud" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'telegram', location: 'footer' })"><i
                                     class="fa-brands fa-telegram"></i></a>
                             <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"
-                                class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/studybuddydev" target="_blank" class="social-icon"><i
+                                class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'linkedin', location: 'footer' })"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/studybuddydev" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'github', location: 'footer' })"><i
                                     class="fa-brands fa-github"></i></a>
-                            <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon"><i
+                            <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'discord', location: 'footer' })"><i
                                     class="fa-brands fa-discord"></i></a>
                         </div>
                     </div>

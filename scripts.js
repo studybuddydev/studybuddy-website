@@ -421,29 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 
 
-    // COOKIES
-    // Check if cookies were already accepted
-    const cookieAccepted = localStorage.getItem('cookiesAccepted');
-    if (!cookieAccepted) {
-        document.getElementById('cookie-banner').classList.remove('hidden');
-    } else {
-        gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-        });
-    }
-
-    // Handle the Accept button click
-    document.getElementById('accept-cookies').addEventListener('click', function () {
-        localStorage.setItem('cookiesAccepted', 'true');
-        document.getElementById('cookie-banner').classList.add('hidden');
-        gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted'
-        });
-    });
-
-
 });
 
 

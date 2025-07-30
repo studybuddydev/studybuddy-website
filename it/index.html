@@ -39,19 +39,7 @@
     <link rel="alternate" hreflang="it" href="https://studybuddy.it/it/">
     <link rel="alternate" hreflang="en" href="https://studybuddy.it/en/">
 
-    <!-- Google tag (gtag.js) we need analytics to see how many users arrive on this site :) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FR9JDD39YJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FR9JDD39YJ', { 'page_language': 'it' });
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied'
-        });
-    </script>
-    <!-- Your Custom Scripts -->
+
 
 
 
@@ -59,6 +47,22 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="preload" as="image" href="/imgs/phone3D.webp">
+
+    <script>
+    // PostHog with memory-only persistence (no cookies, no consent needed)
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    
+    posthog.init('phc_jpPoquCTZrIJTiqZcWTtm1VJAcFkndIOnlYdmSEipTR', {
+        api_host: 'https://a.studybuddy.it',
+        persistence: 'memory', // No cookies or localStorage
+        disable_session_recording: true,
+        disable_cookie: true,
+        respect_dnt: true,
+        property_blacklist: ['$ip'], // Don't collect IP addresses for extra privacy
+        cross_subdomain_cookie: false,
+        secure_cookie: false
+    });
+    </script>
 </head>
 
 <body>
@@ -69,16 +73,16 @@
                 <span itemprop="name"><h1>StudyBuddy</h1></span>
             </div>
             <ul class="header">
-                <li><a href="#features">Funzionalità</a></li>
-                <li><a href="#app-showcase">App</a></li>
-                <li><a href="#testimonials">Recensioni</a></li>
+                <li><a href="#features" onclick="posthog.capture('navigation_link_clicked', { link: 'features', location: 'header' })">Funzionalità</a></li>
+                <li><a href="#app-showcase" onclick="posthog.capture('navigation_link_clicked', { link: 'app_showcase', location: 'header' })">App</a></li>
+                <li><a href="#testimonials" onclick="posthog.capture('navigation_link_clicked', { link: 'testimonials', location: 'header' })">Recensioni</a></li>
                 <!-- <li><a href="#pricing">Prezzi</a></li> -->
-                <li><a href="#contact">Contatti</a></li>
+                <li><a href="#contact" onclick="posthog.capture('navigation_link_clicked', { link: 'contact', location: 'header' })">Contatti</a></li>
             </ul>
             <!-- <div class="mobile-menu-toggle">&#9776;</div> -->
             <div class="header-right">
-                <a href="/en/" class="lang-switch-link"><i class="fa-solid fa-globe"></i><span>EN</span></a>
-                <a href="/it/app.html" class="btn btn-primary">Scarica l'App!</a>
+                <a href="/en/" class="lang-switch-link" onclick="posthog.capture('language_switch_clicked', { from: 'it', to: 'en' })"><i class="fa-solid fa-globe"></i><span>EN</span></a>
+                <a href="/it/app.html" class="btn btn-primary" onclick="posthog.capture('cta_button_clicked', { button: 'download_app', location: 'header' })">Scarica l'App!</a>
             </div>
         </nav>
     </header>
@@ -97,8 +101,8 @@
                     <h2>Rivoluziona il tuo studio</h2>
                     <p>Trova compagni di studio, aumenta la tua produttività e vivi l'università senza stress</p>
                     <div class="cta-buttons">
-                        <a href="/it/app.html" class="btn btn-primary">Scarica l'App!</a>
-                        <a href="https://app.studybuddy.it/" target="_blank" class="btn btn-secondary">Prova la webapp</a>
+                        <a href="/it/app.html" class="btn btn-primary" onclick="posthog.capture('cta_button_clicked', { button: 'download_app', location: 'hero' })">Scarica l'App!</a>
+                        <a href="https://app.studybuddy.it/" target="_blank" class="btn btn-secondary" onclick="posthog.capture('cta_button_clicked', { button: 'try_webapp', location: 'hero' })">Prova la webapp</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -127,8 +131,8 @@
                     <div class="waitlist-container">
                         <form id="waitlist-form" class="waitlist-form" action="https://formsubmit.co/info@studybuddy.it" method="POST">
                             <input type="email" id="email-input" placeholder="Inserisci la tua email" required name="waiting-list">
-                            <button aria-label="submit waiting-list" type="submit" class="btn btn-primary">Iscriviti e prova la nuova app in anteprima</button>
-                            <a href="https://test.studybuddy.it/" aria-label="vai alla webapp" target="_blank" class="action-link">Prova subito la WebApp</a>
+                            <button aria-label="submit waiting-list" type="submit" class="btn btn-primary" onclick="posthog.capture('form_submitted', { form: 'waitlist', location: 'hero' })">Iscriviti e prova la nuova app in anteprima</button>
+                            <a href="https://test.studybuddy.it/" aria-label="vai alla webapp" target="_blank" class="action-link" onclick="posthog.capture('cta_button_clicked', { button: 'try_webapp_immediately', location: 'hero' })">Prova subito la WebApp</a>
                         </form>
                         <div id="waitlist-message" class="waitlist-message"></div>
                     </div>
@@ -138,11 +142,11 @@
 
                 <!-- Social media floating bar -->
                 <div class="social-floating">
-                    <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://t.me/stubud" target="_blank" class="social-icon" aria-label="telegram"><i class="fa-brands fa-telegram"></i></a>
-                    <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank" class="social-icon" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/studybuddydev" target="_blank" class="social-icon" aria-label="github"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon" aria-label="discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon" aria-label="instagram" onclick="posthog.capture('social_link_clicked', { platform: 'instagram', location: 'floating_bar' })"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/stubud" target="_blank" class="social-icon" aria-label="telegram" onclick="posthog.capture('social_link_clicked', { platform: 'telegram', location: 'floating_bar' })"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank" class="social-icon" aria-label="linkedin" onclick="posthog.capture('social_link_clicked', { platform: 'linkedin', location: 'floating_bar' })"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/studybuddydev" target="_blank" class="social-icon" aria-label="github" onclick="posthog.capture('social_link_clicked', { platform: 'github', location: 'floating_bar' })"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon" aria-label="discord" onclick="posthog.capture('social_link_clicked', { platform: 'discord', location: 'floating_bar' })"><i class="fa-brands fa-discord"></i></a>
                 </div>
 
                 <section id="scheme" class="scheme">
@@ -219,7 +223,7 @@
                         <h3>Trova compagni di studio</h3>
                         <p>Connettiti con studenti che stanno preparando i tuoi stessi esami. Insieme potete scambiarvi
                             consigli, risorse utili e motivarvi per ottenere risultati straordinari.</p>
-                        <a href="https://app.studybuddy.it/" target="_blank" aria-label="vai alla webapp" class="btn btn-primary">Comincia ora</a>
+                        <a href="https://app.studybuddy.it/" target="_blank" aria-label="vai alla webapp" class="btn btn-primary" onclick="posthog.capture('cta_button_clicked', { button: 'start_now', location: 'features_section' })">Comincia ora</a>
                     </div>
                     <div class="feature-image">
                         <img src="/imgs/apple_buddies.webp" alt="Study Buddies">
@@ -276,7 +280,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <a class="btn btn-primary" id="btn-login5" href="https://test.studybuddy.it" target="_blank">Segui la scienza!</a>
+                                <a class="btn btn-primary" id="btn-login5" href="https://test.studybuddy.it" target="_blank" onclick="posthog.capture('cta_button_clicked', { button: 'follow_science', location: 'science_section' })">Segui la scienza!</a>
                             </div>
                         </div>
                     </section> -->
@@ -372,11 +376,11 @@
         <section id="testimonials" class="testimonials" >
             <div class="container">
                 <div class="testimonials-header">
-                    <button aria-label="scroll testimonials left" class="arrow arrow-left" onclick="scrollLeft()">
+                    <button aria-label="scroll testimonials left" class="arrow arrow-left" onclick="scrollLeft(); posthog.capture('testimonial_navigation', { direction: 'left' })">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
                     <h2>Dicono di noi</h2>
-                    <button aria-label="scroll testimonials right" class="arrow arrow-right" onclick="scrollRight()">
+                    <button aria-label="scroll testimonials right" class="arrow arrow-right" onclick="scrollRight(); posthog.capture('testimonial_navigation', { direction: 'right' })">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
@@ -522,7 +526,7 @@
             <div class="container">
                 <h2>Pronto a mettere il turbo?</h2>
                 <p>Unisciti a StudyBuddy e rivoluziona il tuo studio!</p>
-                <a href="https://app.studybuddy.it/" target="_blank" aria-label="vai alla webapp" class="btn btn-primary">Comincia ora</a>
+                <a href="https://app.studybuddy.it/" target="_blank" aria-label="vai alla webapp" class="btn btn-primary" onclick="posthog.capture('cta_button_clicked', { button: 'start_now', location: 'final_cta' })">Comincia ora</a>
             </div>
         </section>
 
@@ -540,7 +544,7 @@
                     <div class="form-group">
                         <textarea placeholder="Your Message" name="message" required></textarea>
                     </div>
-                    <button aria-label="submit message" type="submit" class="btn btn-primary">Invia messaggio</button>
+                    <button aria-label="submit message" type="submit" class="btn btn-primary" onclick="posthog.capture('form_submitted', { form: 'contact', location: 'contact_section' })">Invia messaggio</button>
                 </form>
             </div>
         </section>
@@ -567,15 +571,15 @@
                 <div class="footer-section">
                     <p class="contact-text">I nostri social:</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon"><i
+                        <a href="https://www.instagram.com/studybuddy.ita/" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'instagram', location: 'footer' })"><i
                                 class="fa-brands fa-instagram"></i></a>
-                        <a href="https://t.me/stubud" target="_blank" class="social-icon"><i
+                        <a href="https://t.me/stubud" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'telegram', location: 'footer' })"><i
                                 class="fa-brands fa-telegram"></i></a>
                         <a href="https://www.linkedin.com/company/studybuddio/about/" target="_blank"
-                            class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/studybuddydev" target="_blank" class="social-icon"><i
+                            class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'linkedin', location: 'footer' })"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/studybuddydev" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'github', location: 'footer' })"><i
                                 class="fa-brands fa-github"></i></a>
-                        <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon"><i
+                        <a href="https://discord.com/invite/wscTEHjhkW" target="_blank" class="social-icon" onclick="posthog.capture('social_link_clicked', { platform: 'discord', location: 'footer' })"><i
                                 class="fa-brands fa-discord"></i></a>
                     </div>
                 </div>
@@ -593,10 +597,9 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="hidden">
-        <p>Usiamo i cookie per darti la miglior esperienza possibile sul nostro sito. <a href="/it/policy.html" style="color: #1abc9c; text-decoration: underline;">Scopri di più</a></p>
-        <button id="accept-cookies">Accetta</button>
-    </div>
+    </footer>
+
+    <!-- GSAP and Plugins -->
 
     <!-- GSAP and Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
@@ -673,7 +676,54 @@
       >
       <!-- End of OpenWidget code -->
 
+    <!-- PostHog page view tracking -->
+    <script>
+        // Check for QR code source parameter
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
 
+        const source = getQueryParam('src');
+        
+        // Track page view with additional context
+        const pageViewData = {
+            page: 'homepage',
+            language: 'it',
+            url: window.location.href
+        };
+        
+        // Add QR source if present
+        if (source) {
+            pageViewData.qr_source = source;
+            pageViewData.flyer_type = source === 'buddies' ? 'buddies_flyer' : source === 'timer' ? 'timer_flyer' : 'unknown_flyer';
+            
+            // Track specific QR scan event
+            posthog.capture('qr_scan', {
+                source: source,
+                page: 'homepage',
+                flyer_type: pageViewData.flyer_type
+            });
+        }
+        
+        posthog.capture('page_viewed', pageViewData);
+        
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                // Track significant scroll milestones
+                if ([25, 50, 75, 90].includes(scrollPercent)) {
+                    posthog.capture('scroll_depth', { 
+                        depth: scrollPercent,
+                        qr_source: source || null
+                    });
+                }
+            }
+        });
+    </script>
 
   
 </body>
