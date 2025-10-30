@@ -1,0 +1,32 @@
+# StudyBuddy
+
+> StudyBuddy is an all-in-one productivity platform designed for university students. Track your study time, boost your focus with gamified tools, connect with fellow students, and ace your exams with data-driven progress tracking.
+
+## Platform Features
+- Features: Overview of StudyBuddy's core functionalities including Pomodoro tracker, study statistics, and community support. (https://studybuddy.it/en/#features)
+- Get the app: Download StudyBuddy on mobile for iOS and Android. (https://studybuddy.it/en/app.html)
+- Try the webapp: Access the full StudyBuddy experience directly from your browser. (https://app.studybuddy.it/)
+
+## Product Sections
+- Time Tracker: Gamified Pomodoro system tailored for student productivity. (https://studybuddy.it/en/#features)
+- Study Statistics: Visualize study habits, identify patterns, and optimize results. (https://studybuddy.it/en/#features)
+- Focus Spaces: Personalize backgrounds, sounds, and colors to enter flow state. (https://studybuddy.it/en/#features)
+
+## Community
+- Telegram: Join our community group. (https://t.me/stubud)
+- Discord: Connect with students and get support. (https://discord.com/invite/wscTEHjhkW)
+- LinkedIn: Professional updates and news. (https://www.linkedin.com/company/studybuddio/about/)
+- GitHub: Explore open source repos. (https://github.com/studybuddydev)
+
+## Legal & Support
+- Privacy Policy: Data usage and privacy details. (https://studybuddy.it/en/policy.html)
+- Terms of Service: Usage policies. (https://studybuddy.it/en/tos.html)
+- Contact Us: Get in touch with our support team. (https://studybuddy.it/en/#contact)
+
+## Optional
+- Blog: News, updates, and study tips. (https://studybuddy.it/en/blog)
+- f6s Ranking: External company ranking and reviews. (https://www.f6s.com/companies/education/italy/co)
+
+---
+
+This file will help onboard new contributors and improve project documentation.
