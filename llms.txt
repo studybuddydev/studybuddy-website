@@ -11,6 +11,8 @@
 - Time Tracker: Gamified Pomodoro system tailored for student productivity. (https://studybuddy.it/en/#features)
 - Study Statistics: Visualize study habits, identify patterns, and optimize results. (https://studybuddy.it/en/#features)
 - Focus Spaces: Personalize backgrounds, sounds, and colors to enter flow state. (https://studybuddy.it/en/#features)
+- NEET & JEE Prep: Specialized tracker for Indian competitive exams. (https://studybuddy.it/en/neet-jee.html)
+- NEET & JEE Prep (Hinglish): Exam preparation tracker optimizing for JEE/NEET. Localized for Indian students. (https://studybuddy.it/hi/neet-jee.html)
 
 ## Community
 - Telegram: Join our community group. (https://t.me/stubud)

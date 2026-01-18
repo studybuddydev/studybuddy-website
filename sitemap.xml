@@ -36,4 +36,18 @@
       <changefreq>yearly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>https://studybuddy.it/en/neet-jee.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/neet-jee.html" />
+      <xhtml:link rel="alternate" hreflang="hi" href="https://studybuddy.it/hi/neet-jee.html" />
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://studybuddy.it/hi/neet-jee.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://studybuddy.it/en/neet-jee.html" />
+      <xhtml:link rel="alternate" hreflang="hi" href="https://studybuddy.it/hi/neet-jee.html" />
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
 </urlset>
