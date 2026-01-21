@@ -563,14 +563,20 @@
     }
 
     .award-banner {
-        text-align: center; 
-        margin-top: 1rem; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-top: 1rem;
     }
-    
+
     .award-banner img {
-        max-width: 85%; 
-        height: auto; 
-        margin: 0 auto; 
+        max-height: 80%;
+        width: auto;
+        object-fit: contain;
+        padding-right: 1rem;
+        padding-left: 1rem;
+
     }
 
     /* Pricing Section */
@@ -1139,7 +1145,11 @@
         }
         
         .award-banner img {
-            max-height: 8vh;
+            max-height: 80%;
+            width: auto;
+            object-fit: contain;
+            padding-right: 1rem;
+            padding-left: 1rem;
             height: auto; 
             margin: 0 auto; 
         }
@@ -1243,11 +1253,11 @@
             /*nessuna modifica*/
             color: var(--color-primary);
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .scheme p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
@@ -1495,9 +1505,12 @@
         }
         
         .award-banner img {
-            max-height: 12vh;
+            max-height: 80%;
+            width: auto;
+            object-fit: contain;
+            padding-right: 1rem;
+            padding-left: 1rem; 
             height: auto; 
-            margin: 0 auto; 
         }
 
         /* Adjust pricing section to display cards side by side */

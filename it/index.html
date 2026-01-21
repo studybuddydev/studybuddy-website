@@ -524,6 +524,98 @@
             </div>
         </section> -->
 
+        <!-- FAQ Section for SEO and LLMO -->
+        <section id="faq" class="scheme" style="background-color: var(--background-color);">
+            <div class="container">
+                <h2 class="section-title">Domande frequenti</h2>
+                <div class="faq-container" itemscope itemtype="https://schema.org/FAQPage">
+                    
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Cos'è StudyBuddy?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">StudyBuddy è un'applicazione che ti aiuta a trovare compagni di studio nella tua università, gestire meglio il tuo tempo e mantenere la concentrazione mentre studi.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Per quali dispositivi è disponibile?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">StudyBuddy è disponibile su dispositivi mobili (iOS e Android) e come webapp da PC.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Quali sono le funzionalità di StudyBuddy?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Le funzionalità principali di StudyBuddy includono un timer per tracciare il tempo di studio e mantenere la concentrazione, un sistema di matching tra studenti che ti aiuta a trovare chi sta studiando i tuoi stessi esami, statistiche sullo studio, gestione esami e libretto universitario.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Perchè il vostro timer è diverso dagli altri?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Il nostro timer è diverso perché è in grado di adattarsi al tuo ritmo di studio. Quando arriva il momento di fare pausa, sei tu che decidi se continuare a studiare o fermarti. Inoltre, anche il tempo di pausa viene tracciato e alla fine della sessione di studio viene calcolato un punteggio che ti aiuta a capire come hai utilizzato il tuo tempo. E' inoltre disponibile la modalità "freestyle": premi play e studia con i tuoi tempi, e fai pausa quando te la senti.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Come funziona il matching tra studenti?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Inserisci la tua università e gli esami che stai studiando, e il sistema troverà chi studia gli stessi esami nella tua università. A quel punto potrete diventare "Buddies", entrare in contatto e incontrarvi per studiare insieme e migliorare la vostra esperienza accademica.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">E' gratis?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Sì, la maggior parte delle funzioni di StudyBuddy è gratuita. Puoi utilizzare il timer, le statistiche base e il matching tra studenti senza pagare alcun costo.</p>
+                            <p itemprop="text">Sono disponibili anche funzioni premium in abbonamento.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <summary itemprop="name">Cosa è incluso con StudyBuddy Plus?</summary>
+                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <p itemprop="text">Oltre alle funzioni di base StudyBuddy Plus include funzioni aggiuntive come statistiche avanzate, con analisi dei pattern di studio e consigli su come migliorare, migliorie al timer, con la possibilità di impostare fino a 3 timer con i tuoi tempi di studio e pausa preferiti, sfondi premium selezionati e personalizzati, reaction custom da mandare ai tuoi buddies e supporto prioritario da parte del team. Più tutte le funzioni in fase di sviluppo che arriveranno presto!</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+            <style>
+                .faq-container { max-width: 80vw; margin: 0 auto; text-align: left; }
+                .faq-item { background: var(--card-bg, #fff); margin-bottom: 0.8rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); overflow: hidden; }
+                .faq-item summary {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.2rem;
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                    list-style: none;
+                    position: relative;
+                }
+                .faq-item summary::-webkit-details-marker { display: none; }
+                .faq-item summary::after {
+                    content: '+';
+                    flex-shrink: 0;   
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    transition: transform 0.2s;
+                    position: static; 
+                }
+                .faq-item[open] summary::after { transform: rotate(45deg); }
+                .faq-item p { padding: 0 1.2rem 1.2rem 1.2rem; margin: 0; color: #555; line-height: 1.6; font-size: 1rem; }
+                 @media (min-width: 1024px) {
+                        .faq-container {
+                            width: 60%;
+                        }
+                }
+            </style>
+        </section>
+
 
         <section id="cta" class="action-section">
             <div class="container">

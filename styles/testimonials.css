@@ -212,7 +212,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3rem 1.5rem;
+    padding: 3rem 1rem;
     gap: 1rem; /* gestisce lo spazio tra i banner */
     transition: transform 0.3s ease;
 }
