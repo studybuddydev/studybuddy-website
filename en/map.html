@@ -340,10 +340,10 @@
       <div class="stat-value" id="stat-countries">—</div>
       <div class="stat-label">Countries</div>
     </div>
-    <div class="stat-item">
+    <!-- <div class="stat-item">
       <div class="stat-value" id="stat-students">—</div>
       <div class="stat-label">Students</div>
-    </div>
+    </div> -->
   </div>
 
   <!-- Leaflet JS -->
@@ -354,7 +354,7 @@
   <script>
     // ── Configuration ──────────────────────────────────
     // TODO: Replace this URL with your API endpoint for live data
-    const DATA_URL = 'http://localhost:3333/data/university-statistics';
+    const DATA_URL = 'https://api.beta.studybuddy.it/data/university-statistics';
 
     const TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
     const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>';
@@ -413,8 +413,8 @@
     // Priority: 1) lat/lng in API data  2) pre-computed coords file  3) country centroid + jitter
     function resolveCoords(uni) {
       // 1. Coordinates directly in the data
-      if (uni.lat != null && uni.lng != null) {
-        return [uni.lat, uni.lng];
+      if (uni.lat != null && (uni.lng != null || uni.lon != null)) {
+        return [uni.lat, uni.lng ?? uni.lon];
       }
       // 2. Pre-computed geocoded coordinates
       const precomputed = UNIVERSITY_COORDS[uni.name];
@@ -441,6 +441,8 @@
     }
 
     // ── Initialize map ─────────────────────────────────
+    const canvasRenderer = L.canvas({ padding: 0.5 });
+
     const map = L.map('map', {
       center: [25, 10],
       zoom: 2.5,
@@ -505,20 +507,13 @@
           fillOpacity: fillOpacity,
           color: '#81e3e3',
           weight: 1,
-          opacity: borderOpacity
+          opacity: borderOpacity,
+          renderer: canvasRenderer
         }).addTo(map);
-
-        // Tooltip on hover
-        const studentText = uni.students > 0
-          ? `${uni.students} student${uni.students !== 1 ? 's' : ''}`
-          : 'No students yet';
 
         const tooltipContent = `
           <div class="uni-name">${uni.name}</div>
-          <div class="uni-meta">
-            ${uni.country}
-            &nbsp;·&nbsp; <span class="uni-students">${studentText}</span>
-          </div>
+          <div class="uni-meta">${uni.country}</div>
         `;
 
         marker.bindTooltip(tooltipContent, {
@@ -526,12 +521,6 @@
           direction: 'top',
           offset: [0, -radius]
         });
-
-        // Subtle fade-in animation via delayed opacity
-        marker.setStyle({ fillOpacity: 0, opacity: 0 });
-        setTimeout(() => {
-          marker.setStyle({ fillOpacity: fillOpacity, opacity: borderOpacity });
-        }, 50 + Math.min(i, 200) * 8); // cap delay at ~1.6s for large datasets
       });
     }
 
@@ -541,7 +530,7 @@
 
       document.getElementById('stat-unis').textContent = universities.length.toLocaleString();
       document.getElementById('stat-countries').textContent = countries;
-      document.getElementById('stat-students').textContent = totalStudents.toLocaleString();
+     // document.getElementById('stat-students').textContent = totalStudents.toLocaleString();
     }
 
     function hideLoading() {
