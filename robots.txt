@@ -3,5 +3,6 @@ Disallow: /policy.html
 Disallow: /pomoflex.html
 Disallow: /tos.html
 Disallow: /paolo.html
+Content-Signal: search=yes, ai-train=no, ai-input=yes
 
 Sitemap: https://studybuddy.it/sitemap.xml

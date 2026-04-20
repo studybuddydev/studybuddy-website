@@ -451,3 +451,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// WebMCP — expose site tools to AI agents via the browser
+// https://webmachinelearning.github.io/webmcp/
+if (typeof navigator !== 'undefined' && navigator.modelContext) {
+    const controller = new AbortController();
+
+    navigator.modelContext.registerTool({
+        name: 'navigate-to-app',
+        description: 'Open the StudyBuddy web app at app.studybuddy.it',
+        inputSchema: { type: 'object', properties: {}, required: [] },
+        execute: () => { window.open('https://app.studybuddy.it', '_blank', 'noopener'); }
+    }, { signal: controller.signal });
+
+    navigator.modelContext.registerTool({
+        name: 'get-site-info',
+        description: 'Return a summary of what StudyBuddy is, its key features, and links to main sections',
+        inputSchema: { type: 'object', properties: {}, required: [] },
+        execute: () => ({
+            name: 'StudyBuddy',
+            description: 'All-in-one productivity platform for university students: Pomodoro tracker, study stats, focus spaces, and community.',
+            links: {
+                homepage_en: 'https://studybuddy.it/en/',
+                homepage_it: 'https://studybuddy.it/it/',
+                app: 'https://app.studybuddy.it',
+                features: 'https://studybuddy.it/en/#features',
+                download: 'https://studybuddy.it/en/app.html',
+                neet_jee: 'https://studybuddy.it/en/neet-jee.html',
+                contact: 'https://studybuddy.it/en/#contact',
+                llms_txt: 'https://studybuddy.it/llms.txt'
+            }
+        })
+    }, { signal: controller.signal });
+
+    navigator.modelContext.registerTool({
+        name: 'navigate-to-section',
+        description: 'Navigate to a named section of the StudyBuddy homepage',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                section: {
+                    type: 'string',
+                    enum: ['features', 'download', 'contact'],
+                    description: 'The section to navigate to'
+                }
+            },
+            required: ['section']
+        },
+        execute: ({ section }) => {
+            const lang = document.documentElement.lang === 'it' ? 'it' : 'en';
+            window.location.href = `https://studybuddy.it/${lang}/#${section}`;
+        }
+    }, { signal: controller.signal });
+
+    window.addEventListener('unload', () => controller.abort());
+}
+

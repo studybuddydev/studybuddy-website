@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "site-navigation",
+      "type": "skill-md",
+      "description": "How to navigate and interact with the StudyBuddy website: key sections, actions, download links, and community resources",
+      "url": "https://studybuddy.it/.well-known/agent-skills/site-navigation/SKILL.md",
+      "digest": "sha256:ca2f7c01907fe527566a9ff0d2b85bd765fda5221292eb7e2beabbd67f39727f"
+    }
+  ]
+}
