@@ -222,12 +222,14 @@
     /* ── Loading state ────────────────────────────────── */
     .map-loading {
       position: fixed;
-      inset: 0;
-      z-index: 2000;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1500;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1a1a2e;
+      background: transparent;
       transition: opacity 0.6s ease;
     }
 
@@ -249,6 +251,48 @@
       to { transform: rotate(360deg); }
     }
 
+    /* ── View toggle ──────────────────────────────────── */
+    .view-toggle {
+      display: flex;
+      background: rgba(255,255,255,0.07);
+      border-radius: 2rem;
+      padding: 2px;
+      gap: 2px;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.25rem 0.8rem;
+      font-family: var(--font-primary);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .toggle-btn.active {
+      background: var(--color-primary);
+      color: #fff;
+    }
+
+    .toggle-btn:not(.active):hover {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── Country gradient legend ──────────────────────── */
+    .legend-gradient {
+      width: 56px;
+      height: 7px;
+      border-radius: 4px;
+      background: linear-gradient(to right, rgba(0,161,161,0.15), rgba(0,161,161,0.9));
+    }
+    .legend-gradient.heat {
+      background: linear-gradient(to right, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+      opacity: 0.85;
+    }
     /* ── Stats bar ────────────────────────────────────── */
     .map-stats {
       position: fixed;
@@ -316,6 +360,11 @@
     </a>
     <div class="divider"></div>
     <span class="page-title">University Map</span>
+    <div class="view-toggle">
+      <button class="toggle-btn active" id="btn-dots" onclick="setMode('dots')">Dots</button>
+      <button class="toggle-btn" id="btn-heatmap" onclick="setMode('heatmap')">Heatmap</button>
+      <button class="toggle-btn" id="btn-countries" onclick="setMode('countries')">Countries</button>
+    </div>
     <a href="/en/" class="back-link">&larr; Back</a>
   </header>
 
@@ -324,10 +373,20 @@
 
   <!-- Legend -->
   <div class="map-legend">
-    <div class="legend-dot small"></div>
-    <div class="legend-dot medium"></div>
-    <div class="legend-dot large"></div>
-    <div class="legend-label">Dot size = students<br>on StudyBuddy</div>
+    <div id="dots-legend" style="display:flex;align-items:center;gap:0.8rem;">
+      <div class="legend-dot small"></div>
+      <div class="legend-dot medium"></div>
+      <div class="legend-dot large"></div>
+      <div class="legend-label">Dot size = students<br>on StudyBuddy</div>
+    </div>
+    <div id="countries-legend" style="display:none;align-items:center;gap:0.6rem;">
+      <div class="legend-gradient"></div>
+      <div class="legend-label">Fewer &rarr; More students</div>
+    </div>
+    <div id="heatmap-legend" style="display:none;align-items:center;gap:0.6rem;">
+      <div class="legend-gradient heat"></div>
+      <div class="legend-label">Low &rarr; High density</div>
+    </div>
   </div>
 
   <!-- Stats -->
@@ -350,6 +409,8 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
+  <!-- Leaflet.heat -->
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
   <script>
     // ── Configuration ──────────────────────────────────
@@ -409,6 +470,20 @@
     // Coordinate lookup (populated after fetch)
     let UNIVERSITY_COORDS = {};
 
+    // ── Global state ───────────────────────────────────
+    let universitiesData = null;
+    let geoJsonCache = {}; // keyed by '110m' | '50m'
+    let geoJsonData = null;
+    let currentMode = 'dots';
+    let activeResolution = null;
+
+    const GEO_SOURCES = {
+      '110m': 'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector/geojson/ne_110m_admin_0_countries.geojson',
+      '50m':  'https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector/geojson/ne_50m_admin_0_countries.geojson'
+    };
+
+    function resolutionForZoom(z) { return z >= 5 ? '50m' : '110m'; }
+
     // ── Resolve coordinates for a university ───────────
     // Priority: 1) lat/lng in API data  2) pre-computed coords file  3) country centroid + jitter
     function resolveCoords(uni) {
@@ -460,6 +535,10 @@
       maxZoom: 19
     }).addTo(map);
 
+    const dotsGroup = L.layerGroup().addTo(map);
+    const choroplethGroup = L.layerGroup();
+    let heatLayer = null;
+
     // ── Load data & render dots ────────────────────────
     // Fetch API data and pre-computed coordinates in parallel
     Promise.all([
@@ -480,7 +559,9 @@
     ])
       .then(([universities, coords]) => {
         UNIVERSITY_COORDS = coords;
+        universitiesData = universities;
         renderDots(universities);
+        buildHeatLayer(universities);
         updateStats(universities);
         hideLoading();
       })
@@ -509,7 +590,7 @@
           weight: 1,
           opacity: borderOpacity,
           renderer: canvasRenderer
-        }).addTo(map);
+        }).addTo(dotsGroup);
 
         const tooltipContent = `
           <div class="uni-name">${uni.name}</div>
@@ -522,6 +603,126 @@
           offset: [0, -radius]
         });
       });
+    }
+
+    function buildHeatLayer(universities) {
+      const maxStudents = Math.max(1, ...universities.map(u => u.students || 0));
+      const points = universities
+        .map(u => {
+          const coords = resolveCoords(u);
+          if (!coords) return null;
+          const intensity = Math.log(1 + (u.students * 1000000000000 || 0)) / Math.log(1 + maxStudents);
+          return [coords[0], coords[1], intensity];
+        })
+        .filter(Boolean);
+
+      heatLayer = L.heatLayer(points, {
+        radius: 35,
+        blur: 25,
+        maxZoom: 12,
+        max: 1.0,
+        gradient: { 0.0: '#0000ff', 0.3: '#00ffff', 0.5: '#00ff00', 0.7: '#ffff00', 1.0: '#ff0000' }
+      });
+    }
+
+    function renderChoropleth(data) {
+      choroplethGroup.clearLayers();
+      geoJsonData = data;
+
+      const countsByCode = {};
+      universitiesData.forEach(u => {
+        const code = u.alpha_two_code;
+        countsByCode[code] = (countsByCode[code] || 0) + (u.students || 0);
+      });
+
+      const maxStudents = Math.max(1, ...Object.values(countsByCode));
+
+      function choroColor(code) {
+        const s = countsByCode[code] || 0;
+        if (!s) return 'rgba(255,255,255,0.03)';
+        const t = Math.log(s + 1) / Math.log(maxStudents + 1);
+        return `rgba(0,161,161,${(0.12 + t * 0.75).toFixed(2)})`;
+      }
+
+      L.geoJSON(geoJsonData, {
+        style: feature => ({
+          fillColor: choroColor(feature.properties.ISO_A2),
+          fillOpacity: 1,
+          color: 'rgba(255,255,255,0.06)',
+          weight: 0.5
+        }),
+        onEachFeature: (feature, layer) => {
+          const code = feature.properties.ISO_A2;
+          const count = countsByCode[code] || 0;
+          if (count > 0) {
+            layer.bindTooltip(
+              `<div class="uni-name">${feature.properties.NAME}</div>` +
+              `<div class="uni-meta">${count} student${count !== 1 ? 's' : ''}</div>`,
+              { className: 'uni-tooltip', sticky: true }
+            );
+          }
+        }
+      }).addTo(choroplethGroup);
+    }
+
+    function loadAndRenderChoropleth() {
+      const res = resolutionForZoom(map.getZoom());
+      if (activeResolution === res) return;
+      activeResolution = res;
+
+      if (geoJsonCache[res]) {
+        renderChoropleth(geoJsonCache[res]);
+        return;
+      }
+
+      fetch(GEO_SOURCES[res])
+        .then(r => { if (!r.ok) throw new Error('GeoJSON fetch failed'); return r.json(); })
+        .then(data => {
+          geoJsonCache[res] = data;
+          if (activeResolution === res && currentMode === 'countries') {
+            renderChoropleth(data);
+          }
+        })
+        .catch(err => console.error('Could not load country borders:', err));
+    }
+
+    map.on('zoomend', () => {
+      if (currentMode === 'countries') loadAndRenderChoropleth();
+    });
+
+    function setMode(mode) {
+      if (mode === currentMode || !universitiesData) return;
+      currentMode = mode;
+
+      document.getElementById('btn-dots').classList.toggle('active', mode === 'dots');
+      document.getElementById('btn-heatmap').classList.toggle('active', mode === 'heatmap');
+      document.getElementById('btn-countries').classList.toggle('active', mode === 'countries');
+
+      const dotsLegend     = document.getElementById('dots-legend');
+      const countriesLegend = document.getElementById('countries-legend');
+      const heatmapLegend  = document.getElementById('heatmap-legend');
+
+      // Hide all layers first
+      map.removeLayer(dotsGroup);
+      if (map.hasLayer(choroplethGroup)) map.removeLayer(choroplethGroup);
+      if (heatLayer && map.hasLayer(heatLayer)) map.removeLayer(heatLayer);
+
+      dotsLegend.style.display     = 'none';
+      countriesLegend.style.display = 'none';
+      heatmapLegend.style.display  = 'none';
+
+      if (mode === 'dots') {
+        dotsGroup.addTo(map);
+        dotsLegend.style.display = 'flex';
+      } else if (mode === 'heatmap') {
+        if (heatLayer) heatLayer.addTo(map);
+        heatmapLegend.style.display = 'flex';
+      } else {
+        countriesLegend.style.display = 'flex';
+        activeResolution = null;
+        choroplethGroup.addTo(map);
+        loadAndRenderChoropleth();
+      }
     }
 
     function updateStats(universities) {
