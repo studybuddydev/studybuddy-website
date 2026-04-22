@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcola il tuo voto di laurea per Università di Brescia e Trento. Simula il voto finale con formule ufficiali, bonus e regolamenti aggiornati.">
+    <meta itemprop="name" content="Calcolatore Voto di Laurea - StudyBuddy">
+    <title>Calcolatore Voto di Laurea - StudyBuddy</title>
+    <meta name="keywords" content="calcolo voto laurea, media università, voto laurea Brescia, voto laurea Trento, DISI, DII">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00A1A1',
+                        'primary-light': '#81e3e3',
+                        'primary-dark': '#006969',
+                        secondary: '#FF8500',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <link rel="alternate" hreflang="it" href="https://studybuddy.it/it/calcolatore-voto-laurea.html">
+    <link rel="alternate" hreflang="en" href="https://studybuddy.it/en/grade-calculator.html">
+    <link rel="icon" href="/favicon.ico">
+
+    <style>
+        .cfu-slider-track  { background: linear-gradient(90deg, #00A1A1 0%, #81e3e3 50%, #FF8500 100%); }
+        .avg-slider-track  { background: linear-gradient(90deg, #ef4444 0%, #f97316 15%, #eab308 30%, #84cc16 50%, #22c55e 70%, #10b981 100%); }
+        .drag-handle       { cursor: grab; touch-action: none; }
+        .drag-handle:active{ cursor: grabbing; }
+        #avgSliderHandle   { border-width: 3px; }
+
+        /* Dept pills scroll on mobile */
+        #deptPills { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        #deptPills::-webkit-scrollbar { display: none; }
+
+        /* Sticky bar slide-up animation */
+        #stickyBar { transform: translateY(100%); transition: transform 0.3s ease; }
+        #stickyBar.visible { transform: translateY(0); }
+
+        /* Uni tabs */
+        .uni-tab { transition: all 0.2s ease; }
+        .uni-tab.active { background: #00A1A1; color: white; border-color: #00A1A1; }
+
+        /* Dept pill */
+        .dept-pill { transition: all 0.2s ease; white-space: nowrap; }
+        .dept-pill.active { background: #00A1A1; color: white; box-shadow: 0 2px 8px rgba(0,161,161,0.35); }
+    </style>
+</head>
+
+<body class="bg-white">
+    <header itemscope itemtype="http://schema.org.WPHeader">
+        <nav class="container">
+            <div class="logo" itemprop="publisher" itemscope itemtype="http://schema.org.Organization">
+                <img class="logo" src="/favicon.ico" alt="StudyBuddy Logo" itemprop="logo">
+                <span itemprop="name"><h1>StudyBuddy</h1></span>
+            </div>
+            <ul class="header">
+                <li><a href="/it/#features">Funzionalità</a></li>
+                <li><a href="/it/#app-showcase">App</a></li>
+                <li><a href="/it/#testimonials">Recensioni</a></li>
+                <li><a href="/it/#contact">Contatti</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="/en/calcolatore-voto-laurea.html" class="lang-switch-link"><i class="fa-solid fa-globe"></i><span>EN</span></a>
+                <a href="/it/app.html" class="btn btn-primary">Scarica l'App!</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sticky result bar (shown when main vote display scrolls out of view) -->
+    <div id="stickyBar" class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg px-4 py-3">
+        <div class="max-w-5xl mx-auto flex items-center justify-between gap-4">
+            <div class="flex items-center gap-4 text-sm">
+                <span class="text-gray-500">Base <span class="font-bold text-gray-800" id="stickyBase">—</span></span>
+                <i class="fa-solid fa-arrow-right text-gray-300 text-xs"></i>
+                <span class="text-primary font-bold text-lg" id="stickyEstimated">—</span>
+                <i class="fa-solid fa-arrow-right text-gray-300 text-xs"></i>
+                <span class="text-gray-500">Max <span class="font-bold text-gray-800" id="stickyMax">—</span></span>
+            </div>
+            <span id="stickyLodeBadge" class="hidden bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1 rounded-full">★ Lode possibile</span>
+        </div>
+    </div>
+
+    <main class="pt-20">
+        <!-- Page header -->
+        <div class="border-b border-gray-100 py-8 px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="w-1 h-8 bg-primary rounded-full inline-block"></span>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900" style="font-family: 'League Spartan', sans-serif;">Calcola il tuo voto di laurea</h1>
+                </div>
+                <p class="text-gray-500 text-sm ml-4 pl-3">Seleziona il tuo ateneo e corso — otterrai la stima precisa con i bonus del tuo regolamento ufficiale.</p>
+            </div>
+        </div>
+
+        <section class="max-w-3xl mx-auto px-4 py-10">
+
+            <!-- 1. RESULT HERO -->
+            <div class="text-center pb-10" id="resultHero">
+                <div class="flex items-end justify-center gap-3 mb-2">
+                    <span id="finalVoteEstimated" class="text-[7rem] md:text-[9rem] font-extrabold text-gray-900 leading-none tracking-tighter"></span>
+                    <span class="text-3xl md:text-4xl font-bold text-gray-300 mb-5">/&nbsp;110</span>
+                </div>
+                <div class="text-sm font-semibold text-primary mb-4">con bonus</div>
+                <div class="flex items-center justify-center gap-6 text-sm text-gray-500">
+                    <span>Base: <strong id="finalVoteBase" class="text-gray-700 font-bold">95</strong></span>
+                    <span class="text-gray-300">·</span>
+                    <span>Max: <strong id="finalVoteMax" class="text-gray-700 font-bold">102</strong></span>
+                </div>
+                <div id="lodeBadge" class="hidden flex justify-center mt-4">
+                    <span class="bg-yellow-400 text-yellow-900 text-xs font-semibold px-3 py-1.5 rounded-full">★ Lode possibile — soglia <span id="lodeThreshold">110</span></span>
+                </div>
+            </div>
+
+            <div class="w-full h-px bg-gray-100 mb-10"></div>
+
+<div class="mb-6 bg-white rounded-2xl shadow-sm border border-gray-100 p-5" id="bonusSectionWrapper">
+
+    <!-- SECTION TITLE -->
+    <h2 class="text-xs uppercase tracking-widest text-gray-400 font-semibold mb-5">
+        Dati per il calcolo
+    </h2>
+        <!-- MEDIA -->
+    <div class="flex items-center justify-between mb-6">
+
+        <label class="text-sm font-medium text-gray-700" for="currentAvg">
+            Media attuale
+        </label>
+
+        <div class="flex items-center gap-2">
+
+            <button type="button" onclick="adjustCurrentAvg(-0.5)"
+                class="w-8 h-8 rounded-full border border-gray-200 text-gray-400 hover:border-primary hover:text-primary transition flex items-center justify-center">
+                −
+            </button>
+
+            <input type="number" id="currentAvg" value="18"
+                class="w-20 h-11 text-xl font-bold text-center bg-white rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none text-primary-dark">
+
+            <button type="button" onclick="adjustCurrentAvg(0.5)"
+                class="w-8 h-8 rounded-full border border-gray-200 text-gray-400 hover:border-primary hover:text-primary transition flex items-center justify-center">
+                +
+            </button>
+
+        </div>
+    </div>
+
+    <!-- COURSE SELECT (bigger, no label) -->
+    <div class="mb-6">
+
+        <div class="flex items-center gap-2 w-full">
+
+            <select id="uniSelect"
+                class="w-1/3 text-sm font-semibold text-gray-800 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none">
+                <!-- Injected -->
+            </select>
+
+            <div class="w-px h-7 bg-gray-200"></div>
+
+            <select id="deptSelect"
+                class="w-2/3 text-sm font-semibold text-gray-800 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none">
+                <!-- Injected -->
+            </select>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DIVIDER -->
+    <div class="h-px bg-gray-100 my-4"></div>
+
+    <!-- BONUS -->
+    <div id="bonusSection" class="space-y-4 mb-4">
+        <!-- Injected -->
+    </div>
+
+    <!-- REGULATION (moved to bottom, low emphasis) -->
+    <div id="regulationLink" class="mt-2 text-xs text-gray-400 hidden">
+        <!-- Injected -->
+    </div>
+
+</div>
+
+<div class="w-full h-px bg-gray-100 my-8"></div>
+
+            <!-- 3. OPZIONI AVANZATE -->
+            <div>
+                <button type="button" id="advancedToggleBtn" onclick="window.__calcToggleAdvanced()"
+                    class="flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 font-semibold hover:text-gray-600 transition-colors w-full text-left mb-0">
+                    Opzioni avanzate
+                    <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200" id="advancedChevron"></i>
+                </button>
+
+                <div id="advancedFields" class="hidden mt-4 md:grid-cols-2 gap-4">
+                    <!-- CFU Progress -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">CFU Conseguiti</span>
+                            <span class="text-sm font-bold text-primary" id="cfuDisplay">120 <span class="text-gray-400 text-xs">/ 180</span></span>
+                        </div>
+                        <div class="relative h-5 mb-1.5 cursor-pointer select-none" id="cfuSliderContainer" role="slider" aria-label="CFU conseguiti" aria-valuemin="0" aria-valuemax="180" aria-valuenow="120">
+                            <div class="absolute inset-0 h-5 bg-gray-200 rounded-full"></div>
+                            <div id="cfuSliderFill" class="absolute h-5 cfu-slider-track rounded-full transition-all duration-100" style="width: 67%"></div>
+                            <div id="cfuSliderHandle" class="drag-handle absolute top-1/2 w-7 h-7 bg-white border-4 border-primary rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all" style="left: 67%">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fa-solid fa-grip-lines text-gray-400 text-[8px]"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-gray-400">
+                            <span>0</span>
+                            <span id="cfuRemaining">60 mancanti</span>
+                            <span>180</span>
+                        </div>
+                    </div>
+                    <!-- Future Average Slider -->
+                    <div class="bg-gray-50 rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">Media Futura Prevista</span>
+                            <span class="text-sm font-bold text-gray-700" id="futureAvgDisplay">24</span>
+                        </div>
+                        <div class="relative h-3 mb-1.5 cursor-pointer select-none" id="avgSliderContainer" role="slider" aria-label="Media futura prevista" aria-valuemin="18" aria-valuemax="31">
+                            <div class="absolute inset-0 h-3 bg-gray-200 rounded-full"></div>
+                            <div id="avgSliderFill" class="absolute h-3 avg-slider-track rounded-full transition-all duration-100" style="width: 46%"></div>
+                            <div id="avgSliderHandle" class="drag-handle absolute top-1/2 w-5 h-5 bg-white border-primary rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2 hover:scale-110 transition-all" style="left: 46%" aria-hidden="true">
+                                <i class="fa-solid fa-chevron-left text-[8px] text-primary-dark absolute -left-2.5 top-1/2 -translate-y-1/2"></i>
+                                <i class="fa-solid fa-chevron-right text-[8px] text-primary-dark absolute -right-2.5 top-1/2 -translate-y-1/2"></i>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-gray-400">
+                            <span class="text-red-400">18 (min)</span>
+                            <span class="text-emerald-500">30</span>
+                            <span class="text-emerald-500">31 (30L)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SEO Info -->
+        <section class="bg-gray-100 py-10 px-4 mt-10">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-xl font-bold mb-3">Come calcolare il voto di laurea</h2>
+                <div class="text-gray-600 space-y-3 text-sm leading-relaxed">
+                    <p>Il <strong>calcolo del voto di laurea</strong> varia in base all'ateneo e al corso di studi. La base è la <strong>media ponderata</strong> degli esami in trentesimi, convertita in centodecimi tramite un <strong>fattore di conversione</strong> dipartimentale (es. ×3,67 per DLM, ×11/3 per DISI).</p>
+                    <p>A questa si sommano i <strong>bonus</strong>: durata studi, qualità della tesi, mobilità internazionale, percorsi di eccellenza. Per Medicina UniBS il calcolo è distinto: media aritmetica in centodecimi + lodi + progress test + mobilità + punteggio tesi.</p>
+                    <p>La <strong>lode</strong> è assegnata quando il punteggio non arrotondato supera la soglia dipartimentale (110,5 per DLM; 111 per la maggior parte dei corsi UniTrento). Questo calcolatore usa i <strong>regolamenti ufficiali</strong> collegati per ogni dipartimento.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer itemscope itemtype="http://schema.org.WPFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo"><img class="logo" src="/favicon.ico" alt="StudyBuddy Logo"><span>StudyBuddy</span></div>
+                    <p>Il tuo assistente all'università.</p>
+                </div>
+                <div class="footer-section centered-section">
+                    <ul><li><a href="/it/#features">Funzionalità</a></li><li><a href="/it/#contact">Contattaci</a></li></ul>
+                </div>
+                <div class="footer-section">
+                    <p class="contact-text">I nostri social:</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/studybuddy.ita" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://t.me/stubud" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://linkedin.com/company/studybuddio" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/studybuddydev" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="legal-links">
+                        <a href="/it/policy.html">Privacy Policy</a>
+                        <a href="/it/tos.html">Terms of Service</a>
+                    </div>
+                    <p class="copyright">&copy; 2026 StudyBuddy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/calcolatore-voto-laurea.js"></script>
+</body>
+</html>
