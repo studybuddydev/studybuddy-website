@@ -252,13 +252,104 @@
 
         <!-- SEO Info -->
         <section class="bg-gray-100 py-10 px-4 mt-10">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-xl font-bold mb-3">Come calcolare il voto di laurea</h2>
-                <div class="text-gray-600 space-y-3 text-sm leading-relaxed">
-                    <p>Il <strong>calcolo del voto di laurea</strong> varia in base all'ateneo e al corso di studi. La base è la <strong>media ponderata</strong> degli esami in trentesimi, convertita in centodecimi tramite un <strong>fattore di conversione</strong> dipartimentale (es. ×3,67 per DLM, ×11/3 per DISI).</p>
-                    <p>A questa si sommano i <strong>bonus</strong>: durata studi, qualità della tesi, mobilità internazionale, percorsi di eccellenza. Per Medicina UniBS il calcolo è distinto: media aritmetica in centodecimi + lodi + progress test + mobilità + punteggio tesi.</p>
-                    <p>La <strong>lode</strong> è assegnata quando il punteggio non arrotondato supera la soglia dipartimentale (110,5 per DLM; 111 per la maggior parte dei corsi UniTrento). Questo calcolatore usa i <strong>regolamenti ufficiali</strong> collegati per ogni dipartimento.</p>
+            <div class="max-w-3xl mx-auto space-y-10">
+
+                <!-- Intro -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3">Come calcolare il voto di laurea</h2>
+                    <div class="text-gray-600 space-y-3 text-sm leading-relaxed">
+                        <p>Il <strong>calcolo del voto di laurea</strong> varia in base all'ateneo e al corso di studi. La base è la <strong>media ponderata</strong> degli esami in trentesimi, convertita in centodecimi tramite un <strong>fattore di conversione</strong> dipartimentale (es. ×3,67 per DLM, ×11/3 per DISI).</p>
+                        <p>A questa si sommano i <strong>bonus</strong>: durata studi, qualità della tesi, mobilità internazionale, percorsi di eccellenza. Per Medicina UniBS il calcolo è distinto: media aritmetica in centodecimi + lodi + progress test + mobilità + punteggio tesi.</p>
+                        <p>La <strong>lode</strong> è assegnata quando il punteggio non arrotondato supera la soglia dipartimentale (110,5 per DLM; 111 per la maggior parte dei corsi UniTrento). Questo calcolatore usa i <strong>regolamenti ufficiali</strong> collegati per ogni dipartimento.</p>
+                    </div>
                 </div>
+
+                <div class="h-px bg-gray-200"></div>
+
+                <!-- UniTrento per dipartimento -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3">Voto di laurea all'Università di Trento: fattori per dipartimento</h2>
+                    <div class="text-gray-600 space-y-3 text-sm leading-relaxed">
+                        <p>Ogni dipartimento UniTrento adotta un proprio <strong>fattore di conversione</strong> per trasformare la media in trentesimi in un punteggio in centodecimi:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2">
+                            <li><strong>DISI – Ingegneria e Scienza dell'Informazione</strong>: fattore ×11/3 (≈3,667). La media è ponderata per CFU e <em>non</em> include la prova finale. Bonus fino a 6 punti in funzione di media e voto di tesi, più 0–2 punti per laurea in corso. Lode se punteggio ≥ 111 prima dell'arrotondamento.</li>
+                            <li><strong>DLM – Lettere e Filosofia</strong>: fattore ×3,67. Media ponderata <em>inclusa</em> la prova finale (30L = 31/30). Bonus fino a 3 pt per qualità tesi, 3 pt per media curriculare (≥27), 2 pt per durata studi, 1 pt mobilità, 1 pt percorso eccellenza. Lode se punteggio ≥ 110,50.</li>
+                            <li><strong>DEM – Economia e Management</strong>: fattore ×3,86. Media ponderata inclusa prova finale, con scarto del voto più basso. Bonus: 2 pt per 30L alla prova finale, 1 pt per 30, più bonus carriera fino a 4 pt (mobilità, laurea entro 31 dic 3° anno, corsi di lingua, tirocinio). Lode se punteggio ≥ 111.</li>
+                            <li><strong>DICAM – Ingegneria Civile, Ambientale e Meccanica</strong>: fattore ×3,85. Bonus durata: 2 pt entro settembre 3° anno, 1,5 pt entro dicembre, 1 pt entro appello straordinario. Bonus mobilità: 1 pt con ≥18 CFU riconosciuti. Lode se punteggio ≥ 111.</li>
+                            <li><strong>DSRS – Sociologia e Ricerca Sociale</strong>: fattore ×3,9. Nessun bonus esplicito aggiuntivo oltre alla prova finale. Lode se punteggio ≥ 111.</li>
+                        </ul>
+                        <p>In tutti i casi, il punteggio viene arrotondato all'intero più vicino; se supera 110 il voto è fissato a 110/110 e la lode viene attribuita automaticamente al superamento della soglia dipartimentale.</p>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gray-200"></div>
+
+                <!-- UniBS per dipartimento -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3">Voto di laurea all'Università di Brescia: formule per dipartimento</h2>
+                    <div class="text-gray-600 space-y-3 text-sm leading-relaxed">
+                        <p>A differenza di UniTrento, UniBS pubblica spesso i regolamenti a livello di singolo corso di laurea. Ecco le strutture principali:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2">
+                            <li><strong>DII – Ingegneria dell'Informazione (lauree triennali)</strong>: conversione con fattore 110/30 dalla media ponderata per CFU. Bonus fino a 7 pt: fino a 2 pt carriera (lodi, estero, premi), fino a 4 pt qualità tesi e presentazione, 1 pt laurea in corso. Lode se punteggio &gt; 110 e commissione unanime.</li>
+                            <li><strong>DICATAM – Ingegneria Civile, Architettura, Matematica</strong>: struttura a blocchi con fino a 3 pt carriera, 3 pt per l'elaborato e 4 pt per la presentazione. Lode all'unanimità oltre la soglia di 110.</li>
+                            <li><strong>Medicina e Chirurgia (LM-41)</strong>: calcolo articolato in tre componenti. <em>Componente A</em>: media aritmetica degli esami in centodecimi + 0,2 pt per ogni lode (max 2 pt) + eventuale punto progress test. <em>Componente B</em>: 2 pt per laurea in 6 anni, 1 pt in 7 anni + 0,2 pt/mese di mobilità internazionale (max 2 pt). <em>Componente C</em>: fino a 9 pt per tesi di ricerca originale, 5 pt per tesi compilativa. Lode con unanimità della commissione oltre la soglia minima.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gray-200"></div>
+
+                <!-- Bonus più comuni -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3">I bonus più comuni per il voto di laurea</h2>
+                    <div class="text-gray-600 space-y-3 text-sm leading-relaxed">
+                        <p>Quasi tutti i regolamenti prevedono categorie di bonus simili. Conoscerle in anticipo ti aiuta a pianificare la carriera per massimizzare il voto finale:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2">
+                            <li><strong>Laurea in corso</strong> (1–2 pt): si ottiene completando tutti gli esami e sostenendo la prova finale entro il terzo anno accademico (per le triennali). Ogni ateneo fissa sessioni specifiche; in genere la sessione autunnale di settembre/ottobre vale il massimo, quella invernale di dicembre/gennaio vale meno.</li>
+                            <li><strong>Mobilità internazionale</strong> (1 pt): si ottiene con un periodo all'estero riconosciuto in carriera (es. Erasmus+). DICAM UniTrento richiede almeno 18 CFU, altri dipartimenti una semplice registrazione in Esse3.</li>
+                            <li><strong>Qualità della tesi / prova finale</strong> (1–4 pt): dipende dal voto ottenuto alla difesa. DLM UniTrento assegna 3 pt se la prova finale riceve lode + 1 pt aggiuntivo dalla commissione.</li>
+                            <li><strong>Media curriculare alta</strong> (1–3 pt): DLM UniTrento premia le medie ≥ 27 con 1–3 pt aggiuntivi, indipendentemente dalla tesi.</li>
+                            <li><strong>Percorso di eccellenza</strong> (1 pt): progetto aggiuntivo riservato agli studenti con media alta, riconosciuto in Esse3 al completamento.</li>
+                            <li><strong>Attività extra</strong> (tirocini, corsi di lingua, premi): alcuni dipartimenti come DEM UniTrento riconoscono fino a 1 pt per tirocini curriculari e corsi extra di lingua certificati.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="h-px bg-gray-200"></div>
+
+                <!-- FAQ -->
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Domande frequenti sul calcolo del voto di laurea</h2>
+                    <div class="space-y-4 text-sm">
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Qual è la differenza tra media ponderata e media aritmetica?</h3>
+                            <p class="text-gray-600 leading-relaxed">La <strong>media ponderata</strong> tiene conto dei CFU di ogni esame: un esame da 12 CFU "pesa" il doppio di uno da 6. È il metodo più diffuso nelle università italiane. La <strong>media aritmetica</strong> somma tutti i voti e divide per il numero di esami, senza considerare il loro peso in crediti. Medicina UniBS usa la media aritmetica, mentre la quasi totalità degli altri corsi usa la ponderata.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Cosa sono i CFU e come influenzano il voto di laurea?</h3>
+                            <p class="text-gray-600 leading-relaxed">I <strong>CFU (Crediti Formativi Universitari)</strong> misurano il carico di lavoro di ogni insegnamento (1 CFU ≈ 25 ore di studio). Nella media ponderata, ogni voto viene moltiplicato per i CFU dell'esame prima di calcolare la media: esami più pesanti in CFU hanno quindi più impatto sul voto finale.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Come viene assegnata la lode alla laurea?</h3>
+                            <p class="text-gray-600 leading-relaxed">La <strong>lode (110/110 con lode)</strong> si ottiene quando il punteggio finale — prima dell'arrotondamento all'intero — supera una soglia dipartimentale. UniTrento DLM usa la soglia 110,50; la maggior parte dei dipartimenti UniTrento e UniBS usa 111. In alcuni casi (DII UniBS, DICATAM) è richiesta anche la <strong>votazione unanime</strong> della commissione; in altri (DISI, DLM, DSRS UniTrento) la lode è attribuita automaticamente al superamento della soglia.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Il voto della tesi entra nel calcolo della media?</h3>
+                            <p class="text-gray-600 leading-relaxed">Dipende dal regolamento. In alcuni dipartimenti (DLM, DEM, DICAM UniTrento) la prova finale è inclusa nella media ponderata come un normale esame. In altri (DISI UniTrento) la prova finale <em>non</em> entra nella media, ma il voto ottenuto determina i punti bonus aggiunti alla base. In ogni caso, il contributo della tesi al voto finale è sempre significativo.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-gray-800 mb-1">Posso migliorare il mio voto di laurea durante l'ultimo anno?</h3>
+                            <p class="text-gray-600 leading-relaxed">Sì. Gli esami dell'ultimo anno rientrano nella media ponderata finale, quindi portare la media su nelle ultime materie aiuta concretamente. Pianificare di laurearsi nella sessione autunnale in corso può valere 1–2 punti bonus aggiuntivi. Anche un periodo Erasmus riconosciuto in carriera, se non ancora sfruttato, aggiunge 1 pt in quasi tutti i regolamenti.</p>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
